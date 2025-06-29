@@ -32,6 +32,26 @@
       date: 2024年11月9日-11月10日
       place: 中国，深圳
 
+- title: 2025第一期 Docker 训练营
+  description: OpenCamp社区 × 腾讯云CNB平台合作举办。全程线上，免费教学
+  category: conference
+  tags:
+    - opencamp
+    - 腾讯云
+    - Docker
+  events:
+    - year: 2025
+      id: opencampdocker2025
+      link: https://opencamp.cn/Docker/camp/202501
+      timeline:
+        - deadline: '2025-06-29T00:00:00'
+          comment: '训练营开始'
+        - deadline: '2025-08-10T00:00:00'
+          comment: '训练营结束'
+      timezone: Asia/Shanghai
+      date: 2025年6月29日-8月10日（共6周）
+      place: 线上
+
 - title: OpenStack 峰会
   description: OpenStack 峰会汇集了数千名开发者、用户和管理员
   category: conference
