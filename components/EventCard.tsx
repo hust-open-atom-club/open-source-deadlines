@@ -10,6 +10,7 @@ import { Calendar, MapPin, Clock, Star, ExternalLink } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
 import { DateTime } from "luxon"
 import Link from 'next/link'
+import { formatTimezoneToUTC } from '@/lib/utils'
 
 interface EventCardProps {
   item: DeadlineItem
@@ -23,7 +24,13 @@ const categoryTranslations: { [key: string]: string } = {
 };
 
 export function EventCard({ item, event }: EventCardProps) {
-  const { favorites, toggleFavorite, mounted } = useEventStore()
+  const { 
+    favorites, 
+    toggleFavorite, 
+    mounted,
+    displayTimezone 
+  } = useEventStore()
+  
   const cardId = `${event.id}`
   const isFavorited = favorites.includes(cardId)
 
@@ -32,7 +39,7 @@ export function EventCard({ item, event }: EventCardProps) {
   }, [])
 
   const ended = isEventEnded(event)
-  const now = DateTime.now().setZone("Asia/Shanghai")
+  const now = DateTime.now().setZone(displayTimezone)
   
   // 找到下一个截止日期
   const upcomingDeadlines = event.timeline
@@ -42,12 +49,16 @@ export function EventCard({ item, event }: EventCardProps) {
       date: DateTime.fromISO(t.deadline, { zone: event.timezone }),
       index 
     }))
-    // 转换到上海时区进行比较
-    .filter(t => t.date.setZone("Asia/Shanghai") > now)
+    // 转换到显示时区进行比较
+    .filter(t => t.date.setZone(displayTimezone) > now)
     .sort((a, b) => a.date.toMillis() - b.date.toMillis())
   
   const nextDeadline = upcomingDeadlines[0]
   
+  // 转换时区为UTC偏移格式
+  const displayTimezoneUTC = formatTimezoneToUTC(displayTimezone);
+  const eventTimezoneUTC = formatTimezoneToUTC(event.timezone);
+
   return (
     <Card className={`transition-all duration-300 hover:shadow-lg ${ended ? 'opacity-60 grayscale' : ''}`}>
       <CardContent>
@@ -124,7 +135,7 @@ export function EventCard({ item, event }: EventCardProps) {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{event.timezone}</span>
+                <span className="break-words">{eventTimezoneUTC}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
@@ -179,7 +190,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         {nextDeadline.comment}
                       </div>
                       <div className="text-xs text-orange-600">
-                        {nextDeadline.date.setZone("Asia/Shanghai").toFormat('yyyy-MM-dd HH:mm:ss')} (CST)
+                        {nextDeadline.date.setZone(displayTimezone).toFormat('yyyy-MM-dd HH:mm:ss')} ({displayTimezoneUTC})
                       </div>
                     </div>
                     
@@ -249,7 +260,7 @@ export function EventCard({ item, event }: EventCardProps) {
                       {nextDeadline.comment}
                     </div>
                     <div className="text-xs text-orange-600">
-                      {nextDeadline.date.setZone("Asia/Shanghai").toFormat('yyyy-MM-dd HH:mm:ss')} (CST)
+                      {nextDeadline.date.setZone(displayTimezone).toFormat('yyyy-MM-dd HH:mm:ss')} ({displayTimezoneUTC})
                     </div>
                   </div>
                   <div className="flex justify-center">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { DateTime } from 'luxon'
+import { useEventStore } from '@/lib/store'
 
 interface CountdownTimerProps {
   deadline: DateTime
@@ -15,11 +16,14 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
     seconds: number
   } | null>(null)
 
+  // 从全局状态获取显示时区
+  const displayTimezone = useEventStore(state => state.displayTimezone)
+
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = DateTime.now().setZone("Asia/Shanghai")
-      const shanghaiDeadline = deadline.setZone("Asia/Shanghai")
-      const difference = shanghaiDeadline.toMillis() - now.toMillis()
+      const now = DateTime.now().setZone(displayTimezone)
+      const targetDeadline = deadline.setZone(displayTimezone)
+      const difference = targetDeadline.toMillis() - now.toMillis()
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24))
@@ -37,7 +41,7 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
     const timer = setInterval(calculateTimeLeft, 1000)
 
     return () => clearInterval(timer)
-  }, [deadline])
+  }, [deadline, displayTimezone])
 
   if (!timeLeft) {
     return (
