@@ -7,6 +7,7 @@ import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { ReactNode } from 'react'
+import { TimezoneSelector } from '@/components/TimezoneSelector'
 
 const categoryTranslations: { [key: string]: string } = {
   conference: '会议',
@@ -60,7 +61,7 @@ export function FilterBar() {
   const allLocations = Array.from(new Set(
     items.flatMap(item => item.events.map(event => event.place))
   )).sort()
-
+  
   return (
     <div className="space-y-4">
       {/* Search */}
@@ -75,20 +76,26 @@ export function FilterBar() {
         />
       </div>
 
-      {/* Favorites Toggle */}
-      {mounted && (
-        <div className="flex items-center space-x-2">
-          <Switch
-            id="favorites-only"
-            checked={showOnlyFavorites}
-            onCheckedChange={setShowOnlyFavorites}
-          />
-          <Label htmlFor="favorites-only" className="flex items-center gap-1.5">
-            <Star className="w-4 h-4 text-yellow-500" />
-            只显示收藏
-          </Label>
-        </div>
-      )}
+      {/* Favorites and Timezone Row */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        {/* Favorites Toggle */}
+        {mounted && (
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="favorites-only"
+              checked={showOnlyFavorites}
+              onCheckedChange={setShowOnlyFavorites}
+            />
+            <Label htmlFor="favorites-only" className="flex items-center gap-1.5">
+              <Star className="w-4 h-4 text-yellow-500" />
+              只显示收藏
+            </Label>
+          </div>
+        )}
+        
+        {/* 时区选择器 */}
+        <TimezoneSelector />
+      </div>
 
       {/* Categories */}
       <div>

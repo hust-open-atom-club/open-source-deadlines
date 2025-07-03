@@ -15,6 +15,11 @@ interface AppState {
   setShowOnlyFavorites: (show: boolean) => void
   mounted: boolean
   
+  // 时区相关状态
+  displayTimezone: string
+  setDisplayTimezone: (timezone: string) => void
+  detectUserTimezone: () => void
+  
   fetchItems: () => Promise<void>
   setCategory: (category: string | null) => void
   toggleTag: (tag: string) => void
@@ -35,6 +40,9 @@ export const useEventStore = create<AppState>()(
       favorites: [],
       showOnlyFavorites: false,
       mounted: false,
+      
+      // 默认使用上海时区
+      displayTimezone: "Asia/Shanghai",
 
       // Actions
       toggleFavorite: (id: string) =>
@@ -53,6 +61,22 @@ export const useEventStore = create<AppState>()(
         } catch (err) {
           console.error('Failed to load data:', err)
           set({ loading: false })
+        }
+      },
+      
+      // 设置时区
+      setDisplayTimezone: (timezone: string) => set({ displayTimezone: timezone }),
+      
+      // 检测用户本地时区
+      detectUserTimezone: () => {
+        try {
+          const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          if (userTimezone) {
+            set({ displayTimezone: userTimezone });
+          }
+        } catch (err) {
+          console.error('Failed to detect user timezone:', err);
+          // 如果检测失败，保持当前时区不变
         }
       },
       
@@ -75,7 +99,10 @@ export const useEventStore = create<AppState>()(
     {
       name: 'favorites-storage',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ favorites: state.favorites }),
+      partialize: (state) => ({ 
+        favorites: state.favorites,
+        displayTimezone: state.displayTimezone // 保存用户选择的时区
+      }),
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.mounted = true

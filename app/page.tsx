@@ -8,12 +8,12 @@ import { Calendar, Github } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
 import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
-import { TZDate } from '@date-fns/tz'
+import { DateTime } from 'luxon'
 
 interface FlatEvent {
   item: DeadlineItem
   event: EventData
-  nextDeadline: Date
+  nextDeadline: DateTime
   timeRemaining: number
 }
 
@@ -36,14 +36,15 @@ export default function Home() {
 
   const flatEvents: FlatEvent[] = useMemo(() => items.flatMap(item =>
     item.events.map(event => {
-      const now = new TZDate(new Date(), "Asia/Shanghai")
+      const now = DateTime.now().setZone("Asia/Shanghai")
       const upcomingDeadlines = event.timeline
-        .map(t => new TZDate(t.deadline, event.timezone))
+        .map(t => DateTime.fromISO(t.deadline, { zone: event.timezone }))
         .filter(d => d > now)
-        .sort((a, b) => a.getTime() - b.getTime())
+        .sort((a, b) => a.toMillis() - b.toMillis())
       
-      const nextDeadline = upcomingDeadlines[0] || new TZDate(event.timeline[event.timeline.length - 1].deadline, event.timezone)
-      const timeRemaining = nextDeadline.getTime() - now.getTime()
+      const nextDeadline = upcomingDeadlines[0] || 
+        DateTime.fromISO(event.timeline[event.timeline.length - 1].deadline, { zone: event.timezone })
+      const timeRemaining = nextDeadline.toMillis() - now.toMillis()
       
       return { item, event, nextDeadline, timeRemaining }
     })
@@ -124,7 +125,7 @@ export default function Home() {
             开源会议、竞赛和活动重要截止日期概览，不再错过为社区贡献、学习和交流的机会
           </p>
           <p className="text-sm text-slate-600 mt-5">
-            所有截止日期均已转换为北京时间<br/>
+            所有截止日期均默认转换为北京时间，如果您不知道当前所在时区，请点击时区选择器右侧的“自动检测”<br/>
             *免责声明：本站数据由人工维护，仅供参考
           </p>
         </header>
