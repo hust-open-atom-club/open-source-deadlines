@@ -8,7 +8,7 @@ import { CountdownTimer } from '@/components/CountdownTimer'
 import { DeadlineItem, EventData, isEventEnded } from '@/lib/data'
 import { Calendar, MapPin, Clock, Star, ExternalLink } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
-import { TZDate } from '@date-fns/tz'
+import { DateTime } from "luxon"
 import Link from 'next/link'
 
 interface EventCardProps {
@@ -32,13 +32,19 @@ export function EventCard({ item, event }: EventCardProps) {
   }, [])
 
   const ended = isEventEnded(event)
-  const now = new TZDate(new Date(), "Asia/Shanghai")
+  const now = DateTime.now().setZone("Asia/Shanghai")
   
   // 找到下一个截止日期
   const upcomingDeadlines = event.timeline
-    .map((t, index) => ({ ...t, date: new TZDate(t.deadline, event.timezone), index }))
-    .filter(t => t.date.withTimeZone("Asia/Shanghai") > now)
-    .sort((a, b) => a.date.withTimeZone("Asia/Shanghai").getTime() - b.date.withTimeZone("Asia/Shanghai").getTime())
+    .map((t, index) => ({ 
+      ...t, 
+      // 正确处理时区：将原始字符串解析为指定时区的日期
+      date: DateTime.fromISO(t.deadline, { zone: event.timezone }),
+      index 
+    }))
+    // 转换到上海时区进行比较
+    .filter(t => t.date.setZone("Asia/Shanghai") > now)
+    .sort((a, b) => a.date.toMillis() - b.date.toMillis())
   
   const nextDeadline = upcomingDeadlines[0]
   
@@ -173,7 +179,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         {nextDeadline.comment}
                       </div>
                       <div className="text-xs text-orange-600">
-                        {nextDeadline.date.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })} (CST)
+                        {nextDeadline.date.setZone("Asia/Shanghai").toFormat('yyyy-MM-dd HH:mm:ss')} (CST)
                       </div>
                     </div>
                     
@@ -243,11 +249,11 @@ export function EventCard({ item, event }: EventCardProps) {
                       {nextDeadline.comment}
                     </div>
                     <div className="text-xs text-orange-600">
-                      {nextDeadline.date.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })} (CST)
+                      {nextDeadline.date.setZone("Asia/Shanghai").toFormat('yyyy-MM-dd HH:mm:ss')} (CST)
                     </div>
                   </div>
                   <div className="flex justify-center">
-                    <CountdownTimer deadline={nextDeadline.date.withTimeZone("Asia/Shanghai")} />
+                    <CountdownTimer deadline={nextDeadline.date} />
                   </div>
                 </div>
               </div>

@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { DateTime } from 'luxon'
 
 interface CountdownTimerProps {
-  deadline: Date
+  deadline: DateTime
 }
 
 export function CountdownTimer({ deadline }: CountdownTimerProps) {
@@ -16,8 +17,9 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = new Date()
-      const difference = deadline.getTime() - now.getTime()
+      const now = DateTime.now().setZone("Asia/Shanghai")
+      const shanghaiDeadline = deadline.setZone("Asia/Shanghai")
+      const difference = shanghaiDeadline.toMillis() - now.toMillis()
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24))

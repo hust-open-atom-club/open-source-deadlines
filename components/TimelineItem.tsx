@@ -2,7 +2,7 @@
 
 import { TimelineEvent } from '@/lib/data'
 import { getTimelineStatus } from '@/lib/data'
-import { TZDate } from "@date-fns/tz"
+import { DateTime } from "luxon"
 import { useState, useRef, useEffect } from 'react'
 
 interface TimelineItemProps {
@@ -20,7 +20,8 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   const dotRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   
-  const deadlineDate = new TZDate(event.deadline, timezone)
+  // 正确处理时区：将原始字符串解析为指定时区的日期
+  const deadlineDate = DateTime.fromISO(event.deadline, { zone: timezone })
   const status = isEnded ? 'past' : getTimelineStatus(deadlineDate)
   
   // 计算时间线上点的位置 (10% 到 90% 的范围)
@@ -111,11 +112,7 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
           <div className={`text-xs font-medium whitespace-nowrap ${
             isActive ? 'text-orange-700 font-bold' : 'text-gray-600'
           }`}>
-            {deadlineDate.toLocaleString('zh-CN', { 
-              timeZone: 'Asia/Shanghai', 
-              month: '2-digit', 
-              day: '2-digit' 
-            })}
+            {deadlineDate.setZone("Asia/Shanghai").toFormat('MM-dd')}
           </div>
         </div>
       </div>
@@ -134,10 +131,10 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
           <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 whitespace-nowrap shadow-lg">
             <div className="font-medium">{event.comment}</div>
             <div className="text-gray-300">
-              {deadlineDate.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })} (CST)
+              {deadlineDate.setZone("Asia/Shanghai").toFormat('yyyy-MM-dd HH:mm:ss')} (CST)
             </div>
             <div className="text-gray-300">
-              {deadlineDate.toLocaleString('zh-CN', { timeZone: timezone })} ({timezone})
+              {deadlineDate.toFormat('yyyy-MM-dd HH:mm:ss')} ({timezone})
             </div>
             
             {/* Arrow (desktop only) */}

@@ -1,4 +1,4 @@
-import { TZDate } from "@date-fns/tz"
+import { DateTime } from "luxon"
 
 export interface TimelineEvent {
   deadline: string
@@ -23,9 +23,9 @@ export interface DeadlineItem {
   events: EventData[]
 }
 
-export function getTimelineStatus(deadline: TZDate): 'past' | 'current' | 'upcoming' {
-  const now = new TZDate(new Date(), "Asia/Shanghai")
-  const timeDiff = deadline.getTime() - now.getTime()
+export function getTimelineStatus(deadline: DateTime): 'past' | 'current' | 'upcoming' {
+  const now = DateTime.now().setZone("Asia/Shanghai")
+  const timeDiff = deadline.toMillis() - now.toMillis()
   const daysDiff = timeDiff / (1000 * 3600 * 24)
   
   if (daysDiff < -1) return 'past'
@@ -34,7 +34,10 @@ export function getTimelineStatus(deadline: TZDate): 'past' | 'current' | 'upcom
 }
 
 export function isEventEnded(event: EventData): boolean {
-  const now = new TZDate(new Date(), "Asia/Shanghai")
-  const lastDeadline = new TZDate(event.timeline[event.timeline.length - 1].deadline, event.timezone)
-  return lastDeadline.withTimeZone("Asia/Shanghai") < now
+  const now = DateTime.now().setZone("Asia/Shanghai")
+  
+  const lastDeadlineStr = event.timeline[event.timeline.length - 1].deadline
+  const lastDeadline = DateTime.fromISO(lastDeadlineStr, { zone: event.timezone })
+  
+  return lastDeadline.setZone("Asia/Shanghai") < now
 }
