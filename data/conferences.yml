@@ -96,3 +96,35 @@
       timezone: Asia/Shanghai
       date: 2025年7月25日-7月27日
       place: 中国，北京
+
+- title: UbuCon Asia
+  description: UbuCon Asia is a community-organized conference connecting Ubuntu community in Asia.
+  category: conference
+  tags:
+    - Ubuntu
+  events:
+    - year: 2025
+      id: ubuconasia2025
+      link: https://2025.ubucon.asia/
+      timeline:
+        - deadline: '2025-03-01T00:00:00'
+          comment: 'Open day for Call for proposals & Travel grant application'
+        - deadline: '2025-03-31T00:00:00'
+          comment: 'Deadline for Call for proposals, Travel grant application for those who submitted proposals'
+        - deadline: '2025-04-15T00:00:00'
+          comment: 'Extended deadline for Call for proposals'
+        - deadline: '2025-04-28T00:00:00'
+          comment: 'Extended deadline for Travel grant application for those who submitted proposals'
+        - deadline: '2025-08-29T00:00:00'
+          comment: 'Arrival day'
+        - deadline: '2025-08-30T00:00:00'
+          comment: 'Fisrt day of UbuCon Asia 2025'
+        - deadline: '2025-08-31T00:00:00'
+          comment: 'Second day of UbuCon Asia 2025'
+        - deadline: '2025-09-01T00:00:00'
+          comment: 'Group tour program'
+        - deadline: '2025-09-02T00:00:00'
+          comment: 'Departure day'
+      timezone: Asia/Kathmandu
+      date: August 30 - 31
+      place: Kathmandu, Nepal

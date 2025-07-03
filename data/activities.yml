@@ -38,3 +38,23 @@
       timezone: Asia/Shanghai
       date: 2025年7月5日
       place: 中国，北京
+
+- title: 甜“芯”代码局：RISC-V 与 openKylin 的开源狂欢派对
+  description: 由进迭时空与 openKylin 社区共同举办的开源狂欢派对。左手甜点、右手代码，在 RISC-V 与 openKylin 的开源世界里，边吃边玩边搞技术！
+  category: activity
+  tags:
+    - RISC-V
+    - openKylin
+    - 城市沙龙
+  events:
+    - year: 2025
+      id: spacemitopenkylin250703
+      link: https://forum.spacemit.com/t/topic/604
+      timeline:
+        - deadline: '2025-07-03T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-07-03T18:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 3 日
+      place: 中国，沈阳

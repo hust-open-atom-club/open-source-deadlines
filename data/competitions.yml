@@ -124,7 +124,7 @@
       link: https://opensource.tencent.com/summer-of-code
       timeline:
         - deadline: '2025-06-20T00:00:00'
-          comment: '报名开始&开源基础课程开启'
+          comment: '报名开始 & 开源基础课程开启'
         - deadline: '2025-07-10T00:00:00'
           comment: '开源 issue 实践开启'
         - deadline: '2025-07-28T00:00:00'
@@ -136,3 +136,61 @@
       timezone: Asia/Shanghai
       date: 2025 年 6 月 20 日 - 9 月 10 日
       place: 线上
+
+- title: Godot x openKylin 全国开发大赛
+  description: Godot x openKylin 全国开发大赛旨在鼓励开发者使用 Godot 引擎进行跨平台创作，推动开源生态发展。大赛聚焦游戏与软件创新，促进优秀作品在 openKylin 操作系统上的落地应用。
+  category: competition
+  tags:
+    - openKylin
+    - Godot
+    - 开源技术
+  events:
+    - year: 2025
+      id: gondc2025 # Godot x openKylin National Development Competition 首字母缩写
+      link: https://mp.weixin.qq.com/s/pYNHInIts4Rf0TH3joQVsQ
+      timeline:
+        - deadline: '2025-07-05T00:00:00'
+          comment: '报名 & 比赛开始'
+        - deadline: '2025-08-01T00:00:00'
+          comment: '作品提交开始'
+        - deadline: '2025-09-01T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-09-10T23:59:59'
+          comment: '比赛结束 & 作品提交截止'
+        - deadline: '2025-10-15T23:59:59'
+          comment: '评选结束'
+        - deadline: '2025-10-25T12:00:00'
+          comment: '颁奖结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 5 日 - 10 月 25 日
+      place: 线上
+
+- title: 中国研究生操作系统开源创新大赛
+  description: 中国研究生操作系统开源创新大赛是面向研究生和本科生的全国性、公益性开源创新赛，由教育部学位管理与研究生教育司指导、中国学位与研究生教育学会和中国科协青少年科技中心主办。
+  category: competition
+  tags:
+    - 操作系统
+    - 开源技术
+  events:
+    - year: 2025
+      id: cpipc2
+      link: https://cpipc.acge.org.cn/cw/hp/2c9080178c7c917b018d1b1a0af61cd6
+      timeline:
+        - deadline: '2025-05-01T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-05-20T00:00:00'
+          comment: '作品提交开始'
+        - deadline: '2025-07-18T17:00:00'
+          comment: '报名截止'
+        - deadline: '2025-07-20T17:00:00'
+          comment: '作品提交截止'
+        - deadline: '2025-07-25T00:00:00'
+          comment: '初赛评审（具体时间待定）'
+        - deadline: '2025-07-30T00:00:00'
+          comment: '入围公示（具体时间待定）'
+        - deadline: '2025-08-25T00:00:00'
+          comment: '决赛（具体时间待定）'
+      timezone: Asia/Shanghai
+      date: 2025 年 5 月 1 日 - 8 月下旬
+      place: 线上
+
