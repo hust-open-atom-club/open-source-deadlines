@@ -1,6 +1,6 @@
 # Open Source Deadlines
 
-一个追踪开源会议和竞赛截止日期的网站，帮助开发者们及时了解最新的开源活动动态，不再错过为社区贡献、学习和交流的机会。
+一个追踪开源会议、竞赛及活动截止日期的网站，帮助开发者们及时了解最新的开源活动动态，不再错过为社区贡献、学习和交流的机会。
 
 ## 如何添加活动
 
@@ -12,14 +12,13 @@
 - **竞赛**: 请添加到 `data/competitions.yml`
 - **活动**: 请添加到 `data/activities.yml`
 
-
 ### 数据结构
 
 请在对应的 YAML 文件中，仿照以下格式添加新条目：
 
 ```yaml
 - title: 活动名称 (例如：开源之夏)
-  description: 对活动的一句话描述
+  description: 对活动的一句话描述（要求不超过 100 字）
   category: competition # 会议请使用 "conference"，活动请使用 "activity"
   tags:
     - 标签1
@@ -34,15 +33,17 @@
         - deadline: '2024-09-30T24:00:00'
           comment: '结项提交'
       timezone: Asia/Shanghai # 所在时区
-      date: 2025年4月30日-9月30日 # 人类可读的日期范围
+      date: 2025 年 4 月 30 日 - 9 月 30 日 # 人类可读的日期范围
       place: 线上 # 地点
 ```
 
 **注意事项:**
 
-- `category`: 必须是 `conference` 或 `competition`。
-- `timeline.deadline`: 请使用 `YYYY-MM-DDTHH:mm:ss` 格式。
-- `timezone`: 请使用标准的 IANA 时区名称（例如 `Asia/Shanghai`），否则会影响时区转换。
+- `category`: 必须是 `conference` 或 `competition`
+- `timeline.deadline`: 请使用 ISO 8601 标准格式 - `YYYY-MM-DDTHH:mm:ss`
+- `timezone`: 请使用标准的 IANA 时区名称（例如 `Asia/Shanghai`），否则会影响时区转换
+- `date`: 请使用人类可读的单个日期或日期范围，如“2025 年 4 月 30 日”或“2025 年 4 月 30 日 - 9 月 30 日”
+- `place`: 活动地址，如“中国，上海“或”中国广东省深圳市“；如果是线上活动，直接写”线上“
 
 ## 开发指南
 
@@ -52,23 +53,27 @@
 
 ### 本地启动
 
-1.  **克隆项目**
+1. **克隆项目**
+
     ```bash
     git clone https://github.com/hust-open-atom-club/open-source-deadlines.git
     cd open-source-deadlines
     ```
 
-2.  **安装依赖**
+2. **安装依赖**
+
     ```bash
     bun install
     ```
 
-3.  **启动开发服务器**
+3. **启动开发服务器**
+
     ```bash
     bun run dev
     ```
 
 4. **（可选）剪枝**
+
     ```bash
     bun run knip
     ```
