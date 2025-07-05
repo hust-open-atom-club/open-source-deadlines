@@ -2,7 +2,7 @@
 name: 功能需求
 about: 提出新功能或改进建议。
 title: '[Feature] '
-type: Feature
+labels: enhancement
 assignees: ''
 ---
 
