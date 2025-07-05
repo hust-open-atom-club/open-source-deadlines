@@ -1,7 +1,7 @@
 ---
 name: 活动数据修改/添加请求
 about: 添加新的开源活动，或修改已有的活动信息。
-title: '[数据] '
+title: '[Activity] '
 labels: activity-update
 assignees: ''
 ---
