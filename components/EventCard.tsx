@@ -11,6 +11,7 @@ import { useEventStore } from '@/lib/store'
 import { DateTime } from "luxon"
 import Link from 'next/link'
 import { formatTimezoneToUTC } from '@/lib/utils'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
 interface EventCardProps {
   item: DeadlineItem
@@ -233,24 +234,26 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
             
             {/* 时间线容器 - 移动端优化高度 */}
-            <div className="relative bg-gray-50 rounded-lg border h-16 sm:h-20 flex items-center overflow-hidden">
-              {/* 时间线背景线 - 水平居中 */}
-              <div className="absolute left-[8%] right-[8%] h-0.5 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
-              
-              {/* 时间线节点容器 */}
-              <div className="relative w-full h-full">
-                {event.timeline.map((timelineEvent, index) => (
-                  <TimelineItem
-                    key={index}
-                    event={timelineEvent}
-                    timezone={event.timezone}
-                    isEnded={ended}
-                    isActive={nextDeadline?.index === index}
-                    totalEvents={event.timeline.length}
-                    index={index}
-                  />
-                ))}
-              </div>
+            <div className="relative bg-gray-50 rounded-lg border flex items-center overflow-visible pt-2 pb-2" style={{ minHeight: 56 }}>
+              {/* 时间线主线 - 居中于 timeline 区域 */}
+              <div className="absolute left-[8%] right-[8%] h-0.5 bg-gray-300 z-10 top-1/2 transform -translate-y-1/2"></div>
+              <ScrollArea className="w-full max-w-full min-w-0 whitespace-nowrap overflow-visible pb-2">
+                <div className="relative flex w-max min-w-0">
+                  {event.timeline.map((timelineEvent, index) => (
+                    <TimelineItem
+                      key={index}
+                      event={timelineEvent}
+                      timezone={event.timezone}
+                      isEnded={ended}
+                      isActive={nextDeadline?.index === index}
+                      totalEvents={event.timeline.length}
+                      index={index}
+                      layout="flex"
+                    />
+                  ))}
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
             </div>
           </div>
           
