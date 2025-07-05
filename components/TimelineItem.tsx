@@ -1,7 +1,6 @@
 'use client'
 
 import { TimelineEvent } from '@/lib/data'
-import { getTimelineStatus } from '@/lib/data'
 import { DateTime } from "luxon"
 import { useState, useRef, useEffect } from 'react'
 import { useEventStore } from '@/lib/store'
@@ -14,9 +13,10 @@ interface TimelineItemProps {
   isActive?: boolean
   totalEvents: number
   index: number
+  layout?: 'absolute' | 'flex' // 新增，默认为 absolute
 }
 
-export function TimelineItem({ event, timezone, isEnded, isActive = false, totalEvents, index }: TimelineItemProps) {
+export function TimelineItem({ event, timezone, isEnded, isActive = false, totalEvents, index, layout = 'absolute' }: TimelineItemProps) {
   const [showTooltip, setShowTooltip] = useState(false)
   const [tooltipStyle, setTooltipStyle] = useState({ left: 0, top: 0, arrowOffset: 0 })
   const dotRef = useRef<HTMLDivElement>(null)
@@ -27,7 +27,6 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   
   // 正确处理时区：将原始字符串解析为指定时区的日期
   const deadlineDate = DateTime.fromISO(event.deadline, { zone: timezone })
-  const status = isEnded ? 'past' : getTimelineStatus(deadlineDate)
   
   // 计算时间线上点的位置 (10% 到 90% 的范围)
   const position = totalEvents > 1 ? (index / (totalEvents - 1)) * 80 + 10 : 50
@@ -82,8 +81,6 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   const dotClasses = `
     w-3 h-3 rounded-full border-2 shadow-sm transition-all duration-300 cursor-pointer
     ${isActive ? 'bg-orange-500 border-orange-300 ring-2 ring-orange-200 scale-125' :
-      status === 'current' ? 'bg-orange-500 border-orange-300' :
-      status === 'upcoming' ? 'bg-blue-500 border-blue-300' :
       'bg-gray-400 border-gray-300'}
     ${isEnded ? 'opacity-50' : ''}
     ${showTooltip ? 'scale-125' : ''}
@@ -102,28 +99,41 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   return (
     <>
       <div 
-        className="absolute flex flex-col items-center"
-        style={{ 
-          left: `${position}%`,
-          transform: 'translateX(-50%)',
-          top: '50%',
-          marginTop: '-6px'
-        }}
+        className={layout === 'absolute' ? 'absolute flex flex-col items-center' : 'flex flex-col items-center justify-center'}
+        style={layout === 'absolute'
+          ? { left: `${position}%`, transform: 'translateX(-50%)', top: '50%', marginTop: '-6px' }
+          : { position: 'relative', minWidth: 72, height: 40, marginRight: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }
+        }
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowTooltip(false)}
         ref={dotRef}
       >
-        {/* Timeline dot */}
-        <div className={dotClasses} />
-        
-        {/* Date display */}
-        <div className={dateClasses}>
-          <div className={`text-xs font-medium whitespace-nowrap ${
-            isActive ? 'text-orange-700 font-bold' : 'text-gray-600'
-          }`}>
-            {deadlineDate.setZone(displayTimezone).toFormat('MM-dd')}
+        {/* Date display 在上方 */}
+        {layout === 'flex' ? (
+          <div className="mb-2 text-center">
+            <div className={`text-xs font-medium whitespace-nowrap ${
+              isActive ? 'text-orange-700 font-bold' : 'text-gray-600'
+            }`}>
+              {deadlineDate.setZone(displayTimezone).toFormat('MM-dd')}
+            </div>
           </div>
-        </div>
+        ) : null}
+        {/* Timeline dot 绝对定位覆盖主线 */}
+        {layout === 'flex' ? (
+          <div className={dotClasses + ' z-20'} style={{ position: 'absolute', top: 'calc(50% + 3px)', left: '50%', transform: 'translate(-50%, -50%)' }} />
+        ) : (
+          <div className={dotClasses + ' z-20'} />
+        )}
+        {/* 绝对定位日期（桌面端） */}
+        {layout !== 'flex' && (
+          <div className={dateClasses} style={{}}>
+            <div className={`text-xs font-medium whitespace-nowrap ${
+              isActive ? 'text-orange-700 font-bold' : 'text-gray-600'
+            }`}>
+              {deadlineDate.setZone(displayTimezone).toFormat('MM-dd')}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Tooltip */}
