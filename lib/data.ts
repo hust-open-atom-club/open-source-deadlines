@@ -44,18 +44,6 @@ const getCurrentDisplayTimezone = (): string => {
   return 'Asia/Shanghai'; // 默认时区
 };
 
-// 获取时间线状态
-export function getTimelineStatus(deadline: DateTime): 'past' | 'current' | 'upcoming' {
-  const displayTimezone = getCurrentDisplayTimezone();
-  const now = DateTime.now().setZone(displayTimezone)
-  const timeDiff = deadline.toMillis() - now.toMillis()
-  const daysDiff = timeDiff / (1000 * 3600 * 24)
-  
-  if (daysDiff < -1) return 'past'
-  if (daysDiff >= -1 && daysDiff <= 1) return 'current'
-  return 'upcoming'
-}
-
 // 判断事件是否已结束
 export function isEventEnded(event: EventData): boolean {
   const displayTimezone = getCurrentDisplayTimezone();

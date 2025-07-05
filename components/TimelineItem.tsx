@@ -1,7 +1,6 @@
 'use client'
 
 import { TimelineEvent } from '@/lib/data'
-import { getTimelineStatus } from '@/lib/data'
 import { DateTime } from "luxon"
 import { useState, useRef, useEffect } from 'react'
 import { useEventStore } from '@/lib/store'
@@ -27,7 +26,6 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   
   // 正确处理时区：将原始字符串解析为指定时区的日期
   const deadlineDate = DateTime.fromISO(event.deadline, { zone: timezone })
-  const status = isEnded ? 'past' : getTimelineStatus(deadlineDate)
   
   // 计算时间线上点的位置 (10% 到 90% 的范围)
   const position = totalEvents > 1 ? (index / (totalEvents - 1)) * 80 + 10 : 50
@@ -82,8 +80,6 @@ export function TimelineItem({ event, timezone, isEnded, isActive = false, total
   const dotClasses = `
     w-3 h-3 rounded-full border-2 shadow-sm transition-all duration-300 cursor-pointer
     ${isActive ? 'bg-orange-500 border-orange-300 ring-2 ring-orange-200 scale-125' :
-      status === 'current' ? 'bg-orange-500 border-orange-300' :
-      status === 'upcoming' ? 'bg-blue-500 border-blue-300' :
       'bg-gray-400 border-gray-300'}
     ${isEnded ? 'opacity-50' : ''}
     ${showTooltip ? 'scale-125' : ''}
