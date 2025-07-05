@@ -18,7 +18,7 @@
 
 ```yaml
 - title: 活动名称 (例如：开源之夏)
-  description: 对活动的一句话描述（要求不超过 100 字）
+  description: 对活动的一句话描述（不超过 100 字）
   category: competition # 会议请使用 "conference"，活动请使用 "activity"
   tags:
     - 标签1
@@ -39,7 +39,7 @@
 
 **注意事项:**
 
-- `category`: 必须是 `conference` 或 `competition`
+- `category`: 必须是 `conference` 、 `competition` 或 `activity`
 - `timeline.deadline`: 请使用 ISO 8601 标准格式 - `YYYY-MM-DDTHH:mm:ss`
 - `timezone`: 请使用标准的 IANA 时区名称（例如 `Asia/Shanghai`），否则会影响时区转换
 - `date`: 请使用人类可读的单个日期或日期范围，如“2025 年 4 月 30 日”或“2025 年 4 月 30 日 - 9 月 30 日”
@@ -65,14 +65,18 @@
     ```bash
     bun install
     ```
+3. **激活 Git Hook**
+   ```bash
+   bun run prepare
+   ```
 
-3. **启动开发服务器**
+4. **启动开发服务器**
 
     ```bash
     bun run dev
     ```
 
-4. **（可选）剪枝**
+5. **（可选）剪枝**
 
     ```bash
     bun run knip
