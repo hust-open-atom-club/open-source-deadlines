@@ -3,6 +3,6 @@ blank_issues_enabled: true
 
 # 在 Issue 选择页面添加一个自定义链接，作为空白 Issue 的入口
 contact_links:
-  - name: Default Issue
-    url: https://github.com/hust-open-atom-club/open-source-deadlines/issues/new
-    about: 如果上述模板都不适用，请在此处提交。
+  - name: 欢迎加入我们
+    url: https://hust.openatom.club/
+    about: 华科开放原子开源俱乐部是一个致力于促进开源文化发展、贡献优秀开源软件的活跃社区
