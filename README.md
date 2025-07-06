@@ -65,7 +65,8 @@
     ```bash
     bun install
     ```
-3. **激活 Git Hook**
+
+3. **激活 Git Hook（此步骤会在安装依赖后自动执行）**
    ```bash
    bun run prepare
    ```

@@ -279,7 +279,7 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
             
             {/* 时间线容器 - 移动端优化高度 */}
-            <div className="relative w-full">
+            <div className="relative w-full border rounded-lg overflow-hidden bg-gray-50">
               {/* 左右渐变遮罩，z-10，避免遮挡 tooltip */}
               <div className="pointer-events-none absolute left-0 top-0 h-full w-6 z-10 bg-gradient-to-r from-gray-50/90 to-transparent" />
               <div className="pointer-events-none absolute right-0 top-0 h-full w-6 z-10 bg-gradient-to-l from-gray-50/90 to-transparent" />
