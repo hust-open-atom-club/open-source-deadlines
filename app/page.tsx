@@ -8,6 +8,7 @@ import { Calendar } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
 import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
+import Image from 'next/image'
 import { DateTime } from 'luxon'
 
 interface FlatEvent {
@@ -118,7 +119,7 @@ export default function Home() {
               className="border-2 rounded-lg overflow-auto"
               aria-label="GitHub Repository"
             >
-              <img alt="GitHub Repo stars" className='h-8' src="https://img.shields.io/github/stars/hust-open-atom-club/open-source-deadlines?style=for-the-badge&logo=github&logoColor=white&labelColor=155dfc&color=white" />
+              <Image alt="GitHub Repo stars" width={140} height={32} src="/github-stars.svg" />
             </Link>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
@@ -160,6 +161,15 @@ export default function Home() {
         <footer className="mt-16 text-center text-slate-600">
           <p className="text-sm">
             使用 Next.js 与 shadcn/ui 构建 • 由{' '}
+            <Link 
+              href="https://github.com/inscripoem" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline"
+            >
+              inscripoem
+            </Link>
+            {' '}开发 • 由{' '}
             <Link 
               href="https://hust.openatom.club" 
               target="_blank" 
