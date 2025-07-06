@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { TimelineItem } from '@/components/TimelineItem'
@@ -11,6 +11,7 @@ import { useEventStore } from '@/lib/store'
 import { DateTime } from "luxon"
 import Link from 'next/link'
 import { formatTimezoneToUTC } from '@/lib/utils'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface EventCardProps {
   item: DeadlineItem
@@ -60,6 +61,47 @@ export function EventCard({ item, event }: EventCardProps) {
   const eventTimezoneUTC = formatTimezoneToUTC(event.timezone);
 
   const upcomingIndexes = upcomingDeadlines.map(t => t.index);
+
+  // timeline 横向滑动相关逻辑
+  // scrollContentRef: timeline 主体容器，用于检测内容宽度
+  // scrollViewportRef: ScrollArea Viewport，用于检测可视宽度和自动滚动
+  // activeDotRef: 当前 isActive 节点的 ref，实现自动居中
+  // showScrollHint: 是否显示滑动指引
+  const scrollContentRef = useRef<HTMLDivElement>(null);
+  const scrollViewportRef = useRef<HTMLDivElement>(null);
+  const activeDotRef = useRef<HTMLDivElement>(null);
+  const [showScrollHint, setShowScrollHint] = useState(false);
+
+  // 检测 timeline 是否溢出，决定是否显示滑动指引
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (scrollContentRef.current && scrollViewportRef.current) {
+        const contentWidth = scrollContentRef.current.scrollWidth;
+        const viewportWidth = scrollViewportRef.current.offsetWidth;
+        setShowScrollHint(contentWidth > viewportWidth + 1);
+      }
+    };
+    setTimeout(checkOverflow, 0);
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
+  }, [event.timeline]);
+
+  // timeline 溢出时，自动将 isActive 节点平滑滚动到 ScrollArea Viewport 的中间位置
+  useEffect(() => {
+    if (
+      showScrollHint &&
+      scrollViewportRef.current &&
+      activeDotRef.current
+    ) {
+      const viewport = scrollViewportRef.current;
+      const active = activeDotRef.current;
+      const viewportWidth = viewport.offsetWidth;
+      const activeLeft = active.offsetLeft;
+      const activeWidth = active.offsetWidth;
+      const targetScrollLeft = activeLeft - (viewportWidth / 2) + (activeWidth / 2);
+      viewport.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
+    }
+  }, [showScrollHint, event.timeline]);
 
   // 类别标签组件
   const CategoryBadge = () => (
@@ -181,6 +223,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         isUpcoming={upcomingIndexes.slice(1).includes(index)}
                         totalEvents={event.timeline.length}
                         index={index}
+                        ref={nextDeadline?.index === index ? activeDotRef : undefined}
                       />
                     ))}
                   </div>
@@ -236,25 +279,44 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
             
             {/* 时间线容器 - 移动端优化高度 */}
-            <div className="relative bg-gray-50 rounded-lg border h-16 sm:h-20 flex items-center overflow-hidden">
-              {/* 时间线背景线 - 水平居中 */}
-              <div className="absolute left-[8%] right-[8%] h-0.5 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
-              
-              {/* 时间线节点容器 */}
-              <div className="relative w-full h-full">
-                {event.timeline.map((timelineEvent, index) => (
-                  <TimelineItem
-                    key={index}
-                    event={timelineEvent}
-                    timezone={event.timezone}
-                    isEnded={ended}
-                    isActive={nextDeadline?.index === index}
-                    isUpcoming={upcomingIndexes.slice(1).includes(index)}
-                    totalEvents={event.timeline.length}
-                    index={index}
-                  />
-                ))}
-              </div>
+            <div className="relative w-full">
+              {/* 左右渐变遮罩，z-10，避免遮挡 tooltip */}
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-6 z-10 bg-gradient-to-r from-gray-50/90 to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 h-full w-6 z-10 bg-gradient-to-l from-gray-50/90 to-transparent" />
+              <ScrollArea className="w-full pb-6" viewportRef={scrollViewportRef}>
+                <div
+                  className="relative flex items-center h-16 min-w-[320px]"
+                  style={{ minWidth: `${event.timeline.length * 80}px` }}
+                  ref={scrollContentRef}
+                >
+                  {/* 主线 */}
+                  <div className="absolute left-0 right-0 h-0.5 bg-gray-300 top-1/2 -translate-y-1/2 z-0" />
+                  {/* 节点 */}
+                  <div className="relative flex w-full h-full z-10">
+                    {event.timeline.map((timelineEvent, index) => (
+                      <TimelineItem
+                        key={index}
+                        event={timelineEvent}
+                        timezone={event.timezone}
+                        isEnded={ended}
+                        isActive={nextDeadline?.index === index}
+                        isUpcoming={upcomingIndexes.slice(1).includes(index)}
+                        totalEvents={event.timeline.length}
+                        index={index}
+                        ref={nextDeadline?.index === index ? activeDotRef : undefined}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </ScrollArea>
+              {showScrollHint && (
+                <div className="absolute right-2 bottom-2 flex items-center z-30 animate-bounce">
+                  <span className="text-xs text-gray-400 mr-1">滑动</span>
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7l7 7-7 7" />
+                  </svg>
+                </div>
+              )}
             </div>
           </div>
           
