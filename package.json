@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "env COREPACK_ENABLE_AUTO_PIN=0 next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "env COREPACK_ENABLE_AUTO_PIN=0 next lint",
     "knip": "knip",
     "prepare": "husky"
   },

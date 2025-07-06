@@ -4,7 +4,7 @@ import { useEffect, useMemo } from 'react'
 import Fuse from 'fuse.js'
 import { EventCard } from '@/components/EventCard'
 import { FilterBar } from '@/components/FilterBar'
-import { Calendar, Github } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
 import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
@@ -115,10 +115,10 @@ export default function Home() {
               href="https://github.com/hust-open-atom-club/open-source-deadlines"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-slate-700 transition-colors"
+              className="border-2 rounded-lg overflow-auto"
               aria-label="GitHub Repository"
             >
-              <Github className="w-7 h-7" />
+              <img alt="GitHub Repo stars" className='h-8' src="https://img.shields.io/github/stars/hust-open-atom-club/open-source-deadlines?style=for-the-badge&logo=github&logoColor=white&labelColor=155dfc&color=white" />
             </Link>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
