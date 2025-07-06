@@ -1,0 +1,8 @@
+# 允许用户在模板之外创建空白 Issue
+blank_issues_enabled: true
+
+# 在 Issue 选择页面添加一个自定义链接，作为空白 Issue 的入口
+contact_links:
+  - name: 欢迎加入我们
+    url: https://hust.openatom.club/
+    about: 华科开放原子开源俱乐部是一个致力于促进开源文化发展、贡献优秀开源软件的活跃社区
