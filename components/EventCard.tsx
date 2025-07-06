@@ -59,6 +59,8 @@ export function EventCard({ item, event }: EventCardProps) {
   const displayTimezoneUTC = formatTimezoneToUTC(displayTimezone);
   const eventTimezoneUTC = formatTimezoneToUTC(event.timezone);
 
+  const upcomingIndexes = upcomingDeadlines.map(t => t.index);
+
   // 类别标签组件
   const CategoryBadge = () => (
     <div className={`inline-flex px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap ${
@@ -176,6 +178,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         timezone={event.timezone}
                         isEnded={ended}
                         isActive={nextDeadline?.index === index}
+                        isUpcoming={upcomingIndexes.slice(1).includes(index)}
                         totalEvents={event.timeline.length}
                         index={index}
                       />
@@ -246,6 +249,7 @@ export function EventCard({ item, event }: EventCardProps) {
                     timezone={event.timezone}
                     isEnded={ended}
                     isActive={nextDeadline?.index === index}
+                    isUpcoming={upcomingIndexes.slice(1).includes(index)}
                     totalEvents={event.timeline.length}
                     index={index}
                   />
