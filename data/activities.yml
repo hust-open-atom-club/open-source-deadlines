@@ -1,3 +1,22 @@
+- title: 醒源大讲堂第一期
+  description: 醒源大讲堂是由开源社主办的围绕开源治理与社区发展的系列线上专题讲座，会在每期邀请相关领域开源专家进行深入分享和交流互动。
+  category: activity
+  tags:
+    - 醒源大讲堂
+    - 人工智能开源
+  events:
+    - year: 2025
+      id: xingyuandajiangtang-ai2025
+      link: https://mp.weixin.qq.com/s/xD3P0m4XcYaoxi9vta1pvg
+      timeline:
+        - deadline: '2025-07-08T20:00:00'
+          comment: '活动开始'
+        - deadline: '2025-07-08T21:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 8 日
+      place: 线上
+
 - title: openEuler SIG-Arm Meetup 深圳站
   description: openEuler SIG-Arm Meetup 深圳站，面向社区开发者和爱好者，分享 Arm 架构在开源领域的应用和发展。
   category: activity
