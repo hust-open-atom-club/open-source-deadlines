@@ -8,7 +8,6 @@ import { Calendar } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
 import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
-import Image from 'next/image'
 import { DateTime } from 'luxon'
 
 interface FlatEvent {
@@ -119,7 +118,7 @@ export default function Home() {
               className="border-2 rounded-lg overflow-auto"
               aria-label="GitHub Repository"
             >
-              <Image alt="GitHub Repo stars" width={140} height={32} src="/github-stars.svg" />
+              <img alt="GitHub Repo stars" className='h-8' src="https://img.shields.io/github/stars/hust-open-atom-club/open-source-deadlines?style=for-the-badge&logo=github&logoColor=white&labelColor=155dfc&color=white" />
             </Link>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
