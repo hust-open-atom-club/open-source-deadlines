@@ -128,3 +128,21 @@
       timezone: Asia/Kathmandu
       date: August 30 - 31
       place: Kathmandu, Nepal
+
+- title: 开放原子开源生态大会
+  description: 以“开源赋能产业 生态共筑未来”为主题，大会将聚合全球开源智慧，联动政企产学研用多方力量，带来从技术实践到生态建设的全维度分享。
+  category: conference
+  tags:
+    - OpenAtom
+  events:
+    - year: 2025
+      id: openatom-open-source-eco-conf-2025
+      link: https://openatom.cn/conference/2025 # Not accessible
+      timeline:
+        - deadline: '2025-07-23T00:00:00'
+          comment: '会议开始'
+        - deadline: '2025-07-24T00:00:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年7月23日-7月24日
+      place: 中国，上海
