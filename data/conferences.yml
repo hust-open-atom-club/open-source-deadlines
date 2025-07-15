@@ -139,6 +139,8 @@
       id: openatom-open-source-eco-conf-2025
       link: https://openatom.cn/conference/2025 # Not accessible
       timeline:
+        - deadline: '2025-07-21T00:00:00'
+          comment: '报名截止'
         - deadline: '2025-07-23T00:00:00'
           comment: '会议开始'
         - deadline: '2025-07-24T00:00:00'
