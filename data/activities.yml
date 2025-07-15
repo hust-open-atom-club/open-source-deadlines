@@ -1,3 +1,20 @@
+- title: 腾讯开源活动
+  description: 如何用开源经历敲开大厂之门？从“学生开源贡献者”到“腾讯工卡”，畅聊升级打怪之路!
+  category: activity
+  tags:
+    - 腾讯开源
+    - 开源经历
+  events:
+    - year: 2025
+      id: tencentopensource2025
+      link: https://mp.weixin.qq.com/s/1IMxH4FcZQIu--Key6tA1g
+      timeline:
+        - deadline: '2025-07-19T19:00:00'
+          comment: '活动开始'
+      timezone: Asia/Shanghai
+      date: 2025年7月19日
+      place: 中国，线上
+
 - title: 醒源大讲堂第一期
   description: 醒源大讲堂是由开源社主办的围绕开源治理与社区发展的系列线上专题讲座，会在每期邀请相关领域开源专家进行深入分享和交流互动。
   category: activity
