@@ -159,8 +159,14 @@
       id: vueconf-2025
       link: https://vueconf.cn/
       timeline:
+        - deadline: '2025-04-01T00:00:00'
+          comment: '议题征集开始'
         - deadline: '2025-07-05T22:22:00'
-          comment: '报名截止'
+          comment: '购票截止'
+        - deadline: '2025-05-15T00:00:00'
+          comment: '议题征集截止'
+        - deadline: '2025-06-20T00:00:00'
+          comment: '早鸟票截止'
         - deadline: '2025-07-12T08:00:00'
           comment: '签到开始'
         - deadline: '2025-07-12T19:00:00'
