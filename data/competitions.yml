@@ -194,3 +194,57 @@
       date: 2025 年 5 月 1 日 - 8 月下旬
       place: 线上
 
+- title: 字节跳动青训营
+  description: 字节跳动青训营是面向高校学生的技术人才培养计划，提供前端、后端、算法等技术方向的系统培训。
+  category: competition
+  tags:
+    - 字节跳动
+  events:
+    - year: 2025
+      id: bytedance-youth-camp-2025
+      link: https://youthcamp.bytedance.com
+      timeline:
+        - deadline: '2024-11-15T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-01-03T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-01-12T00:00:00'
+          comment: '入营通知'
+        - deadline: '2025-01-14T00:00:00'
+          comment: '开营班会'
+        - deadline: '2025-01-15T00:00:00'
+          comment: '课程学习开始'
+        - deadline: '2025-02-17T00:00:00'
+          comment: '课程学习结束'
+        - deadline: '2025-02-24T00:00:00'
+          comment: '项目开发开始'
+        - deadline: '2025-03-04T00:00:00'
+          comment: '结营'
+      timezone: Asia/Shanghai
+      date: 2024 年 11 月 15 日 - 2025 年 3 月 4 日
+      place: 线上
+
+- title: 字节跳动飞书训练营
+  description: 字节跳动飞书训练营是专注于企业协作与办公自动化领域的技术人才培养项目。
+  category: competition
+  tags:
+    - 字节跳动
+  events:
+    - year: 2025
+      id: feishu-camp-2025
+      link: 
+      timeline:
+        - deadline: '2025-06-01T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-06-16T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-06-17T00:00:00'
+          comment: '笔试开始'
+        - deadline: '2025-06-18T00:00:00'
+          comment: '笔试结束'
+        - deadline: '2025-06-19T00:00:00'
+          comment: '训练营开始（3-4周）'
+      timezone: Asia/Shanghai
+      date: 2025 年 6 月 1 日 - 10 月 31 日
+      place: 线上
+      
