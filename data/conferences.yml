@@ -137,7 +137,7 @@
   events:
     - year: 2025
       id: openatom-open-source-eco-conf-2025
-      link: https://openatom.cn/conference/2025 # Not accessible
+      link: https://mp.weixin.qq.com/s/Pxk9sCDt59EmBBDf2u0Lbg
       timeline:
         - deadline: '2025-07-21T00:00:00'
           comment: '报名截止'

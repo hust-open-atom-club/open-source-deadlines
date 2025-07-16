@@ -114,3 +114,41 @@
       timezone: Asia/Shanghai
       date: 2025 年 7 月 3 日
       place: 中国，沈阳
+
+- title: openKylin Meetup 香港大学站
+  description: 深度拆解 AI 智能操作系统的核心技术奥秘，聚焦RISC-V架构如何重塑智算时代格局，共探其为操作系统创新带来的颠覆性机遇。
+  category: activity
+  tags:
+    - openKylin
+    - Meetup
+  events:
+    - year: 2025
+      id: openkylinmeetup-hku2025
+      link: https://mp.weixin.qq.com/s/b2AMVI_KNyJuQw7WnLPocQ
+      timeline:
+        - deadline: '2025-07-19T09:00:00'
+          comment: '活动开始'
+        - deadline: '2025-07-19T12:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年7月19日
+      place: 中国，香港
+
+- title: openKylin Meetup 香港城市大学站
+  description: 与会嘉宾将分享 openKylin 在 AI 智能操作系统领域的最新研究成果，探讨 RISC-V 架构如何为操作系统创新带来颠覆性机遇。
+  category: activity
+  tags:
+    - openKylin
+    - Meetup
+  events:
+    - year: 2025
+      id: openkylinmeetup-cityuhk2025
+      link: https://www.openkylin.top/support/questionnaire.html?qid=3
+      timeline:
+        - deadline: '2025-07-20T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-07-20T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年7月20日
+      place: 中国，香港
