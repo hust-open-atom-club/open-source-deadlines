@@ -168,3 +168,27 @@
       timezone: Asia/Shanghai
       date: 2025年7月12日
       place: 中国，深圳
+
+- title: RustChinaConf
+  description: 中国最大规模的 Rust 技术盛会，连接全球 Rust 开发者的桥梁。
+  category: conference
+  tags:
+    - Rust
+  events:
+    - year: 2025
+      id: rustchinaconf-2025
+      link: https://rustcc.cn/2025conf/
+      timeline:
+        - deadline: '2025-07-15T00:00:00'
+          comment: '提案截止'
+        - deadline: '2025-07-31T00:00:00'
+          comment: '录用通知'
+        - deadline: '2025-08-15T00:00:00'
+          comment: '最终议程'
+        - deadline: '2025-09-13T00:00:00'
+          comment: '会议开始'
+        - deadline: '2025-09-14T00:00:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年9月13日-9月14日
+      place: 中国，杭州
