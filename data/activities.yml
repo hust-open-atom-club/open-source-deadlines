@@ -58,7 +58,7 @@
   description: OpenCamp社区 × 腾讯云CNB平台合作举办。全程线上，免费教学
   category: activity
   tags:
-    - opencamp
+    - OpenCamp
     - 腾讯云
     - Docker
   events:
@@ -80,7 +80,6 @@
   category: activity
   tags:
     - openvela
-    - 北京
     - 城市沙龙
   events:
     - year: 2025

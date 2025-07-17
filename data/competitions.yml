@@ -2,8 +2,8 @@
   description: GitLink "确实开源"编程夏令营（GLCC）是在 CCF 中国计算机学会指导下，由 CCF 开源发展委员会（CCF ODC）举办的面向全国高校学生的暑期编程活动。
   category: competition
   tags:
-    - 开源
-    - 编程
+    - 确实开源
+    - 编程夏令营
   events:
     - year: 2025
       id: gitlink-summer-camp-2025
@@ -94,7 +94,7 @@
   description: 面向高校大学生举办的全国性大赛，旨在选拔我国计算机系统的设计、分析、优化与应用人才。
   category: competition
   tags:
-    - CPU设计
+    - CPU 设计
     - 龙芯
     - 计算机系统
     - 体系结构
@@ -115,8 +115,8 @@
   description: “犀牛鸟开源人才培养计划”是一项由腾讯发布的，面向高校学生及广大开发者的开源课程和开源实践培养方案，旨在培育开源人才、普及开源文化。
   category: competition
   tags:
-    - 腾讯
-    - Mentorship
+    - 腾讯犀牛鸟
+    - 人才培养
     - 开源技术
   events:
     - year: 2025

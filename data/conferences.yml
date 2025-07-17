@@ -60,7 +60,7 @@
   tags:
     - Linux 内核
     - 开源技术
-    - 开发者峰会
+    - 开发者大会
   events:
     - year: 2024
       id: clk2024
@@ -133,7 +133,8 @@
   description: 以“开源赋能产业 生态共筑未来”为主题，大会将聚合全球开源智慧，联动政企产学研用多方力量，带来从技术实践到生态建设的全维度分享。
   category: conference
   tags:
-    - OpenAtom
+    - 开放原子
+    - 开源生态
   events:
     - year: 2025
       id: openatom-open-source-eco-conf-2025
