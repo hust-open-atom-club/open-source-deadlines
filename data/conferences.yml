@@ -193,3 +193,23 @@
       timezone: Asia/Shanghai
       date: 2025年9月13日-9月14日
       place: 中国，杭州
+
+- title: “一生一芯”2025暑期发布会
+  description: “一生一芯”2025暑期发布会将发布新版讲义、后端讲义和新版流片计划等，线下线上均可参与。
+  category: conference
+  tags:
+    - 一生一芯
+    - RISC-V
+    - 处理器芯片
+  events:
+    - year: 2025
+      id: ysyx2025-summer-press-conference
+      link: https://fa45epzd9c7.feishu.cn/share/base/form/shrcnnDUdmEkwo5yY8YNxl5uUdh
+      timeline:
+        - deadline: '2025-07-19T23:59:00'
+          comment: '线下报名截止'
+        - deadline: '2025-07-21T14:30:00'
+          comment: '会议开始'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 21 日
+      place: 中国，深圳
