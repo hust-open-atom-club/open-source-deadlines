@@ -151,3 +151,29 @@
       timezone: Asia/Shanghai
       date: 2025年7月20日
       place: 中国，香港
+
+- title: 2025 年夏季 InfiniTensor 大模型与人工智能系统训练营
+  description: 由启元实验室与清华团队联合发起，旨在系统普及人工智能领域的关键知识，「线上直播授课+ 在线答疑 + 项目实践辅导」，确保每位同学都能获得充分成长。
+  category: activity
+  tags:
+    - 大模型
+    - 人工智能系统
+    - OpenCamp
+  events:
+    - year: 2025
+      id: opencamp-infinitensor-2025summer
+      link: https://opencamp.cn/InfiniTensor/camp/2025summer
+      timeline:
+        - deadline: '2025-07-20T23:59:59'
+          comment: '报名预热阶段结束，基础考试截止'
+        - deadline: '2025-07-21T00:00:00'
+          comment: '授课学习阶段开始'
+        - deadline: '2025-08-17T23:59:59'
+          comment: '授课学习阶段结束'
+        - deadline: '2025-08-18T00:00:00'
+          comment: '项目实践阶段开始'
+        - deadline: '2025-09-30T23:59:59'
+          comment: '项目实践阶段结束，训练营结营'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 14 日 - 9 月 30 日
+      place: 线上
