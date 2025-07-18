@@ -194,3 +194,24 @@
       date: 2025 年 5 月 1 日 - 8 月下旬
       place: 线上
 
+- title: Community Over Code NA
+  description: Apache 软件基金会的年度会议，汇集开源开发者、用户和贡献者
+  category: conference
+  tags:
+    - Apache
+    - 开源
+    - 北美
+  events:
+    - year: 2025
+      id: coc-na-2025
+      link: https://communityovercode.org/
+      timeline:
+        - deadline: '2025-06-28T23:59:59'
+          comment: '早鸟票截止（US$650）'
+        - deadline: '2025-06-30T23:59:59'
+          comment: '演讲提案提交截止'
+        - deadline: '2025-08-15T23:59:59'
+          comment: '常规票价生效（US$750）'
+      timezone: America/New_York
+      date: 2025 年 9 月 11 日 - 14 日
+      place: 美国，明尼阿波利斯
