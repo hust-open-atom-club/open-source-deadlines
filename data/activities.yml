@@ -1,3 +1,24 @@
+- title: “一生一芯”2025暑期发布会
+  description: 一个培养计算机软硬件系统设计能力和处理器芯片全链条设计能力的公益性项目，坚持开放性和公益性，随到随学，支持在校学生免费流片。
+  category: activity
+  tags:
+    - 芯片设计
+    - RISC-V
+    - 开源
+    - 教育
+    - 发布会
+  events:
+    - year: 2025
+      id: ysyx_summer2025
+      link: https://mp.weixin.qq.com/s/Mt9Rs3yCuxU86ZT5jfTbXg
+      timeline:
+        - deadline: '2025-07-19T23:59:00'
+          comment: '线下参会报名截止'
+        - deadline: '2025-07-21T14:30:00'
+          comment: '活动开始'
+      timezone: Asia/Shanghai
+      date: 2025年7月21日 14:30
+      place: 中国, 深圳 / 线上
 - title: 腾讯开源活动
   description: 如何用开源经历敲开大厂之门？从“学生开源贡献者”到“腾讯工卡”，畅聊升级打怪之路!
   category: activity
