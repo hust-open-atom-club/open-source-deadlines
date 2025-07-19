@@ -177,3 +177,20 @@
       timezone: Asia/Shanghai
       date: 2025 年 7 月 14 日 - 9 月 30 日
       place: 线上
+- title: 源来喻见你系列活动 （二）| 线上操作系统讲座
+  description: 邀请两位主讲人分享操作系统社区运营和活动组织经验
+  category: activity
+  tags:
+    - 操作系统
+  events:
+    - year: 2025
+      id: opensourcemeetyu-2
+      link: https://mp.weixin.qq.com/s/rxi2JRg-HpXMECxmRvIQUg
+      timeline:
+        - deadline: '2025-07-19T19:30:00' 
+          comment: '活动开始'
+        - deadline: '2024-07-19T20:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 19 日 19:30 - 20:30
+      place: 线上 
