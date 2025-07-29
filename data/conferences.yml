@@ -213,3 +213,24 @@
       timezone: Asia/Shanghai
       date: 2025 年 7 月 21 日
       place: 中国，深圳
+
+- title: GOSIM Conference
+  description: GOSIM Conference is for Users, Engineers, Strategists, Business Executives, Architects and Open-Source Experts.
+  category: conference
+  tags:
+    - AI
+    - Web
+  events:
+    - year: 2025
+      id: gosim-hangzhou-2025
+      link: https://hangzhou2025.gosim.org/
+      timeline:
+        - deadline: '2025-08-31T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-09-13T00:00:00'
+          comment: '会议开始'
+        - deadline: '2025-09-14T00:00:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年9月13日-9月14日
+      place: 中国，杭州
