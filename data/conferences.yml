@@ -234,3 +234,21 @@
       timezone: Asia/Shanghai
       date: 2025年9月13日-9月14日
       place: 中国，杭州
+
+- title: 云栖大会
+  description: 作为中国云计算与AI产业链的年度盛会，云栖大会广泛协同上中下游生态共同呈现，展示并交流全产业链的发展趋势、技术创新、关键产品、最新应用。
+  category: conference
+  tags:
+    - AI
+  events:
+    - year: 2025
+      id: apsara-2025
+      link: https://yunqi.aliyun.com/2025
+      timeline:
+        - deadline: '2025-09-24T08:00:00'
+          comment: '会议开始'
+        - deadline: '2025-09-26T17:00:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年9月24日-9月26日
+      place: 中国，杭州

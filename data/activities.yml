@@ -195,3 +195,66 @@
       timezone: Asia/Shanghai
       date: 2025 年 7 月 19 日 19:30 - 20:30
       place: 线上 
+
+- title: World RISC-V Days Beijing
+  description: To bring the RISC-V community together globally to share in a synchronized one-day event, executed in the same week, worldwide.
+  category: activity
+  tags:
+    - RISC-V
+  events:
+    - year: 2025
+      id: risc-v-days-beijing-2025
+      link: https://mp.weixin.qq.com/s/JYZS2pRX201evWbtqB5uaA
+      timeline:
+        - deadline: '2025-08-08T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-08T18:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月8日
+      place: 中国，北京
+
+- title: 开源鸿蒙城市技术沙龙深圳站
+  description: 沙龙聚焦开源鸿蒙平台上的AI技术应用，旨在构建开源鸿蒙端侧AI技术栈，促进驱动、框架与应用协同创新，为开发者、贡献者及集成方搭建交流合作平台，加速开源鸿蒙生态AI能力落地与智能终端潜能释放。
+  category: activity
+  tags:
+    - AI
+    - OpenHarmony
+    - 城市沙龙
+  events:
+    - year: 2025
+      id: openharmony-salon-shenzhen-2025
+      link: https://mp.weixin.qq.com/s/wuJREfpkormMnRvDC_0_CQ
+      timeline:
+        - deadline: '2025-08-09T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-09T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月9日
+      place: 中国，深圳
+
+- title: Rust 编译器开源社区训练营
+  description: 训练营面向系统编程与编译技术爱好者，通过 18 周高强度实战，培训内容包括 Rust 基础知识、编译器基本原理、Rust 编译器架构学习和 Rust 编译器实战任务四个阶段课程，目标是培养能够深入理解并贡献 Rust 编译器（rustc）源码的工程师与研究者。
+  category: activity
+  tags:
+    - Rust
+    - OpenCamp
+  events:
+    - year: 2025
+      id: opencamp-rust-compiler-2025autumn
+      link: https://opencamp.ai/rustcompiler/camp/2025fall
+      timeline:
+        - deadline: '2025-08-04T00:00:00'
+          comment: '训练营开始'
+        - deadline: '2025-08-16T00:00:00'
+          comment: '导学阶段结束'
+        - deadline: '2025-10-18T00:00:00'
+          comment: '基础阶段结束'
+        - deadline: '2025-11-15T00:00:00'
+          comment: '专业阶段结束'
+        - deadline: '2025-12-20T00:00:00'
+          comment: '项目阶段结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月4日-12月20日
+      place: 线上
