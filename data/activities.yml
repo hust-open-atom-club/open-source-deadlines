@@ -278,3 +278,22 @@
       timezone: Asia/Shanghai
       date: 2025年8月23日
       place: 中国，北京
+
+- title: WHLUG 开源咖啡局 | 8 月自由畅聊，等你来当主角！
+  description: WHLUG （武汉 Linux 用户组）由 deepin（深度）社区于 1997 年发起创立，创建的初衷是为武汉地区的 Linux 爱好者们提供一个不受外界干扰的技术讨论氛围，让每一个技术爱好者回归技术本质，构建武汉最纯粹的 Linux 技术讨论圈子，持续推动武汉本地开源社区文化的发展。
+  category: activity
+  tags:
+    - Deepin
+    - Linux用户组
+  events:
+    - year: 2025
+      id: whlug-8-2025
+      link: https://mp.weixin.qq.com/s/SW0zGvJoMqrdqGvMF46OAw
+      timeline:
+        - deadline: '2025-08-23T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-23T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月23日
+      place: 中国，武汉
