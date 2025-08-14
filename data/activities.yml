@@ -258,3 +258,23 @@
       timezone: Asia/Shanghai
       date: 2025年8月4日-12月20日
       place: 线上
+
+- title: 开源鸿蒙城市技术沙龙·北京站
+  description: 为响应国家对操作系统安全人才的迫切需求，深化产教融合进程，全力构建以关键核心技术为坚实根基的产业与人才良性互动生态，为此开源鸿蒙 PMC、北京邮电大学网络空间安全学院计划在北京举办基-开源鸿蒙的智能终端安全与实践赋能培训。
+  category: activity
+  tags:
+    - 终端安全
+    - OpenHarmony
+    - 城市沙龙
+  events:
+    - year: 2025
+      id: openharmony-salon-beijing-2025
+      link: https://mp.weixin.qq.com/s/6JHjzWrfF9pPbWXK9ljjoA
+      timeline:
+        - deadline: '2025-08-23T09:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-23T18:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月23日
+      place: 中国，北京
