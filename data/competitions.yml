@@ -217,3 +217,88 @@
       timezone: America/New_York
       date: 2025 年 9 月 11 日 - 14 日
       place: 美国，明尼阿波利斯
+
+- title: OpenHarmony竞赛训练营
+  description: OpenHarmony竞赛训练营旨在引导高校学生进行OpenHarmony产学研用，培养更多应用型人才和产业需求有效链接，吸引更多的高校师生参与到OpenHarmony的开发和应用中
+  category: competition
+  tags:
+    - OpenHarmony
+    - AI
+  events:
+    - year: 2025
+      id: oh-competition-2025
+      link: https://mp.weixin.qq.com/s/gENH9zvMGa4qQUZWLOwcog
+      timeline:
+        - deadline: '2025-07-15T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-09-16T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-09-17T00:00:00'
+          comment: '初赛作品提交截止'
+        - deadline: '2025-09-30T00:00:00'
+          comment: '入围公示（具体时间待定）'
+        - deadline: '2025-09-30T00:00:00'
+          comment: '决赛（具体时间待定）'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 15 日 - 9 月下旬
+      place: 线上
+
+- title: 开源鸿蒙创新应用挑战赛-媒体格式音视频解码专项
+  description: 聚焦格式解封装、音频解码、视频解码三个领域，诚邀开发者深入开源鸿蒙底层多媒体引擎，实现或优化对特定、复杂音视频格式的高效解码支持
+  category: competition
+  tags:
+    - OpenHarmony
+    - 媒体技术
+    - 开放原子
+  events:
+    - year: 2025
+      id: oh-media-2025
+      link: https://competition.atomgit.com/competitionInfo?id=67a2bfabddf910caee6f422ed8760bf0
+      timeline:
+        - deadline: '2025-08-07T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-10-15T00:00:00'
+          comment: '报名截止'
+        - deadline: '2025-10-17T00:00:00'
+          comment: '作品提交截止'
+        - deadline: '2025-10-25T00:00:00'
+          comment: '公布晋级决赛名单'
+        - deadline: '2025-11-10T00:00:00'
+          comment: '决赛作品提交截止'
+        - deadline: '2025-11-20T00:00:00'
+          comment: '线下决赛路演及颁奖仪式（拟）'
+        - deadline: '2025-11-25T00:00:00'
+          comment: '获奖名单公示（拟）'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 7 日 - 11 月 25 日
+      place: 线上
+
+- title: vivo蓝河操作系统创新赛
+  description: 开放原子与vivo携手致力于把蓝河操作系统创新赛打造为行业内具有含金量和影响力的Rust赛事，为Rust生态的建设与人才培养搭建高质量交流平台
+  category: competition
+  tags:
+    - 操作系统
+    - Rust
+    - 开放原子
+  events:
+    - year: 2025
+      id: vivo-os-2025
+      link: https://competition.atomgit.com/competitionInfo?id=49f0205ecd5c81c96381829456fef6a5
+      timeline:
+        - deadline: '2025-08-05T00:00:00'
+          comment: '报名开始'
+        - deadline: '2025-09-01T00:00:00'
+          comment: '线上培训（拟定）'
+        - deadline: '2025-10-20T23:59:59'
+          comment: '报名及初赛作品提交截止'
+        - deadline: '2025-10-27T00:00:00'
+          comment: '复赛入围名单及赛题公布'
+        - deadline: '2025-11-16T23:59:59'
+          comment: '复赛作品提交截止'
+        - deadline: '2025-11-30T23:59:59'
+          comment: '决赛作品提交截止'
+        - deadline: '2025-12-06T00:00:00'
+          comment: '决赛路演及颁奖仪式（拟定）'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 5 日 - 12 月 6 日
+      place: 线上
