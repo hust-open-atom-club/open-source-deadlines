@@ -297,3 +297,22 @@
       timezone: Asia/Shanghai
       date: 2025年8月23日
       place: 中国，武汉
+
+- title: openEuler sig-Long 异构融合技术 Meetup 北京站
+  description: 以异构融合技术为核心，深入探讨异构融合技术的发展与落地。
+  category: activity
+  tags:
+    - openEuler
+    - Meetup
+  events:
+    - year: 2025
+      id: openeuler-sig-long-meetup-beijing-2025
+      link: https://mp.weixin.qq.com/s/QABou9m5QwHVz-sG77kIEA
+      timeline:
+        - deadline: '2025-08-22T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-22T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 22 日
+      place: 中国，北京
