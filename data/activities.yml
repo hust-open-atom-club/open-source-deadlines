@@ -316,3 +316,42 @@
       timezone: Asia/Shanghai
       date: 2025 年 8 月 22 日
       place: 中国，北京
+
+- title: Shanghai vLLM Community Meetup
+  description: 代码不会说谎，但选择会一这一次，做率先吃到技术红利的人。让代码与灵感同频共振!本次活动云集行业顶尖专家，聚焦VLLM技术展开深度研讨，助力开发者精准把握前沿动态、深度参与开源生态建设。
+  category: activity
+  tags:
+    - vLLM
+    - Meetup
+  events:
+    - year: 2025
+      id: vllm-meetup-shanghai-2025
+      link: https://mp.weixin.qq.com/s/QHJA90fSEQRNp5oSsf2Sog
+      timeline:
+        - deadline: '2025-08-23T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-08-23T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 23 日
+      place: 中国，上海
+
+
+- title: vLLM Shenzhen Meetup
+  description: 重磅汇聚来自腾讯、华为、北京大学、上海交大等多方技术团队的一线专家，聚焦vLLM在算子优化、模型推理部署以及强化学习融合等方面的最新进展与实战经验，与众多开发者共同探索高效、高性能推理的下一站。
+  category: activity
+  tags:
+    - vLLM
+    - Meetup
+  events:
+    - year: 2025
+      id: vllm-meetup-深圳-2025
+      link: https://mp.weixin.qq.com/s/QHJA90fSEQRNp5oSsf2Sog
+      timeline:
+        - deadline: '2025-08-30T13:30:00'
+          comment: '活动开始'
+        - deadline: '2025-08-30T18:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 30 日
+      place: 中国，深圳
