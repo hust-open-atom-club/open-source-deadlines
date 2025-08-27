@@ -252,3 +252,22 @@
       timezone: Asia/Shanghai
       date: 2025年9月24日-9月26日
       place: 中国，杭州
+
+- title: openKylin 开发者大会
+  description: 开源聚智·麒心行
+  category: conference
+  tags:
+    - openkylin
+    - 开发者大会
+  events:
+    - year: 2025
+      id: openkylin-developer-2025
+      link: https://www.openatom.org/journalism/detail/I4P5cHBeVfGi
+      timeline:
+        - deadline: '2025-08-26T14:00:00'
+          comment: '会议开始'
+        - deadline: '2025-08-26T17:30:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年8月26日
+      place: 中国，北京
