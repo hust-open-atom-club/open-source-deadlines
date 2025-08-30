@@ -355,3 +355,22 @@
       timezone: Asia/Shanghai
       date: 2025 年 8 月 30 日
       place: 中国，深圳
+
+- title: openEuler 多样性算力 Meetup 北京站
+  description: 进一步聚焦多样性算力，汇聚各方力量，深入交流创新实践与技术成果，携手推动多样性算力的落地与生态繁荣。
+  category: activity
+  tags:
+    - openEuler
+    - Meetup
+  events:
+    - year: 2025
+      id: openeuler-diverse-computing-meetup-beijing-2025
+      link: https://mp.weixin.qq.com/s/5O3q6-dEa9qJ5ScDVUOWSA
+      timeline:
+        - deadline: '2025-09-06T13:00:00'
+          comment: '活动开始'
+        - deadline: '2025-09-06T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 9 月 6 日
+      place: 中国，北京
