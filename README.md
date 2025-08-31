@@ -1,5 +1,11 @@
 # Open Source Deadlines
 
+![GitHub License](https://img.shields.io/github/license/hust-open-atom-club/open-source-deadlines)
+![Netlify](https://img.shields.io/netlify/7bf7b12c-07c4-4eac-b959-172cff946003)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m801274657-9ccd2d3135578fc9bfb05a5b)
+
+[![](https://img.shields.io/badge/Join_Discord-HUST_OPEN_ATOM_CLUB-white?style=flat&color=5662f6&logo=discord&logoColor=5662f6)](https://discord.gg/EMJqcQCCpW)
+
 一个追踪开源会议、竞赛及活动截止日期的网站，帮助开发者们及时了解最新的开源活动动态，不再错过为社区贡献、学习和交流的机会。
 
 ## 如何添加活动
