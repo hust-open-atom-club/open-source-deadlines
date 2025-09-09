@@ -374,3 +374,24 @@
       timezone: Asia/Shanghai
       date: 2025 年 9 月 6 日
       place: 中国，北京
+
+- title: TiDB 社区活动（西安站）
+  description: TiDB 社区活动来到西安，探讨智慧城市、智能制造（半导体）、疾控、生活服务等行业的核心系统数据库选型和架构升级，以及 TiDB 对业务的实际赋能。（不超过 100 字）
+  category: activity
+  tags:
+    - TiDB
+    - 数据库
+  events:
+    - year: 2025 # 年份
+      id: tidb-xian-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/Vsx790WS_vITp3Dt0OpiXQ # 链接
+      timeline:
+        - deadline: '2025-09-13T13:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '签到 & 玩游戏赢周边 & 畅聊时间' # 日期说明
+        - deadline: '2025-09-13T13:50:00'
+          comment: '活动正式开始'
+        - deadline: '2025-09-13T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 13 日 13:00 - 17:30 # 人类可读的日期范围
+      place: 西安市高新区高新二路 12 号协同大厦三楼会议室（线下）& 线上同步 # 地点
