@@ -376,7 +376,7 @@
       place: 中国，北京
 
 - title: TiDB 社区活动（西安站）
-  description: TiDB 社区活动来到西安，探讨智慧城市、智能制造（半导体）、疾控、生活服务等行业的核心系统数据库选型和架构升级，以及 TiDB 对业务的实际赋能。（不超过 100 字）
+  description: TiDB 社区活动来到西安，探讨智慧城市、智能制造（半导体）、疾控、生活服务等行业的核心系统数据库选型和架构升级，以及 TiDB 对业务的实际赋能。
   category: activity
   tags:
     - TiDB
