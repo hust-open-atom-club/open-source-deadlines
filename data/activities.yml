@@ -395,3 +395,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 13 日 13:00 - 17:30 # 人类可读的日期范围
       place: 中国，西安
+
+- title:模力方舟 AI 应用开发沙龙第七站（成都站）
+  description:模力方舟 AI 应用开发沙龙即将迎来第七站——成都。本期沙龙聚焦 AI 应用在开发范式、算力架构、交互设计与开源社区等关键环节中的跨场景创新实践，汇聚产业领袖、技术专家与一线开发者，推动川渝地区开发者生态建设与产业智能化升级。
+  category: activity
+  tags:
+    - AI
+    - 城市沙龙
+  events:
+    - year: 2025 # 年份
+      id: ai-salon-chengdu-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/E_Cm8I8Ap5oPZgoLb8ma_g # 链接
+      timeline:
+        - deadline: '2025-09-20T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-20T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 20 日 13:30 - 17:00 # 人类可读的日期范围
+      place: 中国，成都
