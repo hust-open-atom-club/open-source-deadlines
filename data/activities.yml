@@ -434,3 +434,26 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 20 日 13:30 - 17:00 # 人类可读的日期范围
       place: 中国，成都
+
+- title: GitCode开源星期六——三方库鸿蒙化技术交流
+  description: 本次活动是由GitCode开源社区打造的“开源星期六”线下开发者交流活动的第二期，将围绕 三方库鸿蒙化全流程设计 议题，每个环节均搭配“分享内容+实战演示”。
+  category: activity
+  tags:
+    - GitCode
+    - OpenHarmony
+  events:
+    - year: 2025 # 年份
+      id: gitcode-opensource-sat-2nd # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/TAZh0b_v5BzWrh4KgLeyQQ # 链接
+      timeline:
+        - deadline: '2025-09-10T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名开始' # 日期说明
+        - deadline: '2025-09-12T20:00:00'
+          comment: '报名截止与活动邀约'
+        - deadline: '2025-09-13T14:00:00'
+          comment: '活动开始'
+        - deadline: '2025-09-13T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 13 日 14:00 - 17:00 # 人类可读的日期范围
+      place: 线上 + 中国，深圳
