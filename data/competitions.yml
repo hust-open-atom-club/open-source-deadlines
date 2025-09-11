@@ -322,3 +322,43 @@
       timezone: Asia/Shanghai
       date: 2025 年 9 月 14 日 - 2025 年 12 月 28 日
       place: 线上
+
+- title: CIE - 玄铁杯 RISC-V 应用创新比赛
+  description: 为了推动 RISC-V 技术的创新和应用，中国电子学会组织发起了首届 CIE 全国 RISC-V 高水平创新和应用大赛。作为大赛副主席单位，达摩院（上海）科技有限公司与杭州电子科技大学、龙蜥社区联合命题，设立「CIE - 玄铁杯 RISC-V 应用创新比赛」，邀请全球开发者、高校团队及企业，与我们共同探索 RISC-V 的无限可能。
+  category: competition
+  tags:
+    - RISC-V
+    - 服务器
+    - AI
+    - 硬件
+  events:
+    - year: 2025
+      id: cie-riscv-2025
+      link: https://rv.cie.org.cn/direction?id=3
+      timeline:
+        - deadline: '2025-07-01T00:00:00'
+          comment: '比赛发布'
+        - deadline: '2025-10-08T23:59:59'
+          comment: '报名与作品提交截止'
+      timezone: Asia/Shanghai
+      date: 2025 年 7 月 1 日 - 2025 年 10 月 8 日
+      place: 线上
+
+- title: RT-Thread 2025 年度嵌入式大赛
+  description: 在人工智能与边缘计算深度融合的今天，嵌入式系统正成为智能终端设备的"智慧大脑基底"。为激发开发者潜能，促进技术交流，RT-Thread 联合多家企业发起本次RT-Thread 2025年度嵌入式大赛，玄铁作为「嵌入式软件大赛」赛道合作伙伴，携合作生态产品参与联合命题。
+  category: competition
+  tags:
+    - RT-Thread
+    - 嵌入式
+  events:
+    - year: 2025
+      id: rt-thread-embed-2025
+      link: https://jsj.top/f/nIjE8u
+      timeline:
+        - deadline: '2025-08-16T00:00:00'
+          comment: '比赛启动'
+        - deadline: '2025-09-30T23:59:59'
+          comment: '报名与项目提交截止'
+      timezone: Asia/Shanghai
+      date: 2025 年 8 月 16 日 - 2025 年 9 月 30 日
+      place: 线上
