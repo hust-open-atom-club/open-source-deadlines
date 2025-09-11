@@ -477,3 +477,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 20 日 14:30 - 17:00 # 人类可读的日期范围
       place: 中国，哈尔滨
+
+- title: openGauss Meetup 成都站
+  description: 苦芽科技携手openGauss在成都等你来
+  category: activity
+  tags:
+    - openGauss
+    - Meetup
+    - 数据库
+  events:
+    - year: 2025 # 年份
+      id: openGauss-Meetup-2025-Chengdu # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/heYxLP9-vKz6TYTEHZ2-qw # 链接
+      timeline:
+        - deadline: '2025-09-27T13:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-27T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 27 日 13:00 - 17:00 # 人类可读的日期范围
+      place: 中国，成都
