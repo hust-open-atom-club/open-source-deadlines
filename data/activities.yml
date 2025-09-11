@@ -435,6 +435,30 @@
       date: 2025 年 09 月 20 日 13:30 - 17:00 # 人类可读的日期范围
       place: 中国，成都
 
+- title: Gitcode 开源星期六第二期
+  description: 由 GitCode 开源社区倾力打造的「开源星期六」线下开发者交流活动第二期即将上线。本次交流活动以三方库鸿蒙化为核心主题，诚邀研究三方库移植、探索鸿蒙、热爱开源的伙伴参与，共同探讨技术碰撞，推动开源生态发展。
+  category: activity
+  tags:
+    - 三方库移植
+    - 鸿蒙
+    - 技术交流
+  events:
+    - year: 2025 # 年份
+      id: open-saturday-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/TAZh0b_v5BzWrh4KgLeyQQ # 链接
+      timeline:
+        - deadline: '2025-09-10T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名开始' # 日期说明
+        - deadline: '2025-09-12T20:00:00'
+          comment: '报名截止'      
+        - deadline: '2025-09-13T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-13T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 13 日 14:00 - 17:00 # 人类可读的日期范围
+      place: 中国，深圳
+
 - title: CCF 开源高校行-黑龙江科技大学
   description: CCF 开源高校行-黑龙江科技大学「开源大咖和你一起，感悟开源」。“开源高校行”是CCF(中国计算机学会)开源发展技术委员会教育组开展的活动，旨在高校加强开源文化宣传和开源人才培养，活动包含开源课堂、开源项目、开源论坛等多种类型。
   category: activity
