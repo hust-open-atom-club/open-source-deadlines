@@ -302,3 +302,23 @@
       timezone: Asia/Shanghai
       date: 2025 年 8 月 5 日 - 12 月 6 日
       place: 线上
+
+- title: 清华大学 OpenCamp 2025 秋冬季开源操作系统训练营
+  description: 清华大学 OpenCamp 2025 秋冬季开源操作系统训练营现已开启报名与学习通道，面向全国高校学生与一线工程师开放。训练营由清华大学陈渝老师和向勇老师发起，旨在通过使用 Rust 语言编写操作系统的实践，培养学员的操作系统开发技能。
+  category: competition
+  tags:
+    - 操作系统
+    - 训练营
+    - Rust
+  events:
+    - year: 2025
+      id: opencamp-2025
+      link: https://mp.weixin.qq.com/s/cErWjE-8RPNLVVr9BechgQ
+      timeline:
+        - deadline: '2025-09-14T00:00:00'
+          comment: '训练营开始'
+        - deadline: '2025-12-28T23:59:59'
+          comment: '训练营结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 9 月 14 日 - 2025 年 12 月 28 日
+      place: 线上
