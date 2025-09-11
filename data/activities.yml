@@ -407,8 +407,10 @@
       id: chitu-first-meetup-2025 # 全局唯一的ID
       link: https://mp.weixin.qq.com/s/iTpI2VGnKmGykErd_KDQ2g # 链接
       timeline:
-        - deadline: '2025-09-13T13:30:00' # 关键日期 (ISO 8601 格式)
-          comment: '活动开始时间' # 日期说明
+        - deadline: '2025-09-13T13:30:00'
+          comment: '活动开始时间'
+        - deadline: '2025-09-13T17:00:00'
+          comment: '活动结束'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 13 日 13:30 - 17:00 # 人类可读的日期范围
       place: 中国，杭州 # 地点
