@@ -322,3 +322,26 @@
       timezone: Asia/Shanghai
       date: 2025 年 9 月 14 日 - 2025 年 12 月 28 日
       place: 线上
+
+- title: QEMU 训练营 2025
+  description: QEMU 训练营 2025 由格维开源社区（GTOC）主办， OpenCamp 训练营协办，现已开启报名通道，面向对 QEMU 感兴趣的开发者和学习者。训练营旨在通过系统的课程和实践项目，帮助学员深入理解和掌握 QEMU 的使用与开发，提升虚拟化技术能力。
+  category: competition
+  tags:
+    - QEMU
+    - 训练营
+  events:
+    - year: 2025 # 年份
+      id: qemu-camp-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/XKfIv0Qjduq8JeHIiQBtrg # 链接
+      timeline:
+        - deadline: '2025-09-28T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '导学阶段开始' # 日期说明
+        - deadline: '2025-09-12T00:00:00'
+          comment: '导学阶段结束'      
+        - deadline: '2025-10-12T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '训练营开始' # 日期说明
+        - deadline: '2025-11-23T23:59:59'
+          comment: '训练营结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 12 日 - 2025 年 11 月 23 日 # 人类可读的日期范围
+      place: 线上
