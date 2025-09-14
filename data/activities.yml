@@ -496,3 +496,25 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 27 日 13:00 - 17:00 # 人类可读的日期范围
       place: 中国，成都
+
+      - title: 开源鸿蒙城市技术沙龙（西安站）
+  description: 由开放原子开源基金会和 OpenHarmony 主办的技术沙龙将于 2025 年 9 月 16 日在西安建筑科技大学举行。本次活动旨在汇聚高校、企业、开发者与社区的力量，共同探讨开源鸿蒙在智能建筑、智慧城市、能碳双控等领域的应用实践与未来路径。通过开放共享、协同共创的方式，推动产学研用深度融合，构建可持续、可演进的智能建筑开源生态。
+  category: activity
+  tags:
+    - 城市沙龙
+    - 鸿蒙
+    - 智能建筑
+  events:
+    - year: 2025 # 年份
+      id: openharmony-tech-salon-xian-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/7x068bQ6VQtT25RITkCIOw # 链接
+      timeline:
+        - deadline: '2025-09-16T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '嘉宾签到' # 日期说明
+        - deadline: '2025-09-16T14:00:00'
+          comment: '活动开始'      
+        - deadline: '2025-09-16T18:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动结束' # 日期说明
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 16 日 13:30 - 2025 年 9 月 16 日 18:30 # 人类可读的日期范围
+      place: 中国，西安
