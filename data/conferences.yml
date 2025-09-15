@@ -271,3 +271,22 @@
       timezone: Asia/Shanghai
       date: 2025年8月26日
       place: 中国，北京
+
+- title: 开源鸿蒙技术大会 2025
+  description: 聚焦开源鸿蒙技术的年度核心进展，勾勒智能终端操作系统全场景适配与技术深化的清晰路径，解读开源鸿蒙在数字基础设施建设中的核心价值。
+  category: conference
+  tags:
+    - OpenHarmony
+    - 开源技术
+  events:
+    - year: 2025
+      id: openharmony-tech-conf-2025
+      link: https://mp.weixin.qq.com/s/k5jE6TqRwTnGViwJgbNesA
+      timeline:
+        - deadline: '2025-09-27T08:00:00'
+          comment: '会议开始'
+        - deadline: '2025-09-27T17:30:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai
+      date: 2025年9月27日
+      place: 中国，长沙
