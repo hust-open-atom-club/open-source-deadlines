@@ -1,3 +1,39 @@
+- title: paddlepaddle启航计划集训营（第六期）
+  description: 「启航计划」 是 飞桨开源社区 发起的远程集训项目，也是「护航计划」的前置活动。我们以开展线上集训营的形式，鼓励开发者积极参与开源项目，以此提升自己的代码实践能力，与社区共同成长 💪。只要对开源怀有热忱，都欢迎报名参与！
+  category: competition # 会议请使用 "conference"，活动请使用 "activity"
+  tags:
+    - PaddlePaddle
+    - 启航计划
+  events:
+    - year: 2025 # 年份
+      id: paddlepaddle-Starter-6th # 全局唯一的ID
+      link: https://github.com/PaddlePaddle/Paddle/issues/75250 # 链接
+      timeline:
+        - deadline: '2024-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: 'pr提交截止' # 日期说明
+        - deadline: '2024-12-15T24:00:00'
+          comment: '结项提交'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 12 日 - 12 月 15 日 # 人类可读的日期范围
+      place: 线上 # 地点
+- title: PaddlePaddle Hackathon 9th
+  description: PaddlePaddle Hackathon 正式开始啦 🎉！本次活动是飞桨开源社区面向全球开发者的深度学习领域编程活动，鼓励开发者了解与参与飞桨深度学习开源项目的开发实践。
+  category: competition # 会议请使用 "conference"，活动请使用 "activity"
+  tags:
+    - PaddlePaddle
+    - Hackathon
+  events:
+    - year: 2025 # 年份
+      id: paddlepaddle-hackathon-9th # 全局唯一的ID
+      link: https://github.com/PaddlePaddle/Paddle/issues/74777 # 链接
+      timeline:
+        - deadline: '2024-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: 'pr提交截止' # 日期说明
+        - deadline: '2024-12-15T24:00:00'
+          comment: '结项提交'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 8 月 25 日 - 12 月 15 日 # 人类可读的日期范围
+      place: 线上 # 地点
 - title: GitLink "确实开源"编程夏令营（GLCC）
   description: GitLink "确实开源"编程夏令营（GLCC）是在 CCF 中国计算机学会指导下，由 CCF 开源发展委员会（CCF ODC）举办的面向全国高校学生的暑期编程活动。
   category: competition
