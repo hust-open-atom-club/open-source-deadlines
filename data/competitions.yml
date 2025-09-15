@@ -9,9 +9,9 @@
       id: paddlepaddle-Starter-6th # 全局唯一的ID
       link: https://github.com/PaddlePaddle/Paddle/issues/75250 # 链接
       timeline:
-        - deadline: '2024-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
+        - deadline: '2025-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
           comment: 'pr提交截止' # 日期说明
-        - deadline: '2024-12-15T24:00:00'
+        - deadline: '2025-12-15T24:00:00'
           comment: '结项提交'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 12 日 - 12 月 15 日 # 人类可读的日期范围
@@ -27,9 +27,9 @@
       id: paddlepaddle-hackathon-9th # 全局唯一的ID
       link: https://github.com/PaddlePaddle/Paddle/issues/74777 # 链接
       timeline:
-        - deadline: '2024-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
+        - deadline: '2025-11-24T18:00:00' # 关键日期 (ISO 8601 格式)
           comment: 'pr提交截止' # 日期说明
-        - deadline: '2024-12-15T24:00:00'
+        - deadline: '2025-12-15T24:00:00'
           comment: '结项提交'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 8 月 25 日 - 12 月 15 日 # 人类可读的日期范围
