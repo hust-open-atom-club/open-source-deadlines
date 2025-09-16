@@ -35,6 +35,7 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 8 月 25 日 - 12 月 15 日 # 人类可读的日期范围
       place: 线上 # 地点
+
 - title: GitLink "确实开源"编程夏令营（GLCC）
   description: GitLink "确实开源"编程夏令营（GLCC）是在 CCF 中国计算机学会指导下，由 CCF 开源发展委员会（CCF ODC）举办的面向全国高校学生的暑期编程活动。
   category: competition
