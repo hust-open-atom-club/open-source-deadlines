@@ -9,6 +9,7 @@ import { useEventStore } from '@/lib/store'
 import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
 import { DateTime } from 'luxon'
+import { useTranslation } from 'react-i18next'
 
 interface FlatEvent {
   item: DeadlineItem
@@ -18,13 +19,13 @@ interface FlatEvent {
 }
 
 export default function Home() {
-  const { 
-    items, 
-    loading, 
-    fetchItems, 
-    selectedCategory, 
-    selectedTags, 
-    selectedLocations, 
+  const {
+    items,
+    loading,
+    fetchItems,
+    selectedCategory,
+    selectedTags,
+    selectedLocations,
     searchQuery,
     favorites,
     showOnlyFavorites,
@@ -34,6 +35,8 @@ export default function Home() {
     fetchItems()
   }, [fetchItems])
 
+  const { t } = useTranslation();
+
   const flatEvents: FlatEvent[] = useMemo(() => items.flatMap(item =>
     item.events.map(event => {
       const now = DateTime.now().setZone("Asia/Shanghai")
@@ -41,11 +44,11 @@ export default function Home() {
         .map(t => DateTime.fromISO(t.deadline, { zone: event.timezone }))
         .filter(d => d > now)
         .sort((a, b) => a.toMillis() - b.toMillis())
-      
-      const nextDeadline = upcomingDeadlines[0] || 
+
+      const nextDeadline = upcomingDeadlines[0] ||
         DateTime.fromISO(event.timeline[event.timeline.length - 1].deadline, { zone: event.timezone })
       const timeRemaining = nextDeadline.toMillis() - now.toMillis()
-      
+
       return { item, event, nextDeadline, timeRemaining }
     })
   ), [items])
@@ -59,7 +62,7 @@ export default function Home() {
 
   const filteredEvents = useMemo(() => {
     let results: FlatEvent[]
-    
+
     if (searchQuery.trim() && fuse) {
       results = fuse.search(searchQuery.trim()).map(result => result.item)
     } else {
@@ -77,11 +80,11 @@ export default function Home() {
       .sort((a, b) => {
         const aEnded = a.timeRemaining < 0
         const bEnded = b.timeRemaining < 0
-        
+
         if (aEnded && !bEnded) return 1
         if (!aEnded && bEnded) return -1
         if (aEnded && bEnded) return b.timeRemaining - a.timeRemaining
-        
+
         return a.timeRemaining - b.timeRemaining
       })
   }, [flatEvents, searchQuery, fuse, selectedCategory, selectedTags, selectedLocations, favorites, showOnlyFavorites]);
@@ -108,7 +111,7 @@ export default function Home() {
                 <Calendar className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-3xl font-bold text-slate-900">
-                开源活动截止日期
+                {t("ui.title")}
               </h1>
             </div>
             <Link
@@ -125,7 +128,7 @@ export default function Home() {
             开源会议、竞赛和活动重要截止日期概览，不再错过为社区贡献、学习和交流的机会
           </p>
           <p className="text-sm text-slate-600 mt-5">
-            所有截止日期均默认转换为北京时间，如果您不知道当前所在时区，请点击时区选择器右侧的“自动检测”<br/>
+            所有截止日期均默认转换为北京时间，如果您不知道当前所在时区，请点击时区选择器右侧的“自动检测”<br />
             *免责声明：本站数据由人工维护，仅供参考
           </p>
         </header>
@@ -138,10 +141,10 @@ export default function Home() {
         {/* Events List */}
         <div className="space-y-4">
           {filteredEvents.map(({ item, event }) => (
-            <EventCard 
-              key={`${event.id}`} 
-              item={item} 
-              event={event} 
+            <EventCard
+              key={`${event.id}`}
+              item={item}
+              event={event}
             />
           ))}
         </div>
@@ -160,19 +163,19 @@ export default function Home() {
         <footer className="mt-16 text-center text-slate-600">
           <p className="text-sm">
             使用 Next.js 与 shadcn/ui 构建 • 由{' '}
-            <Link 
-              href="https://github.com/inscripoem" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              href="https://github.com/inscripoem"
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline"
             >
               inscripoem
             </Link>
             {' '}开发 • 由{' '}
-            <Link 
-              href="https://hust.openatom.club" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              href="https://hust.openatom.club"
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline"
             >
               华科开放原子开源俱乐部
