@@ -125,11 +125,11 @@ export default function Home() {
             </Link>
           </div>
           <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-            开源会议、竞赛和活动重要截止日期概览，不再错过为社区贡献、学习和交流的机会
+            {t("info.description")}
           </p>
           <p className="text-sm text-slate-600 mt-5">
-            所有截止日期均默认转换为北京时间，如果您不知道当前所在时区，请点击时区选择器右侧的“自动检测”<br />
-            *免责声明：本站数据由人工维护，仅供参考
+            {t("info.timezone")}<br />
+            {t("info.disclaimer")}
           </p>
         </header>
 
@@ -152,9 +152,9 @@ export default function Home() {
         {filteredEvents.length === 0 && (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">未找到任何活动</h3>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2">{t("events.notFound")}</h3>
             <p className="text-slate-600">
-              请尝试调整筛选器或搜索词以查看更多活动。
+              {t("events.hint")}
             </p>
           </div>
         )}
@@ -162,27 +162,31 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-16 text-center text-slate-600">
           <p className="text-sm">
-            使用 Next.js 与 shadcn/ui 构建 • 由{' '}
+            {t("acknowledgments.stack")}
+          </p>
+          <p className="text-sm">{' '}
             <Link
               href="https://github.com/inscripoem"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
             >
-              inscripoem
+              {t("acknowledgments.contributor")}
             </Link>
-            {' '}开发 • 由{' '}
+             {' '} {t("acknowledgments.develop")}
+            {' '} • {' '}
             <Link
               href="https://hust.openatom.club"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
             >
-              华科开放原子开源俱乐部
+              {t("acknowledgments.organization")}
             </Link>
-            {' '}维护
+            {' '}{t("acknowledgments.support")}
           </p>
         </footer>
+
       </div>
     </div>
   )
