@@ -10,6 +10,8 @@ import { DeadlineItem, EventData } from '@/lib/data'
 import Link from 'next/link'
 import { DateTime } from 'luxon'
 import { useTranslation } from 'react-i18next'
+import { SwitchLanguage } from '@/components/SwitchLanguage'
+import GithubAvator from '@/components/GithubAvator'
 
 interface FlatEvent {
   item: DeadlineItem
@@ -114,15 +116,7 @@ export default function Home() {
                 {t("ui.title")}
               </h1>
             </div>
-            <Link
-              href="https://github.com/hust-open-atom-club/open-source-deadlines"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-2 rounded-lg overflow-auto"
-              aria-label="GitHub Repository"
-            >
-              <img alt="GitHub Repo stars" className='h-8' src="https://img.shields.io/github/stars/hust-open-atom-club/open-source-deadlines?style=for-the-badge&logo=github&logoColor=white&labelColor=155dfc&color=white" />
-            </Link>
+                { <GithubAvator />}
           </div>
           <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
             {t("info.description")}
@@ -131,6 +125,12 @@ export default function Home() {
             {t("info.timezone")}<br />
             {t("info.disclaimer")}
           </p>
+          <div className="flex justify-between items-center mt-5">
+            <div />
+            <div>
+              <SwitchLanguage />
+            </div>
+          </div>
         </header>
 
         {/* Filters */}
@@ -173,7 +173,7 @@ export default function Home() {
             >
               {t("acknowledgments.contributor")}
             </Link>
-             {' '} {t("acknowledgments.develop")}
+            {' '} {t("acknowledgments.develop")}
             {' '} • {' '}
             <Link
               href="https://hust.openatom.club"
