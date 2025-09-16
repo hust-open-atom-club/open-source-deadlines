@@ -18,5 +18,16 @@
         "organization": "HUST Open Atom Club",
         "support": "Maintained",
         "develop": "Developed"
+    },
+    "filter": {
+        "searchPlaceholder": "Search events, tags or locations...",
+        "onlyFavorites": "Only show favorites",
+        "category": "Category",
+        "all": "All",
+        "category_conference": "Conference",
+        "category_competition": "Competition",
+        "category_activity": "Activity",
+        "location": "Location",
+        "tag": "Tag"
     }
 }

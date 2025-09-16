@@ -18,5 +18,16 @@
         "organization": "华科开放原子开源俱乐部",
         "support": "维护",
         "develop": "开发"
+    },
+    "filter": {
+        "searchPlaceholder": "搜索活动、标签或地点...",
+        "onlyFavorites": "只显示收藏",
+        "category": "类别",
+        "all": "全部",
+        "category_conference": "会议",
+        "category_competition": "竞赛",
+        "category_activity": "活动",
+        "location": "地点",
+        "tag": "标签"
     }
 }
