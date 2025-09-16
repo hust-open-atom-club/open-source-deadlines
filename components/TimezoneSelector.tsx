@@ -5,9 +5,11 @@ import { Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useEventStore } from '@/lib/store'
+import { useTranslation } from 'react-i18next'
 
 export function TimezoneSelector() {
   const { displayTimezone, setDisplayTimezone, detectUserTimezone } = useEventStore()
+  const { t } = useTranslation('common');
   
   // 时区选择器相关状态
   const [timezones, setTimezones] = useState<string[]>([])
@@ -82,7 +84,7 @@ export function TimezoneSelector() {
               <div className="p-2">
                 <Input
                   type="text"
-                  placeholder="搜索时区..."
+                  placeholder={t('filter.searchTimezone')}
                   value={searchTimeZone}
                   onChange={(e) => setSearchTimeZone(e.target.value)}
                   className="mb-2"
@@ -117,7 +119,7 @@ export function TimezoneSelector() {
           }}
           className="whitespace-nowrap"
         >
-          自动检测
+          {t('filter.autoDetect')}
         </Button>
       </div>
     </div>

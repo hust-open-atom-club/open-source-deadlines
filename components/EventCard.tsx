@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { TimelineItem } from '@/components/TimelineItem'
@@ -18,13 +19,10 @@ interface EventCardProps {
   event: EventData
 }
 
-const categoryTranslations: { [key: string]: string } = {
-  conference: '会议',
-  competition: '竞赛',
-  activity: '活动',
-};
+
 
 export function EventCard({ item, event }: EventCardProps) {
+  const { t } = useTranslation('common');
   const { 
     favorites, 
     toggleFavorite, 
@@ -112,7 +110,7 @@ export function EventCard({ item, event }: EventCardProps) {
         'activity': 'bg-purple-600 text-white'
       }[item.category] || 'bg-primary text-white'
     }`}>
-      {categoryTranslations[item.category] || item.category}
+      {t(`filter.category_${item.category}`)}
     </div>
   );
 
@@ -145,7 +143,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         </Badge>
                         {ended && (
                           <Badge variant="secondary" className="text-xs">
-                            已结束
+                            {t('events.ended', '已结束')}
                           </Badge>
                         )}
                         {mounted && (
@@ -171,6 +169,7 @@ export function EventCard({ item, event }: EventCardProps) {
             
             {/* 标签 */}
             <div className="flex flex-wrap gap-1.5">
+              <span className="text-xs text-muted-foreground mr-2">{t('filter.tag')}: </span>
               {item.tags.map((tag) => (
                 <Badge key={tag} variant="outline" className="text-xs">
                   {tag}
@@ -182,15 +181,15 @@ export function EventCard({ item, event }: EventCardProps) {
             <div className="flex flex-col sm:flex-row md:flex-col md:items-start lg:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{event.date}</span>
+                <span className="break-words">{t('events.date')}: {event.date}</span>
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{eventTimezoneUTC}</span>
+                <span className="break-words">{t('events.timezone')}: {eventTimezoneUTC}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{event.place}</span>
+                <span className="break-words">{t('events.place')}: {event.place}</span>
               </div>
             </div>
 
@@ -203,7 +202,7 @@ export function EventCard({ item, event }: EventCardProps) {
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm font-medium">时间线</span>
+                  <span className="text-sm font-medium">{t("events.timeline")}</span>
                 </div>
                 
                 {/* 时间线容器 */}
@@ -237,7 +236,7 @@ export function EventCard({ item, event }: EventCardProps) {
                     {/* 左侧文本信息 */}
                     <div className="space-y-1 text-center lg:text-left">
                       <div className="text-sm font-bold text-orange-800">
-                        下一个截止日期
+                        {t('events.nextDeadline')}
                       </div>
                       <div className="text-sm font-bold text-orange-900 leading-tight break-words">
                         {nextDeadline.comment}
@@ -257,10 +256,10 @@ export function EventCard({ item, event }: EventCardProps) {
                 <div className="p-3 bg-gray-100 rounded-xl border-2 border-gray-200">
                   <div className="text-center">
                     <div className="text-sm font-bold text-gray-600 mb-1">
-                      活动已结束
+                      {t("events.ended")}
                     </div>
                     <div className="text-xs text-gray-500">
-                      所有截止日期已过
+                      {t("events.allDeadlinesPassed")}
                     </div>
                   </div>
                 </div>
@@ -275,7 +274,7 @@ export function EventCard({ item, event }: EventCardProps) {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span className="text-sm font-medium">时间线</span>
+              <span className="text-sm font-medium">{t('events.timeline')}</span>
             </div>
             
             {/* 时间线容器 - 移动端优化高度 */}
@@ -311,7 +310,7 @@ export function EventCard({ item, event }: EventCardProps) {
               </ScrollArea>
               {showScrollHint && (
                 <div className="absolute right-2 bottom-2 flex items-center z-30 animate-bounce">
-                  <span className="text-xs text-gray-400 mr-1">滑动</span>
+                  <span className="text-xs text-gray-400 mr-1">{t('events.swipe')}</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7l7 7-7 7" />
                   </svg>
@@ -327,7 +326,7 @@ export function EventCard({ item, event }: EventCardProps) {
                 <div className="text-center space-y-3">
                   <div className="space-y-1">
                     <div className="text-sm font-bold text-orange-800 mb-1">
-                      下一个截止日期
+                      {t('events.nextDeadline', '下一个截止日期')}
                     </div>
                     <div className="text-base font-bold text-orange-900 leading-tight break-words">
                       {nextDeadline.comment}
@@ -345,10 +344,10 @@ export function EventCard({ item, event }: EventCardProps) {
               <div className="p-4 bg-gray-100 rounded-xl border-2 border-gray-200">
                 <div className="text-center">
                   <div className="text-sm font-bold text-gray-600 mb-1">
-                    活动已结束
+                    {t('events.ended')}
                   </div>
                   <div className="text-xs text-gray-500">
-                    所有截止日期已过
+                    {t('events.allDeadlinesPassed')}
                   </div>
                 </div>
               </div>
