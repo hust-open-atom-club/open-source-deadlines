@@ -420,3 +420,4 @@
           comment: '训练营结束'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 12 日 - 2025 年 11 月 23 日 # 人类可读的日期范围
+      place: 线上
