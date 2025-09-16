@@ -9,7 +9,8 @@
     },
     "events": {
         "notFound": "No events found",
-        "hint": "Try adjusting the filters or search terms to see more events."
+        "hint": "Try adjusting the filters or search terms to see more events.",
+        "loading": "Loading events..."
     },
     "acknowledgments": {
         "stack": "Built with Next.js and shadcn/ui",

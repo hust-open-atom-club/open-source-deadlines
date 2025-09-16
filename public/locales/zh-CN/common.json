@@ -9,7 +9,8 @@
     },
     "events": {
         "notFound": "未找到任何活动",
-        "hint": "请尝试调整筛选器或搜索词以查看更多活动。"
+        "hint": "请尝试调整筛选器或搜索词以查看更多活动。",
+        "loading": "正在加载活动..."
     },
     "acknowledgments": {
         "stack": "使用 Next.js 与 shadcn/ui 构建",
