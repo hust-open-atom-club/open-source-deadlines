@@ -289,3 +289,25 @@
       timezone: Asia/Shanghai
       date: 2025年9月27日
       place: 中国，长沙
+
+- title: 首届 FlagOS 开放计算开发者大会
+  description: 由 FlagOS 开源社区和北京智源人工智能研究院联合主办的首届 FlagOS 开放计算开发者大会将于 2025 年 9 月 26 - 27 日在中国北京举行。在北京市发改委、北京市科委中关村管委会、北京市经信局、海淀区政府等部门的联合指导下，本次大会旨在打造一场全球开源技术的交流盛宴，探索“人工智能+”建设的产-学-研共同体。大会将聚焦 AI 系统软件的核心技术突破，致力于应对当前 AI 系统生态碎片化、软硬件跨系统迁移困难等重大挑战，旨在构建更开放、高效、兼容的未来人工智能产业生态。
+  category: conference
+  tags:
+    - FlagOS
+    - AI
+    - 人工智能+
+  events:
+    - year: 2025 # 年份
+      id: flagos-dev-conference-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/pCuhGVccOcibJqNWRbQwAg # 链接
+      timeline:
+        - deadline: '2025-09-25T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名截止' # 日期说明
+        - deadline: '2025-09-26T00:00:00'
+          comment: '大会开始'      
+        - deadline: '2025-09-27T23:59:59' # 关键日期 (ISO 8601 格式)
+          comment: '大会结束' # 日期说明
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
+      place: 中国，北京
