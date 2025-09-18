@@ -311,3 +311,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: PyCon China 2025
+  description: PyCon China 2025 将于 9 月 20 日在上海与大家相约！大会将通过 1 个主会场、4 个分会场、开源松、Vibe Coding 黑客松以及社区开源集市展的形式，汇集国内外各 Python 专家与实力开发者，为大家带来一场丰富、精彩、趣味、活力的 PyCon 大会。今年的大会将有来自国内外的 40+ Python 大咖，带来 27 个主题演讲、1 个圆桌讨论、12 个闪电演讲，涵盖大模型与 AI Agent 技术，Python 工程与生态实践，数据、搜索与金融应用，逆向、调试与底层技术，Web/工程自动化与应用开发，以及开源社区与生态发展等多个 Python 生态相关的前沿与实践方向。
+  category: conference
+  tags:
+    - Python
+    - AI
+    - 黑客松
+  events:
+    - year: 2025 # 年份
+      id: pycon-china-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/o__QnWKYwlKV40OlEjFyaA # 链接
+      timeline:
+        - deadline: '2025-09-20T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+        - deadline: '2025-09-20T18:00:00'
+          comment: '大会结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 20 日 # 人类可读的日期范围
+      place: 中国，上海
