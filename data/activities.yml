@@ -496,3 +496,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 27 日 13:00 - 17:00 # 人类可读的日期范围
       place: 中国，成都
+
+- title: openvela 城市沙龙（上海站）
+  description: 由 openvela 开源社区主办的 openvela 城市沙龙·上海站即将开启，聚焦物联网操作系统前沿技术演进与产业级典型落地案例。本次沙龙邀请了 AIoT 产业链技术专家、资深开源开发者及行业领军企业代表，共同探讨 AIoT 开源操作系统的未来发展方向，旨在推动 AIoT 技术落地与场景拓展，加速 AIoT 产业生态的繁荣生长。
+  category: activity
+  tags:
+    - openvela
+    - AIoT
+    - 物联网
+  events:
+    - year: 2025 # 年份
+      id: openvela-shanghai-salon # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/8CX7qxVHCvb6e1K4Ya427A # 链接
+      timeline:
+        - deadline: '2025-09-20T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-20T18:00:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 20 日 # 人类可读的日期范围
+      place: 中国，上海
