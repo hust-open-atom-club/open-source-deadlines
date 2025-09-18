@@ -496,3 +496,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 27 日 13:00 - 17:00 # 人类可读的日期范围
       place: 中国，成都
+
+  - title: openEuler & openGauss Meetup 西安站
+  description: 9月26日，OpenAtom openEuler（简称：“openEuler”或“开源欧拉”）、openGauss 社区、西北工业大学联合举办的 openEuler & openGauss Meetup 将在西安举行，诚邀数据库开发者、操作系统爱好者及企业技术专家共同参与！  category: activity
+  tags:
+    - openGauss
+    - openEuler
+    - 数据库
+    - 操作系统
+  events:
+    - year: 2025 # 年份
+      id: openGauss-openEuler-Meetup-2025-Xian # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/4-N0QoyecGq-B4rVD3sS7Q # 链接
+      timeline:
+        - deadline: '2025-09-26T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-26T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 26 日 13:30 - 17:30 # 人类可读的日期范围
+      place: 中国，西安
