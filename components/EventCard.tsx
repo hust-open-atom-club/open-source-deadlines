@@ -184,11 +184,11 @@ export function EventCard({ item, event }: EventCardProps) {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{t('events.timezone')}: {eventTimezoneUTC}</span>
+                <span className="break-words">{eventTimezoneUTC}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{t('events.place')}: {event.place}</span>
+                <span className="break-words">{event.place}</span>
               </div>
             </div>
 

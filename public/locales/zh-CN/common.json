@@ -17,9 +17,7 @@
     "nextDeadline": "下一个截止日期",
     "timeline": "时间线",
     "swipe": "滑动",
-    "date": "日期",
-    "timezone": "时区",
-    "place": "地点"
+    "date": "日期"
   },
   "acknowledgments": {
     "stack": "使用 Next.js 与 shadcn/ui 构建",

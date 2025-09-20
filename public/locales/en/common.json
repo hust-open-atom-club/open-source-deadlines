@@ -17,9 +17,7 @@
     "nextDeadline": "Next Deadline",
     "timeline": "Timeline",
     "swipe": "Swipe",
-    "date": "Date",
-    "timezone": "Timezone",
-    "place": "Place"
+    "date": "Date"
   },
   "acknowledgments": {
     "stack": "Built with Next.js and shadcn/ui",
