@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { DateTime } from 'luxon'
 import { useEventStore } from '@/lib/store'
+import { useTranslation } from 'react-i18next'
 
 interface CountdownTimerProps {
   deadline: DateTime
@@ -15,6 +16,8 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
     minutes: number
     seconds: number
   } | null>(null)
+
+  const { t } = useTranslation('common');
 
   // 从全局状态获取显示时区
   const displayTimezone = useEventStore(state => state.displayTimezone)
@@ -46,7 +49,7 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
   if (!timeLeft) {
     return (
       <div className="text-sm font-bold text-red-600 bg-red-100 px-3 py-2 rounded-lg">
-        已过期
+        {t("events.outdated")}
       </div>
     )
   }
@@ -58,26 +61,26 @@ export function CountdownTimer({ deadline }: CountdownTimerProps) {
           <div className="bg-gradient-to-b from-orange-500 to-orange-600 text-white px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base min-w-[35px] sm:min-w-[40px] shadow-md">
             {timeLeft.days.toString().padStart(2, '0')}
           </div>
-          <div className="text-xs text-orange-700 mt-1 font-medium">天</div>
+          <div className="text-xs text-orange-700 mt-1 font-medium">{t("date.days")}</div>
         </div>
       )}
       <div className="text-center">
         <div className="bg-gradient-to-b from-orange-500 to-orange-600 text-white px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base min-w-[35px] sm:min-w-[40px] shadow-md">
           {timeLeft.hours.toString().padStart(2, '0')}
         </div>
-        <div className="text-xs text-orange-700 mt-1 font-medium">小时</div>
+        <div className="text-xs text-orange-700 mt-1 font-medium">{t("date.hours")}</div>
       </div>
       <div className="text-center">
         <div className="bg-gradient-to-b from-orange-500 to-orange-600 text-white px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base min-w-[35px] sm:min-w-[40px] shadow-md">
           {timeLeft.minutes.toString().padStart(2, '0')}
         </div>
-        <div className="text-xs text-orange-700 mt-1 font-medium">分钟</div>
+        <div className="text-xs text-orange-700 mt-1 font-medium">{t("date.minutes")}</div>
       </div>
       <div className="text-center">
         <div className="bg-gradient-to-b from-orange-500 to-orange-600 text-white px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base min-w-[35px] sm:min-w-[40px] shadow-md countdown-pulse">
           {timeLeft.seconds.toString().padStart(2, '0')}
         </div>
-        <div className="text-xs text-orange-700 mt-1 font-medium">秒</div>
+        <div className="text-xs text-orange-700 mt-1 font-medium">{t("date.seconds")}</div>
       </div>
     </div>
   )

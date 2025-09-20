@@ -7,13 +7,10 @@ import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TimezoneSelector } from '@/components/TimezoneSelector'
 
-const categoryTranslations: { [key: string]: string } = {
-  conference: '会议',
-  competition: '竞赛',
-  activity: '活动',
-};
+
 
 // 可复用的过滤按钮组件
 interface FilterButtonProps {
@@ -41,6 +38,7 @@ function FilterButton({ isSelected, onClick, children, className = '' }: FilterB
 }
 
 export function FilterBar() {
+  const { t } = useTranslation('common');
   const {
     items,
     selectedCategory,
@@ -69,7 +67,7 @@ export function FilterBar() {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
         <Input
           type="text"
-          placeholder="搜索活动、标签或地点..."
+          placeholder={t('filter.searchPlaceholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10"
@@ -88,7 +86,7 @@ export function FilterBar() {
             />
             <Label htmlFor="favorites-only" className="flex items-center gap-1.5">
               <Star className="w-4 h-4 text-yellow-500" />
-              只显示收藏
+              {t('filter.onlyFavorites')}
             </Label>
           </div>
         )}
@@ -99,13 +97,13 @@ export function FilterBar() {
 
       {/* Categories */}
       <div>
-        <h3 className="text-sm font-medium mb-2">类别</h3>
+  <h3 className="text-sm font-medium mb-2">{t('filter.category')}</h3>
         <div className="flex flex-wrap gap-2">
           <FilterButton 
             isSelected={selectedCategory === null}
             onClick={() => setCategory(null)}
           >
-            全部
+            {t('filter.all')}
           </FilterButton>
           {categories.map((category) => (
             <FilterButton
@@ -114,7 +112,7 @@ export function FilterBar() {
               onClick={() => setCategory(category)}
               className="capitalize"
             >
-              {categoryTranslations[category] || category}
+              {t(`filter.category_${category}`)}
             </FilterButton>
           ))}
         </div>
@@ -122,7 +120,7 @@ export function FilterBar() {
 
       {/* Locations */}
       <div>
-        <h3 className="text-sm font-medium mb-2">地点</h3>
+  <h3 className="text-sm font-medium mb-2">{t('filter.location')}</h3>
         <div className="flex flex-wrap gap-2">
           {allLocations.map((location) => (
             <FilterButton
@@ -138,7 +136,7 @@ export function FilterBar() {
 
       {/* Tags */}
       <div>
-        <h3 className="text-sm font-medium mb-2">标签</h3>
+  <h3 className="text-sm font-medium mb-2">{t('filter.tag')}</h3>
         <div className="flex flex-wrap gap-2">
           {allTags.map((tag) => (
             <FilterButton
