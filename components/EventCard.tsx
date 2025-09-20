@@ -23,13 +23,13 @@ interface EventCardProps {
 
 export function EventCard({ item, event }: EventCardProps) {
   const { t } = useTranslation('common');
-  const { 
-    favorites, 
-    toggleFavorite, 
+  const {
+    favorites,
+    toggleFavorite,
     mounted,
-    displayTimezone 
+    displayTimezone
   } = useEventStore()
-  
+
   const cardId = `${event.id}`
   const isFavorited = favorites.includes(cardId)
 
@@ -39,21 +39,21 @@ export function EventCard({ item, event }: EventCardProps) {
 
   const ended = isEventEnded(event)
   const now = DateTime.now().setZone(displayTimezone)
-  
+
   // 找到下一个截止日期
   const upcomingDeadlines = event.timeline
-    .map((t, index) => ({ 
-      ...t, 
+    .map((t, index) => ({
+      ...t,
       // 正确处理时区：将原始字符串解析为指定时区的日期
       date: DateTime.fromISO(t.deadline, { zone: event.timezone }),
-      index 
+      index
     }))
     // 转换到显示时区进行比较
     .filter(t => t.date.setZone(displayTimezone) > now)
     .sort((a, b) => a.date.toMillis() - b.date.toMillis())
-  
+
   const nextDeadline = upcomingDeadlines[0]
-  
+
   // 转换时区为UTC偏移格式
   const displayTimezoneUTC = formatTimezoneToUTC(displayTimezone);
   const eventTimezoneUTC = formatTimezoneToUTC(event.timezone);
@@ -103,13 +103,12 @@ export function EventCard({ item, event }: EventCardProps) {
 
   // 类别标签组件
   const CategoryBadge = () => (
-    <div className={`inline-flex px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap ${
-      {
+    <div className={`inline-flex px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap ${{
         'conference': 'bg-green-600 text-white',
         'competition': 'bg-red-600 text-white',
         'activity': 'bg-purple-600 text-white'
       }[item.category] || 'bg-primary text-white'
-    }`}>
+      }`}>
       {t(`filter.category_${item.category}`)}
     </div>
   );
@@ -148,25 +147,24 @@ export function EventCard({ item, event }: EventCardProps) {
                         )}
                         {mounted && (
                           <Star
-                            className={`w-4 h-4 cursor-pointer transition-colors ${
-                              isFavorited
+                            className={`w-4 h-4 cursor-pointer transition-colors ${isFavorited
                                 ? 'text-yellow-400 fill-yellow-400'
                                 : 'text-gray-400 hover:text-yellow-500'
-                            }`}
+                              }`}
                             onClick={() => toggleFavorite(cardId)}
                           />
                         )}
                       </div>
                     </div>
                   </div>
-                </div>            
+                </div>
               </div>
               {/* 描述 */}
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
             </div>
-            
+
             {/* 标签 */}
             <div className="flex flex-wrap gap-1.5">
               {item.tags.map((tag) => (
@@ -193,7 +191,7 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
 
           </div>
-          
+
           {/* 右侧Timeline和Deadline - 桌面端 */}
           <div className="hidden md:block md:w-1/2">
             <div className="flex flex-col gap-4">
@@ -203,12 +201,12 @@ export function EventCard({ item, event }: EventCardProps) {
                   <Clock className="w-4 h-4" />
                   <span className="text-sm font-medium">{t("events.timeline")}</span>
                 </div>
-                
+
                 {/* 时间线容器 */}
                 <div className="relative bg-gray-50 rounded-lg border h-16 flex items-center">
                   {/* 时间线背景线 */}
                   <div className="absolute left-[10%] right-[10%] h-0.5 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
-                  
+
                   {/* 时间线节点容器 */}
                   <div className="relative w-full h-full">
                     {event.timeline.map((timelineEvent, index) => (
@@ -227,7 +225,7 @@ export function EventCard({ item, event }: EventCardProps) {
                   </div>
                 </div>
               </div>
-              
+
               {/* 倒计时区域 - 下方，左右布局 */}
               {!ended && nextDeadline ? (
                 <div className="p-3 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 shadow-sm">
@@ -244,7 +242,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         {nextDeadline.date.setZone(displayTimezone).toFormat('yyyy-MM-dd HH:mm:ss')} ({displayTimezoneUTC})
                       </div>
                     </div>
-                    
+
                     {/* 右侧倒计时 */}
                     <div className="mt-2 lg:mt-0 flex justify-center items-center">
                       <CountdownTimer deadline={nextDeadline.date} />
@@ -266,7 +264,7 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
           </div>
         </div>
-        
+
         {/* 移动端布局 - Timeline和Deadline */}
         <div className="block md:hidden space-y-6 mt-6">
           {/* Timeline区域 - 独立一行 */}
@@ -275,7 +273,7 @@ export function EventCard({ item, event }: EventCardProps) {
               <Clock className="w-4 h-4" />
               <span className="text-sm font-medium">{t('events.timeline')}</span>
             </div>
-            
+
             {/* 时间线容器 - 移动端优化高度 */}
             <div className="relative w-full border rounded-lg overflow-hidden bg-gray-50">
               {/* 左右渐变遮罩，z-10，避免遮挡 tooltip */}
@@ -317,7 +315,7 @@ export function EventCard({ item, event }: EventCardProps) {
               )}
             </div>
           </div>
-          
+
           {/* 倒计时区域 - 独立一行，移动端全宽 */}
           <div className="w-full">
             {!ended && nextDeadline ? (
@@ -325,7 +323,7 @@ export function EventCard({ item, event }: EventCardProps) {
                 <div className="text-center space-y-3">
                   <div className="space-y-1">
                     <div className="text-sm font-bold text-orange-800 mb-1">
-                      {t('events.nextDeadline', '下一个截止日期')}
+                      {t('events.nextDeadline')}
                     </div>
                     <div className="text-base font-bold text-orange-900 leading-tight break-words">
                       {nextDeadline.comment}
