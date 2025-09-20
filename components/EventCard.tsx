@@ -1,18 +1,18 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { TimelineItem } from '@/components/TimelineItem'
 import { CountdownTimer } from '@/components/CountdownTimer'
+import { TimelineItem } from '@/components/TimelineItem'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { DeadlineItem, EventData, isEventEnded } from '@/lib/data'
-import { Calendar, MapPin, Clock, Star, ExternalLink } from 'lucide-react'
 import { useEventStore } from '@/lib/store'
+import { formatTimezoneToUTC } from '@/lib/utils'
+import { Calendar, Clock, ExternalLink, MapPin, Star } from 'lucide-react'
 import { DateTime } from "luxon"
 import Link from 'next/link'
-import { formatTimezoneToUTC } from '@/lib/utils'
-import { ScrollArea } from '@/components/ui/scroll-area'
+import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface EventCardProps {
   item: DeadlineItem
@@ -169,7 +169,6 @@ export function EventCard({ item, event }: EventCardProps) {
             
             {/* 标签 */}
             <div className="flex flex-wrap gap-1.5">
-              <span className="text-xs text-muted-foreground mr-2">{t('filter.tag')}: </span>
               {item.tags.map((tag) => (
                 <Badge key={tag} variant="outline" className="text-xs">
                   {tag}
