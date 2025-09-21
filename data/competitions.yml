@@ -421,3 +421,28 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 12 日 - 2025 年 11 月 23 日 # 人类可读的日期范围
       place: 线上
+
+- title: RT-Thread 2025 嵌入式软件大赛
+  description: 本赛道为嵌入式软件大赛，聚焦嵌入式软件设计与开发。参赛者需基于RT-Thread官方指定的硬件平台，充分利用RT-Thread操作系统的核心特性，开发符合该硬件平台赛题方向规定的，高性能、低功耗的嵌入式应用作品，并提交完整的项目设计文档。
+  category: competition
+  tags:
+    - RT-Thread
+    - 嵌入式
+  events:
+    - year: 2025 # 年份
+      id: rt-thread-software-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/uoznPrNJeHX44plQ_liJAg # 链接
+      timeline:
+        - deadline: '2025-08-16T00:00:00' 
+          comment: '报名开始' # 日期说明     
+        - deadline: '2025-09-30T00:00:00' 
+          comment: '报名结束' # 日期说明
+        - deadline: '2025-11-30T00:00:00' 
+          comment: '提交作品' # 日期说明
+        - deadline: '2025-12-01T00:00:00' 
+          comment: '评审开始' # 日期说明
+        - deadline: '2025-12-07T23:59:59'
+          comment: '评审结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 8 月 16 日 - 2025 年 12 月 7 日 # 人类可读的日期范围
+      place: 线上
