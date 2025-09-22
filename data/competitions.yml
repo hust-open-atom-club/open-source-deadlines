@@ -446,3 +446,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 8 月 16 日 - 2025 年 12 月 7 日 # 人类可读的日期范围
       place: 线上
+
+- title: 基于 RISC-V 芯片和开源鸿蒙操作系统的 AI 应用开发赛
+  description: 润开鸿将围绕大赛“软件定义世界 开源共筑未来”主题，强调基于 RISC-V 架构的芯片平台结合开源鸿蒙操作系统的双开源平台，利用 DAYU800A 开发板，开发面向人工智能领域的应用、场景化方案，探索和促进人工智能相关技术在开源鸿蒙操作系统上的发展与应用。
+  category: competition
+  tags:
+    - RISC-V
+    - 开源鸿蒙
+    - AI 应用开发
+  events:
+    - year: 2025 # 年份
+      id: riscv-openharmony-ai-dev-competition-2025 # 全局唯一的ID
+      link: https://competition.atomgit.com/competitionInfo?id=f90bd619dd856d17039720c0fa6cca3e#heading-0-0 # 链接
+      timeline:
+        - deadline: '2025-07-01T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '大赛开始' # 日期说明
+        - deadline: '2025-12-31T23:59:59'
+          comment: '大赛结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 7 月 1 日 - 2025 年 12 月 31 日 # 人类可读的日期范围
+      place: 线上
