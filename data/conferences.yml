@@ -331,3 +331,21 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 20 日 # 人类可读的日期范围
       place: 中国，上海
+
+- title: COSCon'25
+  description: 中国开源年会 COSCon 是业界最具影响力的开源盛会之一，由开源社在 2015 年首次发起，今年恰逢中国开源年会的第十个年头。COSCon 具有跨组织、跨项目、跨社区的广泛覆盖面，也吸引了众多国内外开源开发者、贡献者和提交者的关注及参与。
+  category: conference
+  tags:
+    - 开源
+  events:
+    - year: 2025 # 年份
+      id: coscon-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/1hgKp-VCRJbVYaVPC_SRKw # 链接
+      timeline:
+        - deadline: '2025-12-06T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+        - deadline: '2025-12-07T18:00:00'
+          comment: '大会结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 12 月 6 日 - 2025 年 12 月 7 日 # 人类可读的日期范围
+      place: 中国，北京
