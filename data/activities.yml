@@ -562,7 +562,6 @@
   category: activity
   tags:
     - CCF
-    - 开源
   events:
     - year: 2025 # 年份
       id: ccf-open-source-tour-2025 # 全局唯一的ID
