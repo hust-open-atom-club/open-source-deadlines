@@ -142,7 +142,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         </Badge>
                         {ended && (
                           <Badge variant="secondary" className="text-xs">
-                            {t('events.ended', '已结束')}
+                            {t('events.ended')}
                           </Badge>
                         )}
                         {mounted && (
