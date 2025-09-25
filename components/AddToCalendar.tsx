@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { google, ics, outlook, yahoo } from "calendar-link";
+import { google, outlook, yahoo } from "calendar-link";
 import {
   Apple,
   Calendar,
@@ -42,12 +42,12 @@ export function AddToCalendar({
   const start = DateTime.fromISO(
     `${startDate}T${startTime ?? "00:00"}`,
     { zone: timeZone }
-  ).toISO();
+  ).toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
 
   const end = DateTime.fromISO(
     `${endDate}T${endTime ?? "23:59"}`,
     { zone: timeZone }
-  ).toISO();
+  ).toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
 
   const event = {
     title,
@@ -57,16 +57,29 @@ export function AddToCalendar({
     end,
   };
 
-  // 生成 ICS 下载
-  const handleDownloadICS = () => {
-    const fileContent = ics(event);
-    const blob = new Blob([fileContent], {
-      type: "text/calendar;charset=utf-8",
-    });
+
+  const handleDownloadICS = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your App//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:${Date.now()}-${Math.random().toString(36).substr(2, 9)}@example.com
+DTSTAMP:${DateTime.now().toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'")}
+DTSTART:${start}
+DTEND:${end}
+SUMMARY:${title.replace(/[\n\r]/g, "\\n")}
+${description ? `DESCRIPTION:${description.replace(/[\n\r]/g, "\\n")}\n` : ""}
+${location ? `LOCATION:${location.replace(/[\n\r]/g, "\\n")}\n` : ""}
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${title}.ics`;
+    a.download = `${title}_${startDate}.ics`;
     a.click();
     URL.revokeObjectURL(url);
   };
