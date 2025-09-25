@@ -199,7 +199,7 @@ export function EventCard({ item, event }: EventCardProps) {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 flex-nowrap">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm font-medium">时间线</span>
+                  <span className="text-sm font-medium">{t("events.timeline")}</span>
                   {!ended && nextDeadline && (
                     <div className="ml-auto">
                       <AddToCalendar
@@ -283,7 +283,7 @@ export function EventCard({ item, event }: EventCardProps) {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span className="text-sm font-medium">时间线</span>
+              <span className="text-sm font-medium">{t("events.timeline")}</span>
               {!ended && nextDeadline && (
                 <div className="mt-2 ml-auto">
                   <AddToCalendar
