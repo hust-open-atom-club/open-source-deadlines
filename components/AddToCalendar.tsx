@@ -130,7 +130,7 @@ END:VCALENDAR`;
           onClick={handleDownloadICS}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <Apple className="h-4 w-4" /> Apple / iCal (${t("calendar.download")})
+          <Apple className="h-4 w-4" /> Apple / iCal ({t("calendar.download")})
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
