@@ -1,0 +1,46 @@
+{
+  "ui": {
+    "title": "开源活动截止日期"
+  },
+  "info": {
+    "description": "开源会议、竞赛和活动重要截止日期概览，不再错过为社区贡献、学习和交流的机会",
+    "timezone": "所有截止日期均默认转换为北京时间，如果您不知道当前所在时区，请点击时区选择器右侧的“自动检测”",
+    "disclaimer": "*免责声明：本站数据由人工维护，仅供参考"
+  },
+  "events": {
+    "notFound": "未找到任何活动",
+    "hint": "请尝试调整筛选器或搜索词以查看更多活动。",
+    "loading": "正在加载活动...",
+    "ended": "已结束",
+    "outdated": "已过期",
+    "allDeadlinesPassed": "所有截止日期已过",
+    "nextDeadline": "下一个截止日期",
+    "timeline": "时间线",
+    "swipe": "滑动"
+  },
+  "acknowledgments": {
+    "stack": "使用 Next.js 与 shadcn/ui 构建",
+    "contributor": "inscripoem",
+    "organization": "华科开放原子开源俱乐部",
+    "support": "维护",
+    "develop": "开发"
+  },
+  "filter": {
+    "searchPlaceholder": "搜索活动、标签或地点...",
+    "searchTimezone": "搜索时区...",
+    "autoDetect": "自动检测",
+    "onlyFavorites": "只显示收藏",
+    "category": "类别",
+    "all": "全部",
+    "category_conference": "会议",
+    "category_competition": "竞赛",
+    "category_activity": "活动",
+    "location": "地点"
+  },
+  "date": {
+    "days": "天",
+    "hours": "小时",
+    "minutes": "分钟",
+    "seconds": "秒"
+  }
+}

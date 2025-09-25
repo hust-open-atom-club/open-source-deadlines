@@ -289,3 +289,63 @@
       timezone: Asia/Shanghai
       date: 2025年9月27日
       place: 中国，长沙
+
+- title: 首届 FlagOS 开放计算开发者大会
+  description: 由 FlagOS 开源社区和北京智源人工智能研究院联合主办的首届 FlagOS 开放计算开发者大会将于 2025 年 9 月 26 - 27 日在中国北京举行。在北京市发改委、北京市科委中关村管委会、北京市经信局、海淀区政府等部门的联合指导下，本次大会旨在打造一场全球开源技术的交流盛宴，探索“人工智能+”建设的产-学-研共同体。大会将聚焦 AI 系统软件的核心技术突破，致力于应对当前 AI 系统生态碎片化、软硬件跨系统迁移困难等重大挑战，旨在构建更开放、高效、兼容的未来人工智能产业生态。
+  category: conference
+  tags:
+    - FlagOS
+    - AI
+    - 人工智能+
+  events:
+    - year: 2025 # 年份
+      id: flagos-dev-conference-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/pCuhGVccOcibJqNWRbQwAg # 链接
+      timeline:
+        - deadline: '2025-09-25T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名截止' # 日期说明
+        - deadline: '2025-09-26T00:00:00'
+          comment: '大会开始'      
+        - deadline: '2025-09-27T23:59:59' # 关键日期 (ISO 8601 格式)
+          comment: '大会结束' # 日期说明
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
+      place: 中国，北京
+
+- title: PyCon China 2025
+  description: PyCon China 2025 将于 9 月 20 日在上海与大家相约！大会将通过 1 个主会场、4 个分会场、开源松、Vibe Coding 黑客松以及社区开源集市展的形式，汇集国内外各 Python 专家与实力开发者，为大家带来一场丰富、精彩、趣味、活力的 PyCon 大会。今年的大会将有来自国内外的 40+ Python 大咖，带来 27 个主题演讲、1 个圆桌讨论、12 个闪电演讲，涵盖大模型与 AI Agent 技术，Python 工程与生态实践，数据、搜索与金融应用，逆向、调试与底层技术，Web/工程自动化与应用开发，以及开源社区与生态发展等多个 Python 生态相关的前沿与实践方向。
+  category: conference
+  tags:
+    - Python
+    - AI
+    - 黑客松
+  events:
+    - year: 2025 # 年份
+      id: pycon-china-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/o__QnWKYwlKV40OlEjFyaA # 链接
+      timeline:
+        - deadline: '2025-09-20T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+        - deadline: '2025-09-20T18:00:00'
+          comment: '大会结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 20 日 # 人类可读的日期范围
+      place: 中国，上海
+
+- title: COSCon'25
+  description: 中国开源年会 COSCon 是业界最具影响力的开源盛会之一，由开源社在 2015 年首次发起，今年恰逢中国开源年会的第十个年头。COSCon 具有跨组织、跨项目、跨社区的广泛覆盖面，也吸引了众多国内外开源开发者、贡献者和提交者的关注及参与。
+  category: conference
+  tags:
+    - 开源社
+  events:
+    - year: 2025 # 年份
+      id: coscon-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/1hgKp-VCRJbVYaVPC_SRKw # 链接
+      timeline:
+        - deadline: '2025-12-06T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+        - deadline: '2025-12-07T18:00:00'
+          comment: '大会结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 12 月 6 日 - 2025 年 12 月 7 日 # 人类可读的日期范围
+      place: 中国，北京

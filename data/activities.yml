@@ -496,3 +496,111 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 09 月 27 日 13:00 - 17:00 # 人类可读的日期范围
       place: 中国，成都
+
+- title: openEuler & openGauss Meetup 西安站
+  description: OpenAtom openEuler（简称：“openEuler”或“开源欧拉”）、openGauss 社区、西北工业大学联合举办的 openEuler & openGauss Meetup 将在西安举行，诚邀数据库开发者、操作系统爱好者及企业技术专家共同参与！  
+  category: activity
+  tags:
+    - openGauss
+    - openEuler
+    - 数据库
+    - 操作系统
+  events:
+    - year: 2025 # 年份
+      id: openGauss-openEuler-Meetup-2025-Xian # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/4-N0QoyecGq-B4rVD3sS7Q # 链接
+      timeline:
+        - deadline: '2025-09-26T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-26T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 26 日 # 人类可读的日期范围
+      place: 中国，西安
+
+- title: openEuler 云原生开源中间件 Meetup 武汉站
+  description: openEuler 云原生开源中间件 Meetup 武汉站将在武汉职业技术大学关山校区召开，专家将分享基于轻舟 API 的高效开发以及有关 TongRDS 中间件有关的 openEuler 开源中间件技术。
+  category: activity
+  tags:
+    - openEuler
+    - 中间件
+  events:
+    - year: 2025 # 年份
+      id: openEuler-middleware-Meetup-2025-Wuhan # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/f_w1lNaYU3H2nu_q6R-B0A # 链接
+      timeline:
+        - deadline: '2025-09-25T13:45:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-25T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 09 月 25 日 # 人类可读的日期范围
+      place: 中国，武汉
+
+- title: openvela 城市沙龙（上海站）
+  description: 由 openvela 开源社区主办的 openvela 城市沙龙·上海站即将开启，聚焦物联网操作系统前沿技术演进与产业级典型落地案例。本次沙龙邀请了 AIoT 产业链技术专家、资深开源开发者及行业领军企业代表，共同探讨 AIoT 开源操作系统的未来发展方向，旨在推动 AIoT 技术落地与场景拓展，加速 AIoT 产业生态的繁荣生长。
+  category: activity
+  tags:
+    - openvela
+    - AIoT
+    - 物联网
+  events:
+    - year: 2025 # 年份
+      id: openvela-shanghai-salon # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/8CX7qxVHCvb6e1K4Ya427A # 链接
+      timeline:
+        - deadline: '2025-09-20T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-09-20T18:00:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 20 日 # 人类可读的日期范围
+      place: 中国，上海
+
+- title: CCF 开源高校行——哈尔滨工程大学、哈尔滨工业大学
+  description: 在数字化转型的浪潮中，开源人才的培养是信息技术创新发展的重要根基，高校学子作为我国开源生态的源头活水备受重视。9 月 22 日，CCF 开源发展技术委员会 “开源高校行” 暨红山开源 × openKylin 高校行活动将走进哈尔滨工程大学和哈尔滨工业大学，与两校师生交流分享开源经验，共同推进开源教育，建立产学研用一体化开源创新人才培养体系
+  category: activity
+  tags:
+    - CCF
+  events:
+    - year: 2025 # 年份
+      id: ccf-open-source-tour-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/fVCftOIV491w3Hjibq9EIg # 链接
+      timeline:
+        - deadline: '2025-09-22T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '哈尔滨工程大学站开始' # 日期说明
+        - deadline: '2025-09-22T16:30:00'
+          comment: '哈尔滨工程大学站结束'      
+        - deadline: '2025-09-22T19:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '哈尔滨工业大学站开始' # 日期说明
+        - deadline: '2025-09-22T20:00:00'
+          comment: '哈尔滨工业大学站结束'     
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 22 日 # 人类可读的日期范围
+      place: 中国，哈尔滨
+
+- title:  CCF 开源高校行——深圳技术大学、深圳大学、中山大学
+  description: CCF 开源发展技术委员会“开源高校行”活动将于 9 月 26 日- 27 日走进深圳技术大学、深圳大学和中山大学。本次活动由红山开源平台、openKylin、粤港澳大湾区数字经济研究院等单位共同组织，旨在与广大师生交流分享开源经验，共同推进开源教育，建立产学研用一体化开源创新人才培养体系。
+  category: activity
+  tags:
+    - CCF
+  events:
+    - year: 2025 # 年份
+      id: ccf-open-source-tour-shenzhen-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/LcS6zIfkRgT_PZ5NqqRIGw # 链接
+      timeline:
+        - deadline: '2025-09-26T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '深圳技术大学站开始' # 日期说明
+        - deadline: '2025-09-26T16:30:00'
+          comment: '深圳技术大学站结束'      
+        - deadline: '2025-09-26T19:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '深圳大学站开始' # 日期说明
+        - deadline: '2025-09-26T21:30:00'
+          comment: '深圳大学站结束' 
+        - deadline: '2025-09-27T15:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '中山大学站开始' # 日期说明
+        - deadline: '2025-09-27T17:30:00'
+          comment: '中山大学站结束' 
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
+      place: 中国，深圳

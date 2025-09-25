@@ -1,0 +1,46 @@
+{
+  "ui": {
+    "title": "Open Source Deadlines"
+  },
+  "info": {
+    "description": "An overview of important deadlines for open source conferences, competitions, and events, so you never miss an opportunity to contribute, learn, and connect with the community.",
+    "timezone": "All deadlines are converted to Beijing Time by default. If you are unsure of your current time zone, please click 'Auto Detect' next to the time zone selector.",
+    "disclaimer": "*Disclaimer: The data on this site is manually maintained and for reference only."
+  },
+  "events": {
+    "notFound": "No events found",
+    "hint": "Try adjusting the filters or search terms to see more events.",
+    "loading": "Loading events...",
+    "ended": "Ended",
+    "outdated": "Outdated",
+    "allDeadlinesPassed": "All deadlines have passed",
+    "nextDeadline": "Next Deadline",
+    "timeline": "Timeline",
+    "swipe": "Swipe"
+  },
+  "acknowledgments": {
+    "stack": "Built with Next.js and shadcn/ui",
+    "contributor": "inscripoem",
+    "organization": "HUST Open Atom Club",
+    "support": "Maintained",
+    "develop": "Developed"
+  },
+  "filter": {
+    "searchPlaceholder": "Search events, tags or locations...",
+    "searchTimezone": "Search timezone...",
+    "autoDetect": "Auto Detect",
+    "onlyFavorites": "Only show favorites",
+    "category": "Category",
+    "all": "All",
+    "category_conference": "Conference",
+    "category_competition": "Competition",
+    "category_activity": "Activity",
+    "location": "Location"
+  },
+  "date": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  }
+}
