@@ -16,8 +16,7 @@
     "allDeadlinesPassed": "所有截止日期已过",
     "nextDeadline": "下一个截止日期",
     "timeline": "时间线",
-    "swipe": "滑动",
-    "date": "日期"
+    "swipe": "滑动"
   },
   "acknowledgments": {
     "stack": "使用 Next.js 与 shadcn/ui 构建",

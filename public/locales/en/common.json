@@ -16,8 +16,7 @@
     "allDeadlinesPassed": "All deadlines have passed",
     "nextDeadline": "Next Deadline",
     "timeline": "Timeline",
-    "swipe": "Swipe",
-    "date": "Date"
+    "swipe": "Swipe"
   },
   "acknowledgments": {
     "stack": "Built with Next.js and shadcn/ui",

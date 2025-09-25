@@ -104,10 +104,10 @@ export function EventCard({ item, event }: EventCardProps) {
   // 类别标签组件
   const CategoryBadge = () => (
     <div className={`inline-flex px-3 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap ${{
-        'conference': 'bg-green-600 text-white',
-        'competition': 'bg-red-600 text-white',
-        'activity': 'bg-purple-600 text-white'
-      }[item.category] || 'bg-primary text-white'
+      'conference': 'bg-green-600 text-white',
+      'competition': 'bg-red-600 text-white',
+      'activity': 'bg-purple-600 text-white'
+    }[item.category] || 'bg-primary text-white'
       }`}>
       {t(`filter.category_${item.category}`)}
     </div>
@@ -148,8 +148,8 @@ export function EventCard({ item, event }: EventCardProps) {
                         {mounted && (
                           <Star
                             className={`w-4 h-4 cursor-pointer transition-colors ${isFavorited
-                                ? 'text-yellow-400 fill-yellow-400'
-                                : 'text-gray-400 hover:text-yellow-500'
+                              ? 'text-yellow-400 fill-yellow-400'
+                              : 'text-gray-400 hover:text-yellow-500'
                               }`}
                             onClick={() => toggleFavorite(cardId)}
                           />
@@ -178,7 +178,7 @@ export function EventCard({ item, event }: EventCardProps) {
             <div className="flex flex-col sm:flex-row md:flex-col md:items-start lg:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4 flex-shrink-0" />
-                <span className="break-words">{t('events.date')}: {event.date}</span>
+                <span className="break-words">{event.date}</span>
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 flex-shrink-0" />
