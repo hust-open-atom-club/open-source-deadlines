@@ -578,3 +578,29 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 22 日 # 人类可读的日期范围
       place: 中国，哈尔滨
+
+- title:  CCF 开源高校行——深圳技术大学、深圳大学、中山大学
+  description: CCF 开源发展技术委员会“开源高校行”活动将于 9 月 26 日- 27 日走进深圳技术大学、深圳大学和中山大学。本次活动由红山开源平台、openKylin、粤港澳大湾区数字经济研究院等单位共同组织，旨在与广大师生交流分享开源经验，共同推进开源教育，建立产学研用一体化开源创新人才培养体系。
+  category: activity
+  tags:
+    - CCF
+  events:
+    - year: 2025 # 年份
+      id: ccf-open-source-tour-shenzhen-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/LcS6zIfkRgT_PZ5NqqRIGw # 链接
+      timeline:
+        - deadline: '2025-09-26T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '深圳技术大学站开始' # 日期说明
+        - deadline: '2025-09-26T16:30:00'
+          comment: '深圳技术大学站结束'      
+        - deadline: '2025-09-26T19:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '深圳大学站开始' # 日期说明
+        - deadline: '2025-09-26T21:30:00'
+          comment: '深圳大学站结束' 
+        - deadline: '2025-09-27T15:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '中山大学站开始' # 日期说明
+        - deadline: '2025-09-27T17:30:00'
+          comment: '中山大学站结束' 
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
+      place: 中国，深圳
