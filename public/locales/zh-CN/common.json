@@ -42,5 +42,9 @@
     "hours": "小时",
     "minutes": "分钟",
     "seconds": "秒"
+  },
+  "calendar": {
+    "title": "日历",
+    "download": "下载 .ics"
   }
 }

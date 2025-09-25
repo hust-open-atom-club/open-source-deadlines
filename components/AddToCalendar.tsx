@@ -16,6 +16,7 @@ import {
   Mail,
 } from "lucide-react";
 import { DateTime } from "luxon";
+import { useTranslation } from "react-i18next";
 
 interface AddToCalendarProps {
   title: string;
@@ -84,12 +85,14 @@ END:VCALENDAR`;
     URL.revokeObjectURL(url);
   };
 
+  const { t } = useTranslation();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="flex items-center gap-2">
           <Calendar className="h-4 w-4" />
-          日历
+          {t("calendar.title")}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -127,7 +130,7 @@ END:VCALENDAR`;
           onClick={handleDownloadICS}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <Apple className="h-4 w-4" /> Apple / iCal (下载 .ics)
+          <Apple className="h-4 w-4" /> Apple / iCal (${t("calendar.download")})
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
