@@ -381,25 +381,6 @@
       timezone: Asia/Shanghai
       date: 2025 年 7 月 1 日 - 2025 年 10 月 8 日
       place: 线上
-
-- title: RT-Thread 2025 年度嵌入式大赛
-  description: 在人工智能与边缘计算深度融合的今天，嵌入式系统正成为智能终端设备的"智慧大脑基底"。为激发开发者潜能，促进技术交流，RT-Thread 联合多家企业发起本次RT-Thread 2025年度嵌入式大赛，玄铁作为「嵌入式软件大赛」赛道合作伙伴，携合作生态产品参与联合命题。
-  category: competition
-  tags:
-    - RT-Thread
-    - 嵌入式
-  events:
-    - year: 2025
-      id: rt-thread-embed-2025
-      link: https://jsj.top/f/nIjE8u
-      timeline:
-        - deadline: '2025-08-16T00:00:00'
-          comment: '比赛启动'
-        - deadline: '2025-09-30T23:59:59'
-          comment: '报名与项目提交截止'
-      timezone: Asia/Shanghai
-      date: 2025 年 8 月 16 日 - 2025 年 9 月 30 日
-      place: 线上
       
 - title: QEMU 训练营 2025
   description: QEMU 训练营 2025 由格维开源社区（GTOC）主办， OpenCamp 训练营协办，现已开启报名通道，面向对 QEMU 感兴趣的开发者和学习者。训练营旨在通过系统的课程和实践项目，帮助学员深入理解和掌握 QEMU 的使用与开发，提升虚拟化技术能力。
@@ -465,4 +446,61 @@
           comment: '大赛结束'      
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 7 月 1 日 - 2025 年 12 月 31 日 # 人类可读的日期范围
+      place: 线上
+
+- title: 首届“光谷杯”鸿蒙创新大赛
+  description: 首届“光谷杯”鸿蒙创新大赛正在报名招募中，旨在推动鸿蒙生态的发展，鼓励创新和应用开发。
+  category: competition
+  tags:
+    - 鸿蒙
+  events:
+    - year: 2025 # 年份
+      id: optcup-harmony-innovation-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/AhGJ464mU1tUXxTxyq6UXw # 链接
+      timeline:
+        - deadline: '2025-09-26T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '项目征集开始' # 日期说明
+        - deadline: '2025-11-16T23:59:59'
+          comment: '项目征集结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 26 日 - 2025 年 11 月 16 日 # 人类可读的日期范围
+      place: 中国，武汉
+
+- title: CCF 开源 GPU 创新生态赛常规赛
+  description: 第八届 CCF 开源创新大赛常规赛之一的开源 GPU 创新生态赛第一期即将开启。该赛事由中国计算机学会（CCF）主办，开源发展技术委员会（ODTC）承办，聚焦 GPU 技术与开源生态的深度融合，旨在推动国产算力创新及人工智能普惠化发展。赛事设置三大子赛题，提供19万+奖金池，吸引全球开发者、高校团队及企业共同探索 GPU 底层优化、算法加速与生态共建。
+  category: competitio
+  tags:
+    - GPU
+    - 人工智能+
+    - 开源生态
+  events:
+    - year: 2025 # 年份
+      id: open-source-gpu-innovation-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/d-9WsAiF_kGZqcI3sJQVWg # 链接
+      timeline:
+        - deadline: '2025-09-15T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名开始' # 日期说明
+        - deadline: '2025-12-10T23:59:59'
+          comment: '报名截止'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 15 日 - 2025 年 12 月 30 日 # 人类可读的日期范围
+      place: 线上
+
+- title: 第三届开放原子大赛 OpenLoong 双赛题
+  description: 第三届开放原子大赛由开放原子开源基金会主办，OpenLoong 开源社区承办，正式启动两个赛题：“在仿真环境下控制青龙机器人，实现仿真环境下的基础运动控制”和“用格物平台实现自主 1v1 踢足球挑战赛”。大赛旨在通过开源模式解决产业发展、科研创新过程中遇到的技术难题，推广开源技术、发现开源人才，推动人形机器人研究和应用的发展。
+  category: competition
+  tags:
+    - 仿真控制
+    - 人形机器人
+  events:
+    - year: 2025 # 年份
+      id: open-atom-contest-openloong-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/ZgtLF3PMfI6_yYnvcVuE0g # 链接
+      timeline:
+        - deadline: '2025-09-01T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名开始' # 日期说明
+        - deadline: '2025-11-15T23:59:59'
+          comment: '报名结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 9 月 1 日 - 2025 年 11 月 30 日 # 人类可读的日期范围
       place: 线上
