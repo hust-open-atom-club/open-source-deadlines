@@ -42,5 +42,9 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "seconds": "Seconds"
+  },
+  "calendar": {
+    "title": "Calendar",
+    "download": "Download .ics"
   }
 }

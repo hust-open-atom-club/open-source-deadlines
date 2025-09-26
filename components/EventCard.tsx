@@ -13,6 +13,7 @@ import { DateTime } from "luxon"
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AddToCalendar } from './AddToCalendar'
 
 interface EventCardProps {
   item: DeadlineItem
@@ -189,7 +190,6 @@ export function EventCard({ item, event }: EventCardProps) {
                 <span className="break-words">{event.place}</span>
               </div>
             </div>
-
           </div>
 
           {/* 右侧Timeline和Deadline - 桌面端 */}
@@ -197,36 +197,48 @@ export function EventCard({ item, event }: EventCardProps) {
             <div className="flex flex-col gap-4">
               {/* Timeline区域 - 上方 */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-nowrap">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm font-medium">{t("events.timeline")}</span>
-                </div>
-
-                {/* 时间线容器 */}
-                <div className="relative bg-gray-50 rounded-lg border h-16 flex items-center">
-                  {/* 时间线背景线 */}
-                  <div className="absolute left-[10%] right-[10%] h-0.5 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
-
-                  {/* 时间线节点容器 */}
-                  <div className="relative w-full h-full">
-                    {event.timeline.map((timelineEvent, index) => (
-                      <TimelineItem
-                        key={index}
-                        event={timelineEvent}
-                        timezone={event.timezone}
-                        isEnded={ended}
-                        isActive={nextDeadline?.index === index}
-                        isUpcoming={upcomingIndexes.slice(1).includes(index)}
-                        totalEvents={event.timeline.length}
-                        index={index}
-                        ref={nextDeadline?.index === index ? activeDotRef : undefined}
+                  {!ended && nextDeadline && (
+                    <div className="ml-auto">
+                      <AddToCalendar
+                        title={item.title}
+                        description={item.description}
+                        location={event.place}
+                        startDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
+                        endDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
+                        startTime={nextDeadline.date.toFormat("HH:mm")}
+                        endTime={nextDeadline.date.plus({ hours: 1 }).toFormat("HH:mm")}
+                        timeZone={event.timezone}
                       />
-                    ))}
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center flex-nowrap">
+                  {/* 时间线容器 */}
+                  <div className="relative bg-gray-50 rounded-lg border h-16 flex items-center flex-grow min-w-0">
+                    <div className="absolute left-[10%] right-[10%] h-0.5 bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
+                    <div className="relative w-full h-full">
+                      {event.timeline.map((timelineEvent, index) => (
+                        <TimelineItem
+                          key={index}
+                          event={timelineEvent}
+                          timezone={event.timezone}
+                          isEnded={ended}
+                          isActive={nextDeadline?.index === index}
+                          isUpcoming={upcomingIndexes.slice(1).includes(index)}
+                          totalEvents={event.timeline.length}
+                          index={index}
+                          ref={nextDeadline?.index === index ? activeDotRef : undefined}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* 倒计时区域 - 下方，左右布局 */}
+              {/* 倒计时区域 - 下方 */}
               {!ended && nextDeadline ? (
                 <div className="p-3 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 shadow-sm">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -271,7 +283,21 @@ export function EventCard({ item, event }: EventCardProps) {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span className="text-sm font-medium">{t('events.timeline')}</span>
+              <span className="text-sm font-medium">{t("events.timeline")}</span>
+              {!ended && nextDeadline && (
+                <div className="mt-2 ml-auto">
+                  <AddToCalendar
+                    title={item.title}
+                    description={item.description}
+                    location={event.place}
+                    startDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
+                    endDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
+                    startTime={nextDeadline.date.toFormat("HH:mm")}
+                    endTime={nextDeadline.date.plus({ hours: 1 }).toFormat("HH:mm")}
+                    timeZone={event.timezone}
+                  />
+                </div>
+              )}
             </div>
 
             {/* 时间线容器 - 移动端优化高度 */}
@@ -316,7 +342,7 @@ export function EventCard({ item, event }: EventCardProps) {
             </div>
           </div>
 
-          {/* 倒计时区域 - 独立一行，移动端全宽 */}
+          {/* 倒计时区域 - 独立一行 */}
           <div className="w-full">
             {!ended && nextDeadline ? (
               <div className="p-4 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 shadow-sm">
