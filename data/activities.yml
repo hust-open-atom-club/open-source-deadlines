@@ -604,3 +604,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 26 日 - 2025 年 9 月 27 日 # 人类可读的日期范围
       place: 中国，深圳
+
+- title: 开源 × AI × 游戏——新世代开发者的技术狂欢
+  description: 活动邀请飞桨、BiliNote、昆明游戏开发者、SRC 安全社区、开源游戏引擎 Dora SSR 的开发者们，共同带来一场「AI × 游戏 × 开源」的跨界分享。活动包括 AI 文档智能、开源工具、游戏主机开发、安全逆向测试和开源文化等多个主题，适合技术极客、开源贡献者和游戏爱好者参加。
+  category: activity
+  tags:
+    - AI
+    - 游戏开发
+  events:
+    - year: 2025 # 年份
+      id: ai-game-open-source-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/BIwPL11fWPO1WRRZ1-Tecw # 链接
+      timeline:
+        - deadline: '2025-10-18T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-18T17:00:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 18 日 # 人类可读的日期范围
+      place: 中国，昆明
