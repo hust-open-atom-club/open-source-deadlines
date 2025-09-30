@@ -40,22 +40,26 @@ export function AddToCalendar({
   timeZone,
 }: AddToCalendarProps) {
   // 组合 ISO 格式时间
-  const start = DateTime.fromISO(
+  const startLuxon = DateTime.fromISO(
     `${startDate}T${startTime ?? "00:00"}`,
     { zone: timeZone }
-  ).toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
-
-  const end = DateTime.fromISO(
+  );
+  const endLuxon = DateTime.fromISO(
     `${endDate}T${endTime ?? "23:59"}`,
     { zone: timeZone }
-  ).toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
+  );
 
+  // For ICS export (UTC format)
+  const start = startLuxon.toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
+  const end = endLuxon.toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
+
+  // For Google/Outlook/Yahoo (ISO format)
   const event = {
     title,
     description,
     location,
-    start,
-    end,
+    start: startLuxon.toISO(),
+    end: endLuxon.toISO(),
   };
 
 
@@ -64,15 +68,15 @@ export function AddToCalendar({
     e.stopPropagation();
     const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Your App//NONSGML v1.0//EN
+PRODID:-//YourApp//EN
 BEGIN:VEVENT
-UID:${Date.now()}-${Math.random().toString(36).substr(2, 9)}@example.com
+UID:${Date.now()}-${Math.random().toString(36).substring(2, 11)}@example.com
 DTSTAMP:${DateTime.now().toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'")}
 DTSTART:${start}
 DTEND:${end}
 SUMMARY:${title.replace(/[\n\r]/g, "\\n")}
-${description ? `DESCRIPTION:${description.replace(/[\n\r]/g, "\\n")}\n` : ""}
-${location ? `LOCATION:${location.replace(/[\n\r]/g, "\\n")}\n` : ""}
+${description ? `DESCRIPTION:${description.replace(/[\n\r]/g, "\\n")}` : ""}
+${location ? `LOCATION:${location.replace(/[\n\r]/g, "\\n")}` : ""}
 END:VEVENT
 END:VCALENDAR`;
 
