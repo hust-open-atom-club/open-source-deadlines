@@ -208,7 +208,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         location={event.place}
                         startDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
                         endDate={nextDeadline.date.toFormat("yyyy-MM-dd")}
-                        startTime={nextDeadline.date.minus({ hours: 1 }).toFormat("HH:mm")}
+                        startTime={nextDeadline.date.toFormat("HH:mm")}
                         endTime={nextDeadline.date.toFormat("HH:mm")}
                         timeZone={event.timezone}
                       />
