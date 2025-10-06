@@ -36,7 +36,7 @@ export default function Home() {
     fetchItems()
   }, [fetchItems])
 
-  const { t } = useTranslation();
+  const { t, ready: translationReady } = useTranslation();
 
   const flatEvents: FlatEvent[] = useMemo(() => items.flatMap(item =>
     item.events.map(event => {
@@ -90,6 +90,16 @@ export default function Home() {
       })
   }, [flatEvents, searchQuery, fuse, selectedCategory, selectedTags, selectedLocations, favorites, showOnlyFavorites]);
 
+  // Show simple loading state without text if translation is not ready
+  if (!translationReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  // Show loading state with translated text if translation is ready but data is loading
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
