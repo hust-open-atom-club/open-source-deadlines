@@ -468,7 +468,7 @@
 
 - title: CCF 开源 GPU 创新生态赛常规赛
   description: 第八届 CCF 开源创新大赛常规赛之一的开源 GPU 创新生态赛第一期即将开启。该赛事由中国计算机学会（CCF）主办，开源发展技术委员会（ODTC）承办，聚焦 GPU 技术与开源生态的深度融合，旨在推动国产算力创新及人工智能普惠化发展。赛事设置三大子赛题，提供19万+奖金池，吸引全球开发者、高校团队及企业共同探索 GPU 底层优化、算法加速与生态共建。
-  category: competitio
+  category: competition
   tags:
     - GPU
     - 人工智能+
