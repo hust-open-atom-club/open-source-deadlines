@@ -1,4 +1,4 @@
-# Open Source Deadlines
+# Open Source Deadlines | 开源活动倒计时
 
 ![GitHub License](https://img.shields.io/github/license/hust-open-atom-club/open-source-deadlines)
 ![Netlify](https://img.shields.io/netlify/7bf7b12c-07c4-4eac-b959-172cff946003)
