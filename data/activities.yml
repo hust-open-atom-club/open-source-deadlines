@@ -623,3 +623,42 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 18 日 # 人类可读的日期范围
       place: 中国，昆明
+
+- title: 开源 AI 基础设施论坛 - “国芯+国模”下开源 AI Infra 的机遇与挑战 | CNCC
+  description: 本次论坛聚焦开源 AI 基础设施，旨在开源模式下，通过技术协同与生态共建，推动行业降本增效与创新突破。论坛将从 AI Infra 开源进展，开源大模型训练和推理技术解析、大模型技术体系开源开放分级评估规范、GPU 开源生态建设、云原生 Infra Services 等各个维度进行深度探讨。
+  category: activity
+  tags:
+    - AI
+    - GPU
+    - 云原生
+  events:
+    - year: 2025 # 年份
+      id: open-ai-infra-forum-cncc-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/tKV3V_4Opjd0T42qU_DOIg # 链接
+      timeline:
+        - deadline: '2025-10-22T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-25T23:59:59'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 22 日# 人类可读的日期范围
+      place: 中国，哈尔滨
+
+- title: deepin & GitCode Meetup - 大湾区开发者盛会
+  description: deepin 联合 GitCode 在深圳举办一场面向未来的开发者盛会，旨在汇聚一线开发者、贡献者、生态推动者，共同探讨操作系统技术的生态未来。活动内容包括生态视野、内核视角、开发实践等主题演讲，以及茶歇、抽奖和自由交流环节。
+  category: activity
+  tags:
+    - deepin
+    - GitCode
+  events:
+    - year: 2025 # 年份
+      id: deepin-gitcode-meetup-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/NDztoW6Tqx-srRZiNWgNyQ # 链接
+      timeline:
+        - deadline: '2025-10-18T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-18T17:00:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 18 日 # 人类可读的日期范围
+      place: 中国，深圳
