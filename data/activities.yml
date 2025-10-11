@@ -662,3 +662,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 18 日 # 人类可读的日期范围
       place: 中国，深圳
+
+- title: openEuler Compiler SIG Meetup 北京站
+  description: openEuler Compiler SIG Meetup 北京站将在北京中关村理工大学亚朵S酒店召开，专家将分享 openEuler Compiler SIG 运作介绍以及AI图编译技术等内容。
+  category: activity
+  tags:
+    - openEuler
+    - 编译器
+  events:
+    - year: 2025 # 年份
+      id: openEuler-compiler-sig-Meetup-2025-Beijing # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/qJnabiweOMMYG1k4JFpXYA # 链接
+      timeline:
+        - deadline: '2025-10-16T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-16T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 16 日 # 人类可读的日期范围
+      place: 中国，北京
