@@ -681,3 +681,41 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 16 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 开源川行 · 西南石油大学站
+  description: GitCode 将与西南石油大学、华为云联合举办「开源川行第三站——走进西南石油大学」主题技术沙龙！GitCode 将助力西南石油大学开源社团建设，推动校园开源文化深入发展。华为云等企业现场设立展台，提供实习/内推机会，链接学子与行业。开源社区嘉宾带领现场编码，零距离感受开源项目贡献流程。
+  category: activity
+  tags:
+    - GitCode
+    - 华为云
+  events:
+    - year: 2025 # 年份
+      id: gitcode-opensource-sichuan-swpu-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/-7NXDb4jwqGQt6aJncEQOw # 链接
+      timeline:
+        - deadline: '2025-10-16T16:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-16T18:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 16 日 # 人类可读的日期范围
+      place: 中国，成都
+
+- title: openEuler 具身智能技术 Meetup 西安站
+  description: OpenAtom openEuler Embedded SIG 联合 AGIROS 共性算法框架 SIG 举办的具身智能技术 Meetup 将在西安站举行。本次 Meetup 将围绕具身智能相关技术，包括但不限于 ROS、AI 框架、OS 底座、具身 Agent、行业优秀案例以及行业发展趋势等进行分享及探讨。
+  category: activity
+  tags:
+    - openEuler
+    - 具身智能
+  events:
+    - year: 2025 # 年份
+      id: openEuler-embodied-intelligence-Meetup-2025-Xian # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/_FaVuHIqjt1mZawibPQmew # 链接
+      timeline:
+        - deadline: '2025-10-23T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-23T17:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 23 日 # 人类可读的日期范围
+      place: 中国，西安
