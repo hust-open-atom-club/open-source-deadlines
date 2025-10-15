@@ -349,3 +349,21 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 12 月 6 日 - 2025 年 12 月 7 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: openvela Global Developer Conference
+  description: 由 openvela 与 NuttX 联合打造的 openvela Global Developer Conference（全球开发者大会）将在哥斯达黎加圣何塞的 HYATT PLACE SAN JOSE/PINARES 盛大举办，为全球 AIoT 开发者搭建技术交流、生态共建的顶级平台。
+  category: conference
+  tags:
+    - openvela
+  events:
+    - year: 2025 # 年份
+      id: openvela-gdc-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/ZFaAI48dO67MnfuzVoOqKg # 链接
+      timeline:
+        - deadline: '2025-10-17T13:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+        - deadline: '2025-10-17T16:00:00'
+          comment: '大会结束'      
+      timezone: America/Costa_Rica # 所在时区（IANA时间标识符）
+      date: 2025 年 10 月 17 日 # 人类可读的日期范围
+      place: 哥斯达黎加
