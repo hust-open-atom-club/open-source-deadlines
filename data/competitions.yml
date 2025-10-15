@@ -518,9 +518,13 @@
       link: https://mp.weixin.qq.com/s/8DCmKkBGVoUY6eDgkqV03w # 链接
       timeline:
         - deadline: '2025-10-10T00:00:00' # 关键日期 (ISO 8601 格式)
-          comment: '报名开始' # 日期说明
+          comment: '报名启动' # 日期说明
+        - deadline: '2025-10-12T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '赛题公布' # 日期说明
         - deadline: '2025-10-21T23:59:59'
           comment: '作品提交截止'      
+        - deadline: '2025-10-24T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '决赛路演' # 日期说明
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 10 日 - 2025 年 10 月 24 日 # 人类可读的日期范围
       place: 线上
