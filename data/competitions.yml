@@ -250,7 +250,7 @@
           comment: '演讲提案提交截止'
         - deadline: '2025-08-15T23:59:59'
           comment: '常规票价生效（US$750）'
-        - deadline: '2025-09-11T0:0:0'
+        - deadline: '2025-09-11T00:00:00'
           comment: '会议正式开始'
       timezone: America/New_York
       date: 2025 年 9 月 11 日 - 14 日
