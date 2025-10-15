@@ -504,3 +504,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 9 月 1 日 - 2025 年 11 月 30 日 # 人类可读的日期范围
       place: 线上
+
+- title: 江汉大学开源创新中心智能体开发大赛
+  description: 江汉大学开源创新中心举办的智能体开发大赛正式启动。这是武汉“政产学研用”协同创新生态下的AI盛宴，聚焦医疗、新媒体、市场调研三大武汉重点产业场景真实痛点，邀你用开源技术与AI算法破解难题，展现技术才华，还能与全球开发者接轨！
+  category: competition
+  tags:
+    - 智能体
+    - AI 应用开发
+    - 武汉开源创新联盟
+  events:
+    - year: 2025 # 年份
+      id: jhun-opensource-agent-dev-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/8DCmKkBGVoUY6eDgkqV03w # 链接
+      timeline:
+        - deadline: '2025-10-10T00:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '报名开始' # 日期说明
+        - deadline: '2025-10-21T23:59:59'
+          comment: '作品提交截止'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 10 日 - 2025 年 10 月 24 日 # 人类可读的日期范围
+      place: 线上
