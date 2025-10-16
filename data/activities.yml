@@ -737,4 +737,4 @@
           comment: '讲堂结束'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 17 日 # 人类可读的日期范围
-      place: 中国，北京；线上
+      place: 中国，北京
