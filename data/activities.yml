@@ -719,3 +719,41 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 23 日 # 人类可读的日期范围
       place: 中国，西安
+
+- title: 2025 开放原子校源行上海站——复旦大学
+  description: 院士专家、高校代表与头部企业齐聚复旦大学邯郸校区，通过开源人才评价改革试点、校企 AI 项目联动及前沿技术解码，推动开源科技创新与人才培养。活动特设 ModelEngine AI 开发与 EP 均衡技术实践课堂，提供零距离接触混元等顶尖开源项目的机会。
+  category: activity
+  tags:
+    - AI
+    - 人才培养
+  events:
+    - year: 2025 # 年份
+      id: open-atom-campus-shanghai-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/IY9IzizCuETLKG-9UfCqIA # 链接
+      timeline:
+        - deadline: '2025-10-15T09:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-15T16:00:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 15 日 # 人类可读的日期范围
+      place: 中国，上海
+
+  - title: 多模态数据湖与 Agentic AI——构建企业智能基座技术研讨会
+  description: 聚焦企业智能化核心挑战，通过多模态数据湖与 Agentic AI 技术闭环，提供端到端智能基座解决方案。活动涵盖数据平台重构、AI 开发范式革新、向量数据库应用及多模态集成实践，包含主题演讲与动手实验环节。
+  category: activity
+  tags:
+    - Agentic AI
+    - 企业智能化
+  events:
+    - year: 2025 # 年份
+      id: multimodal-agentic-ai-beijing-2025   # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/49GZZDKLzYfpbO2K1IJpMw # 链接
+      timeline:
+        - deadline: '2025-10-18T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-18T17:30:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 18 日 # 人类可读的日期范围
+      place: 中国，北京
