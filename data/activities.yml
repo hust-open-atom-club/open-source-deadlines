@@ -719,3 +719,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 23 日 # 人类可读的日期范围
       place: 中国，西安
+
+- title: 华为开源生态大讲堂第五讲：浅谈开源操作系统的生态建设
+  description: 华为开源特邀中科院软件所副所长武延军在本次直播中，探讨开源软件生态的痛点与解题之道，作为openEuler、OpenHarmony开源社区，以及RISC-V指令集生态的深度参与者，整理近年来实践中的一些心得体会，从开源软件供应链的角度，梳理开源操作系统生态建设的痛点、难点和要素，并提出一些可能的路径，希望能够助力中国操作系统的可持续高质量发展。
+  category: activity
+  tags:
+    - 华为开源
+    - 操作系统
+  events:
+    - year: 2025 # 年份
+      id: huawei-opensource-oseco-5th-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/WZtz7t7PrSxKMlrbmkt9IA # 链接
+      timeline:
+        - deadline: '2025-10-17T17:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '讲堂开始' # 日期说明
+        - deadline: '2025-10-17T18:00:00'
+          comment: '讲堂结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 17 日 # 人类可读的日期范围
+      place: 中国，北京；线上
