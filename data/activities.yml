@@ -738,3 +738,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 17 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 开源鸿蒙城市技术沙龙·北京站——开源鸿蒙 & RISC-V 技术融合交流会
+  description: 为推动OpenHarmony和RISC-V两大生态深度协同、促进技术交流与资源整合，由开源鸿蒙项目管理委员会、开源鸿蒙 RISC-V SIG、如意RISC-V原生社区联合主办的 “开源鸿蒙城市技术沙龙·北京站——开源鸿蒙 & RISC-V 技术融合交流会”将于10月22日在北京正式启动。
+  category: activity
+  tags:
+    - 开源鸿蒙
+    - RISC-V
+  events:
+    - year: 2025 # 年份
+      id: openharmony-riscv-techsalon-beijing-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/8-eWQuKh9LuW07re-NcAEw # 链接
+      timeline:
+        - deadline: '2025-10-22T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-22T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 22 日 # 人类可读的日期范围
+      place: 中国，北京
