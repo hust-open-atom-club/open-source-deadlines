@@ -757,3 +757,45 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 10 月 22 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 开放原子校源行（上海站）
+  description: 开放原子校源行（上海站）将在复旦大学邯郸校区重磅开启，院士专家、高校代表、头部企业大咖与上海多所高校师生齐聚，以思想碰撞点燃开源热情，以实践探索赋能人才成长。推动用开源贡献来验证学生能力的开源人才评价改革试点工作落地，复旦大学首次评选并表彰 “开源先锋”。聚焦开源人工智能领域，深化高校与产业合作实践。混元等多个顶尖开源项目走进复旦大学，为师生提供一线项目实践机会。院士领衔，联合一线开源人工智能社区专家组成权威阵容，深度解读行业前沿技术，破解技术发展核心密码。
+  category: activity
+  tags:
+    - 开放原子
+    - 校源行
+  events:
+    - year: 2025 # 年份
+      id: openatom-campus-shanghai-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/IY9IzizCuETLKG-9UfCqIA # 链接
+      timeline:
+        - deadline: '2025-10-15T09:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '主论坛开始' # 日期说明
+        - deadline: '2025-10-15T11:40:00'
+          comment: '主论坛结束'
+        - deadline: '2025-10-15T14:00:00'
+          comment: '动手实践课堂开始'
+        - deadline: '2025-10-15T16:30:00'
+          comment: '动手实践课堂结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 15 日 # 人类可读的日期范围
+      place: 中国，上海
+
+- title: 多模态数据湖与 Agentic AI——构建企业智能基座技术研讨会
+  description: 聚焦企业智能化核心挑战，通过多模态数据湖与 Agentic AI 技术闭环，提供端到端智能基座解决方案。活动涵盖数据平台重构、AI 开发范式革新、向量数据库应用及多模态集成实践，包含主题演讲与动手实验环节。
+  category: activity
+  tags:
+    - Agentic AI
+    - 企业智能化
+  events:
+    - year: 2025 # 年份
+      id: multimodal-agentic-ai-beijing-2025   # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/49GZZDKLzYfpbO2K1IJpMw # 链接
+      timeline:
+        - deadline: '2025-10-18T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-10-18T17:30:00'
+          comment: '活动结束'      
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 10 月 18 日 # 人类可读的日期范围
+      place: 中国，北京
