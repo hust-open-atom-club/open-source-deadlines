@@ -36,7 +36,10 @@
     "category_conference": "Conference",
     "category_competition": "Competition",
     "category_activity": "Activity",
-    "location": "Location"
+    "location": "Location",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "showAll": "Show All"
   },
   "date": {
     "days": "Days",

@@ -1,14 +1,14 @@
 'use client'
 
-import { useEventStore } from '@/lib/store'
-import { Input } from '@/components/ui/input'
-import { Search, Star } from 'lucide-react'
-import { Switch } from '@/components/ui/switch'
-import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button'
-import { ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
 import { TimezoneSelector } from '@/components/TimezoneSelector'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+import { useEventStore } from '@/lib/store'
+import { ChevronDown, ChevronUp, Search, Star } from 'lucide-react'
+import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -54,8 +54,25 @@ export function FilterBar() {
     mounted,
   } = useEventStore()
 
+  const [visibleTagCount, setVisibleTagCount] = useState(10)
+
   const categories = ['conference', 'competition', 'activity']
+  
+  // 统计每个标签的数量
+  const tagCounts = items.reduce((acc, item) => {
+    item.tags.forEach(tag => {
+      acc[tag] = (acc[tag] || 0) + 1
+    })
+    return acc
+  }, {} as Record<string, number>)
+  
   const allTags = Array.from(new Set(items.flatMap(item => item.tags)))
+    .sort((a, b) => tagCounts[b] - tagCounts[a]) // 按数量降序排序
+  
+  const displayedTags = allTags.slice(0, visibleTagCount)
+  const hasMoreTags = allTags.length > visibleTagCount
+  const remainingTags = allTags.length - visibleTagCount
+  
   const allLocations = Array.from(new Set(
     items.flatMap(item => item.events.map(event => event.place))
   )).sort()
@@ -136,17 +153,63 @@ export function FilterBar() {
 
       {/* Tags */}
       <div>
-  <h3 className="text-sm font-medium mb-2">{t('filter.tag')}</h3>
-        <div className="flex flex-wrap gap-2">
-          {allTags.map((tag) => (
-            <FilterButton
-              key={tag}
-              isSelected={selectedTags.includes(tag)}
-              onClick={() => toggleTag(tag)}
+        <h3 className="text-sm font-medium mb-2">{t('filter.tag')}</h3>
+        <div className="space-y-2">
+          <div className="flex flex-wrap gap-2">
+            {displayedTags.map((tag) => (
+              <FilterButton
+                key={tag}
+                isSelected={selectedTags.includes(tag)}
+                onClick={() => toggleTag(tag)}
+              >
+                {tag} <span className="ml-1 text-xs opacity-70">({tagCounts[tag]})</span>
+              </FilterButton>
+            ))}
+          </div>
+          {hasMoreTags && (
+            <div className="flex gap-2">
+              {remainingTags > 10 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setVisibleTagCount(allTags.length)}
+                  className="text-xs text-muted-foreground hover:text-foreground"
+                >
+                  <ChevronDown className="w-3 h-3 mr-1" />
+                  {t('filter.showAll')} ({remainingTags})
+                </Button>
+              )}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  if (remainingTags <= 10) {
+                    setVisibleTagCount(allTags.length)
+                  } else {
+                    setVisibleTagCount(prev => prev + 10)
+                  }
+                }}
+                className="text-xs text-muted-foreground hover:text-foreground"
+              >
+                <ChevronDown className="w-3 h-3 mr-1" />
+                {remainingTags <= 10 
+                  ? `${t('filter.showMore')} (${remainingTags})`
+                  : `${t('filter.showMore')} 10`
+                }
+              </Button>
+            </div>
+          )}
+          {visibleTagCount > 10 && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setVisibleTagCount(10)}
+              className="text-xs text-muted-foreground hover:text-foreground"
             >
-              {tag}
-            </FilterButton>
-          ))}
+              <ChevronUp className="w-3 h-3 mr-1" />
+              {t('filter.showLess')}
+            </Button>
+          )}
         </div>
       </div>
     </div>

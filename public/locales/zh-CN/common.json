@@ -36,7 +36,10 @@
     "category_conference": "会议",
     "category_competition": "竞赛",
     "category_activity": "活动",
-    "location": "地点"
+    "location": "地点",
+    "showMore": "显示更多",
+    "showLess": "收起",
+    "showAll": "全部展开"
   },
   "date": {
     "days": "天",
