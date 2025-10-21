@@ -800,8 +800,8 @@
       date: 2025 年 10 月 18 日 # 人类可读的日期范围
       place: 中国，北京
 
-- title: OpenTenBase城市行成都站
-  description: OpenTenBase城市行将走进成都！我们特别邀请多位数据库领域资深专家，与成都的开发者朋友、数据库技术爱好者齐聚一堂，深度拆解OpenTenBase 5.0的新架构逻辑、解读实用新特性，还会分享真实场景下的实践应用案例，更将共同展望社区未来发展方向，干货满满，不容错过！  
+- title: OpenTenBase 城市行成都站
+  description: OpenTenBase 城市行将走进成都！我们特别邀请多位数据库领域资深专家，与成都的开发者朋友、数据库技术爱好者齐聚一堂，深度拆解 OpenTenBase 5.0 的新架构逻辑、解读实用新特性，还会分享真实场景下的实践应用案例，更将共同展望社区未来发展方向，干货满满，不容错过！  
   category: activity
   tags:
     - OpenTenBase
