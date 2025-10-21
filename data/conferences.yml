@@ -367,3 +367,28 @@
       timezone: America/Costa_Rica # 所在时区（IANA时间标识符）
       date: 2025 年 10 月 17 日 # 人类可读的日期范围
       place: 哥斯达黎加
+
+- title: openEuler Summit 2025
+  description: OpenAtom openEuler（简称“openEuler”或“开源欧拉”） 社区将在北京中关村国际创新中心举办 openEuler Summit 2025。本次大会聚焦 AI 与 OS 的深度融合，推动全球开源生态协作创新。大会将邀请来自全球的客户、伙伴与开发者共聚一堂，分享操作系统领域前沿技术趋势与产业实践，探讨操作系统如何通过开源协作提升全球影响力。  
+  category: conference
+  tags:
+    - openEuler
+    - 开放原子
+  events:
+    - year: 2025 # 年份
+      id: openEuler-summit-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/pRyVgmOthCgiiHOUS3dy_Q # 链接
+      timeline:
+        - deadline: '2025-10-24T24:00:00'
+          comment: 'Call for Speaker'      
+        - deadline: '2025-10-24T24:00:00'
+          comment: 'Call for Demo'      
+        - deadline: '2025-10-30T24:00:00'
+          comment: 'Call for SIG'      
+        - deadline: '2025-11-07T18:00:00'
+          comment: 'Call for Poster'     
+        - deadline: '2025-11-15T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '大会开始' # 日期说明
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 15 日 # 人类可读的日期范围
+      place: 中国，北京
