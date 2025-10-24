@@ -1,0 +1,11 @@
+[project]
+name = "scripts"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dateutil>=2.9.0.post0",
+    "pytz>=2025.2",
+    "pyyaml>=6.0.3",
+]

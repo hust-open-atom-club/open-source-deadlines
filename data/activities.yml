@@ -807,7 +807,7 @@
     - OpenTenBase
   events:
     - year: 2025 # 年份
-      id: opentenbase-chengdu-2025 # 全局唯一的ID
+      id: opentenbase-chengdu-2025  #全局唯一的ID
       link: https://mp.weixin.qq.com/s/qyl-VRB7AN3HTM-rGotI5Q # 链接
       timeline:
         - deadline: '2025-11-01T13:00:00' # 关键日期 (ISO 8601 格式)

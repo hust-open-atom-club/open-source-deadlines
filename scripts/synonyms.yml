@@ -1,0 +1,150 @@
+# === 人工智能与机器学习 ===
+"AI":
+  - "人工智能"
+  - "人工智能+"
+  - "人工智能系统"
+  - "人工智能开源"
+  - "Artificial Intelligence"
+
+"ML":
+  - "机器学习"
+  - "Machine Learning"
+
+"NLP":
+  - "自然语言处理"
+  - "natural language processing"
+  - "Natural Language Processing"
+
+"CV":
+  - "计算机视觉"
+  - "computer vision"
+  - "Computer Vision"
+
+"deep learning":
+  - "深度学习"
+
+"大模型":
+  - "Large Language Model"
+  - "LLM"
+  - "大语言模型"
+
+"Agentic AI":
+  - "智能体AI"
+  - "具身智能"
+
+# === 前端/后端/全栈 ===
+"frontend":
+  - "前端"
+  - "web"
+  - "Web"
+  - "Web开发"
+
+"backend":
+  - "后端"
+
+"fullstack":
+  - "全栈"
+
+# === 开源与生态 ===
+"开源":
+  - "Open Source"
+  - "开放技术"
+  - "开源软件"
+
+"开源生态":
+  - "开源生态系统"
+  - "开源社区"
+
+# === 操作系统与基础软件 ===
+"Deepin":
+  - "deepIn"
+  - "DeepIn"
+
+"openEuler":
+  - "OpenEuler"
+
+"OpenHarmony":
+  - "openharmony"
+  - "OpenHarmony OS"
+
+"Ubuntu":
+  - "ubuntu"
+
+# === 编程语言与框架 ===
+"Python":
+  - "python"
+
+"Rust":
+  - "rust"
+
+"Go":
+  - "golang"
+
+"Vue.js":
+  - "Vue"
+  - "vue.js"
+
+"PaddlePaddle":
+  - "飞桨"
+
+# === 芯片与硬件 ===
+"RISC-V":
+  - "riscv"
+  - "RISCV"
+
+"Arm":
+  - "ARM"
+
+"CPU":
+  - "处理器芯片"
+
+"开源硬件":
+  - "开放硬件"
+
+# === 活动与组织 ===
+"Meetup":
+  - "线下聚会"
+  - "技术沙龙"
+
+"Hackathon":
+  - "黑客松"
+  - "编程马拉松"
+
+"开发者大会":
+  - "DevCon"
+  - "Conference"
+  - "技术大会"
+
+"训练营":
+  - "训练营活动"
+  - "Bootcamp"
+
+# === 其他常见术语 ===
+"数据库":
+  - "Database"
+
+"云服务":
+  - "云计算"
+  - "Cloud"
+
+"物联网":
+  - "IoT"
+  # - "AoT"  # 暂时注释掉，除非确认 AoT = 物联网
+
+"嵌入式":
+  - "Embedded Systems"
+
+"Docker":
+  - "docker"
+
+"GitCode":
+  - "gitcode"
+
+"openGauss":
+  - "OpenGauss"
+
+"TiDB":
+  - "tidb"
+
+"RTThread":
+  - "RT-Thread"
