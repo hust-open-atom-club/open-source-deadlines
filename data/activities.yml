@@ -648,7 +648,7 @@
   description: deepin 联合 GitCode 在深圳举办一场面向未来的开发者盛会，旨在汇聚一线开发者、贡献者、生态推动者，共同探讨操作系统技术的生态未来。活动内容包括生态视野、内核视角、开发实践等主题演讲，以及茶歇、抽奖和自由交流环节。
   category: activity
   tags:
-    - deepin
+    - Deepin
     - GitCode
   events:
     - year: 2025 # 年份
@@ -832,7 +832,7 @@
       timeline:
         - deadline: '2025-11-15T09:30:00' # 关键日期 (ISO 8601 格式)
           comment: '活动开始' # 日期说明
-        - deadline: '2025-11-01T17:45:00'
+        - deadline: '2025-11-15T17:45:00'
           comment: '活动结束'
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 15 日 # 人类可读的日期范围
