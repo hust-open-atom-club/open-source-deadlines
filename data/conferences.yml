@@ -126,7 +126,7 @@
         - deadline: '2025-09-02T00:00:00'
           comment: 'Departure day'
       timezone: Asia/Kathmandu
-      date: August 30 - 31
+      date: August 30th, 2025 - August 31th, 2025
       place: Kathmandu, Nepal
 
 - title: 开放原子开源生态大会
