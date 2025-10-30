@@ -392,3 +392,30 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 15 日 # 人类可读的日期范围
       place: 中国，北京
+
+
+- title: GOTC 2025 - AI 教育与人才培养论坛
+  description: 聚焦AI与开源教育，探讨智能时代下的人才战略与产业协同育人路径。
+  category: conference
+  tags:
+    - 人工智能开源
+    - AI
+    - openEuler
+    - RISC-V
+    - 大模型
+    - 云原生
+    - AI安全
+    - 开源教育
+    - 人才培养
+  events:
+    - year: 2025
+      id: gotc-ai-education-2025
+      link: https://mp.weixin.qq.com/s/R-Bzn68rhebRldaUwdP1Vg
+      timeline:
+        - deadline: '2025-11-02T13:30:00'
+          comment: '论坛开始'
+        - deadline: '2025-11-02T16:15:00'
+          comment: '论坛结束'
+      timezone: Asia/Shanghai
+      date: 2025 年 11 月 2 日 13:30 - 16:15
+      place: 北京亦庄·通明湖会展中心 1 层分会场三（线上同步直播）
