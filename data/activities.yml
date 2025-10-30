@@ -838,6 +838,24 @@
       date: 2025 年 11 月 15 日 # 人类可读的日期范围
       place: 中国，杭州
 
+- title: GitCode「源启高校」 华中科技大学站
+  description: 11 月 1 日，GitCode「源启高校」计划将走进华中科技大学，以「AI 上开源，AI 上 Coding」为题，与华科学子共同探讨 AI 时代下的开源技术与创新实践。
+  category: activity
+  tags:
+    - GitCode
+  events:
+    - year: 2025 # 年份
+      id: gitcode-campus-hust-2025  #全局唯一的ID
+      link: https://mp.weixin.qq.com/s/1VIrDmx1plHhl2MFHIKQwg # 链接
+      timeline:
+        - deadline: '2025-11-01T14:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-11-01T18:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 1 日 # 人类可读的日期范围
+      place: 中国，武汉
+
 - title: Google DevFest Hangzhou 2025
   description: DevFest 是由 Google 发起、全球各地 GDG（Google Developer Groups，谷歌开发者社区）举办的一年一度的开发者盛会，专为互联网技术从业者举办的年度大型面基会、技术交流碰撞会、前沿新技术学习。作为全球 GDG 的主要成员，杭州谷歌开发者社区将于 11 月 1 日举办 DevFest 活动，本次活动集主题演讲、Workshop、出海加速、圆桌讨论、AI集市等为一体，让开发者了解最新谷歌技术、体验前沿谷歌产品，更有丰富的社区学习板块、AI 产品体验板块让你打开视野，全方位沉浸到 AI 的技术世界。
   category: activity
