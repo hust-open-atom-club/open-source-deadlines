@@ -97,10 +97,16 @@ def check_event_structure(event, file_path):
     # 检查 date 格式（宽松检查）
     date_str = event.get('date', '')
     if isinstance(date_str, str):
-        if not re.search(r'\d{4} *年 *\d+ *月 *\d+ *日', date_str):
+        chinese_pattern = r'\d{4} *年 *\d+ *月 *\d+ *日'
+        english_pattern = r'[a-z]{3,9} \d{1,2}(?:st|nd|rd|th)?(,? \d{4})?'
+
+        is_chinese_format = re.search(chinese_pattern, date_str)
+        is_english_format = re.search(english_pattern, date_str, re.IGNORECASE)
+
+        if not (is_chinese_format or is_english_format):
             record_warning(
                 f"Warning: 'date' field format might be incorrect in {file_path} for event '{event.get('id', 'unknown')}'. "
-                f"规范要求: 请使用人类可读的格式，如 '2025 年 4 月 30 日' 或 '2025 年 4 月 30 日 - 9 月 30 日'。"
+                f"规范要求: 请使用人类可读的格式，例如 '2025 年 4 月 30 日'、'April 30, 2025' 或日期范围。"
             )
     else:
         record_error(f"Error: 'date' must be a string in {file_path} for event '{event.get('id', 'unknown')}'")
