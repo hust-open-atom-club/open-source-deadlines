@@ -893,3 +893,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 9 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: OpenLoong 高校行 北京科技大学站
+  description: DORA 社区受邀与 OpenLoong 开源社区联合主办本次高校行活动，届时将携手北京智源人工智能研究院、GitCode 等国内顶尖力量，共同深挖开源技术在具身智能与人形机器人领域的落地路径。
+  category: activity
+  tags:
+    - OpenLoong
+    - DORA
+  events:
+    - year: 2025 # 年份
+      id: openloong-college-beijing-2025  #全局唯一的ID
+      link: https://mp.weixin.qq.com/s/WveAJQFGRKlVJDy8FrW4Mg # 链接
+      timeline:
+        - deadline: '2025-11-08T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-11-08T16:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 8 日 # 人类可读的日期范围
+      place: 中国，北京
