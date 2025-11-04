@@ -912,3 +912,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 8 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 开源鸿蒙 AI 赋能系列技术直播课 第二期
+  description: 龚阿世，华为鸿蒙 ArkData AI 数据底座架构师操作系统数据管理领域技术专家，主要研究分布式数据库与多模态数据库，擅长智能检索、RAG 及知识图谱，将分享有关 ArkData AI 数据底座的主要定位及面向办公场景的若干应用相关话题。
+  category: activity
+  tags:
+    - OpenHarmony
+    - 开放原子
+    - ArkData
+  events:
+    - year: 2025 # 年份
+      id: openharmony-arkdata-enabling-streaming-lesson-2  #全局唯一的ID
+      link: https://mp.weixin.qq.com/s/tbIzMoN8oL2YSHREPWutIg # 链接
+      timeline:
+        - deadline: '2025-11-04T19:00:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-11-04T20:00:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 4 日 # 人类可读的日期范围
+      place: 线上
