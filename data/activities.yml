@@ -951,3 +951,23 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 15 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 开放原子校源行（大连大学站）
+  description: 开放原子校源行（大连大学站）将于 11月 11日在大连大学拉开帷幕。本次活动以“开源赋能，创新未来”为主题，旨在向大学生普及开源知识、培养开源意识，并通过技术分享和动手实验，提升学生的开源实践能力。最终目标是激发学生创新精神，培养未来开源人才，助力中国开源事业持续发展。
+  category: activity
+  tags:
+    - 开放原子
+    - 校源行
+    - OpenTenbase
+  events:
+    - year: 2025 # 年份
+      id: openatom-campus-udalian-2025  #全局唯一的ID
+      link: https://mp.weixin.qq.com/s/OENe_NvhSbDKpdWe4uS-zg # 链接
+      timeline:
+        - deadline: '2025-11-11T09:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-11-11T11:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 11 日 # 人类可读的日期范围
+      place: 中国，大连
