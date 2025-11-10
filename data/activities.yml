@@ -932,3 +932,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 4 日 # 人类可读的日期范围
       place: 线上
+
+- title: CANN Meetup 北京站 | 11月15日，邀您共赴一场技术盛宴
+  description: 本次活动汇聚来自 TileAI 社区、xLLM 推理引擎社区、算力软件服务商清程极智、AI 训练平台 SwanLab 等组织的技术专家。立足 CANN 开源，我们将共同探索 AscendC、CATLASS、PyPTO、TileLang-Ascend 如何纷呈创新，实现高效开发。我们还将与您共享大模型的优化实践，希望参会朋友受到启发并发现人工智能技术生态中的合作机会。
+  category: activity
+  tags:
+    - CANN
+    - Ascend
+  events:
+    - year: 2025 # 年份
+      id: cann-meetup-beijing-2025  #全局唯一的ID
+      link: https://mp.weixin.qq.com/s/imVzEaJP3cUk7-xrsREe3w # 链接
+      timeline:
+        - deadline: '2025-11-15T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '活动开始' # 日期说明
+        - deadline: '2025-11-15T17:30:00'
+          comment: '活动结束'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2025 年 11 月 15 日 # 人类可读的日期范围
+      place: 中国，北京
