@@ -958,7 +958,7 @@
   tags:
     - 开放原子
     - 校源行
-    - OpenTenbase
+    - OpenTenBase
   events:
     - year: 2025 # 年份
       id: openatom-campus-udalian-2025  #全局唯一的ID
