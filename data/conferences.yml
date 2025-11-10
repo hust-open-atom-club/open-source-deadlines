@@ -392,3 +392,22 @@
       timezone: Asia/Shanghai # 所在时区
       date: 2025 年 11 月 15 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: GOTC 2025 全球开源技术峰会 AI 教育与人才培养论坛
+  description: 为响应全球企业对 AI 人才培养的迫切需求，助力行业破解技术人才困境，由 Linux Foundation 开源软件学园（LFOSSA）、开放智算产业联盟、RISC-V International、LF AI & DATA APAC RUG 支持的「AI 教育与人才培养论坛」，即将在 GOTC 大会期间 2025 年 11 月 2 日（周日） 在北京亦庄·通明湖会展中心盛大启幕！
+  category: conference
+  tags:
+    - GOTC
+    - AI
+  events:
+    - year: 2025 # 年份
+      id: gotc-ai-edu-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/R-Bzn68rhebRldaUwdP1Vg # 链接
+      timeline:
+        - deadline: '2025-11-02T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '分论坛开始' # 日期说明
+        - deadline: '2025-11-02T16:15:00'
+          comment: '分论坛结束'      
+      timezone: Asia/Shanghai # 所在时区（IANA时间标识符）
+      date: 2025 年 11 月 2 日 # 人类可读的日期范围
+      place: 中国，北京
