@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-GitHub Actions 专用的活动信息提取脚本
-自动确认保存，无需人工交互
+GitHub Actions 活动信息提取脚本
 """
 
 import asyncio
@@ -12,11 +11,9 @@ import yaml
 from pathlib import Path
 from dotenv import load_dotenv
 
-# 添加当前目录到路径
 sys.path.insert(0, str(Path(__file__).parent))
 from ai_agent import AIAgentService
 
-# 加载 .env 文件
 load_dotenv()
 
 
@@ -50,26 +47,21 @@ async def extract_and_save(url: str, data_dir: Path, auto_save: bool = True) -> 
     print(f'\n正在从URL提取活动信息: {url}')
     print('=' * 60)
     
-    # 加载现有数据
     existing_tags, existing_ids = load_existing_data(data_dir)
     print(f'已加载 {len(existing_tags)} 个现有标签和 {len(existing_ids)} 个现有ID')
     
-    # 创建AI Agent
     agent = AIAgentService()
     
-    # 提取信息
     result = await agent.extract_from_url(url, existing_tags, existing_ids)
     
-    # 处理结果
     if result['success']:
-        print('\n✅ 提取成功!')
+        print('\n提取成功!')
         
         if result.get('warnings'):
-            print('\n⚠️  警告:')
+            print('\n警告:')
             for warning in result['warnings']:
                 print(f'  - {warning}')
         
-        # 生成YAML
         yaml_content = agent.to_yaml(result['data'])
         
         print('\n生成的YAML内容:')
@@ -77,7 +69,6 @@ async def extract_and_save(url: str, data_dir: Path, auto_save: bool = True) -> 
         print(yaml_content)
         print('=' * 60)
         
-        # 保存到文件
         category = result['data']['category']
         output_file = data_dir / f'{category}s.yml'
         
@@ -86,7 +77,7 @@ async def extract_and_save(url: str, data_dir: Path, auto_save: bool = True) -> 
                 f.write('\n')
                 f.write(yaml_content)
                 f.write('\n')
-            print(f'\n✅ 已自动保存到 {output_file}')
+            print(f'\n已自动保存到 {output_file}')
             
             return {
                 'success': True,
@@ -102,7 +93,7 @@ async def extract_and_save(url: str, data_dir: Path, auto_save: bool = True) -> 
                 'yaml': yaml_content
             }
     else:
-        print(f'\n❌ 提取失败: {result.get("error")}')
+        print(f'\n提取失败: {result.get("error")}')
         return {
             'success': False,
             'error': result.get('error')
@@ -127,12 +118,10 @@ def main():
     
     args = parser.parse_args()
     
-    # 检查数据目录
     if not args.data_dir.exists():
-        print(f'❌ 数据目录不存在: {args.data_dir}')
+        print(f'数据目录不存在: {args.data_dir}')
         sys.exit(1)
     
-    # 执行提取
     try:
         result = asyncio.run(extract_and_save(
             args.url,
@@ -152,10 +141,10 @@ def main():
             sys.exit(1)
             
     except KeyboardInterrupt:
-        print('\n\n❌ 用户中断')
+        print('\n\n用户中断')
         sys.exit(1)
     except Exception as e:
-        print(f'\n❌ 发生错误: {e}')
+        print(f'\n发生错误: {e}')
         import traceback
         traceback.print_exc()
         sys.exit(1)
@@ -163,3 +152,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
