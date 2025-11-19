@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 GitHub Actions 活动信息提取脚本
 """
@@ -152,4 +152,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
