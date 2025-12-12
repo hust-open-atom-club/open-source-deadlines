@@ -27,7 +27,7 @@
     "i18next-http-backend": "^3.0.2",
     "lucide-react": "^0.525.0",
     "luxon": "^3.6.1",
-    "next": "15.4.8",
+    "next": "15.4.9",
     "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
