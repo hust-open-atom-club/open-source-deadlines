@@ -541,7 +541,7 @@
       timeline:
         - deadline: '2025-11-12T00:00:00' # 关键日期 (ISO 8601 格式)
           comment: '报名启动' # 日期说明
-        - deadline: '2025-11-18T23:59:59'
+        - deadline: '2025-12-20T23:59:59'
           comment: '报名结束'  
         - deadline: '2025-12-31T23:59:59'
           comment: '作品提交截止'      
