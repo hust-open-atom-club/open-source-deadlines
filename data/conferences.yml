@@ -411,3 +411,23 @@
       timezone: Asia/Shanghai # 所在时区（IANA时间标识符）
       date: 2025 年 11 月 2 日 # 人类可读的日期范围
       place: 中国，北京
+
+- title: 第十五届深度开发者与用户大会 (DDUC 2025)
+  description: 本次分享嘉宾来自 deepin 核心团队、生态伙伴、开源社区及开发者代表，他们将围绕系统演进、兼容技术、开源协作等主题，展开多维度对话。会议议题主要覆盖：deepin 社区共创与版本展望、Wine Wayland 的演进路径、DKapture 高效系统信息采集方案、CPU 自主生态与端侧 AI 开源融合、跨界协作与社区创新等内容。
+  category: conference
+  tags:
+    - deepin
+  events:
+    - year: 2025 # 年份
+      id: dduc-wuhan-2025 # 全局唯一的ID
+      link: https://mp.weixin.qq.com/s/Fgw-F-bFOdcmBM0xXMWBXQ # 链接
+      timeline:
+        - deadline: '2025-12-27T13:30:00' # 关键日期 (ISO 8601 格式)
+          comment: '会议签到开始'
+        - deadline: '2025-12-27T14:00:00'
+          comment: '会议正式开始'
+        - deadline: '2025-12-27T18:00:00'
+          comment: '会议结束'
+      timezone: Asia/Shanghai # 所在时区（IANA时间标识符）
+      date: 2025 年 12 月 27 日 # 人类可读的日期范围
+      place: 中国，武汉
