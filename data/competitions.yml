@@ -1,3 +1,41 @@
+- title: 【HACKATHON 预备营】飞桨启航计划集训营（马年新春版）
+  description: 「启航计划（马年新春版）」 是为 寒假与春节假期 特别推出的限时版本。我们希望在年初相对集中的空闲时间里，为对开源感兴趣的开发者提供一个 低门槛、可实践 的参与机会。能让各位在春节假期中真正参与一次开源贡献，了解真实开源项目的协作方式与节奏，在新的一年，迈出属于自己的 第一步开源实践 ——这个冬天，不只是休息与团聚，也可以是你开启开源之旅的起点。
+  category: competition # 会议请使用 "conference"，活动请使用 "activity"
+  tags:
+    - PaddlePaddle
+    - 启航计划
+  events:
+    - year: 2026 # 年份
+      id: PaddlePaddle-Starter-2026spring # 全局唯一的ID
+      link: https://github.com/PaddlePaddle/Paddle/issues/77510 # 链接
+      timeline:
+        - deadline: '2026-01-26T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: 'PR 提交截止' # 日期说明
+        - deadline: '2026-03-09T24:00:00'
+          comment: '结项提交'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2026 年 1 月 26 日 - 3 月 9 日 # 人类可读的日期范围
+      place: 线上 # 地点
+
+- title: 【Hackathon 10th】开源贡献个人挑战赛 · 春节特别季
+  description: 本次 「春节特别季」 是第十期 PaddlePaddle Hackathon 的前置特别活动，面向全球开发者开放，聚焦 高质量开源贡献，为开发者在春节期间提供一个可持续投入、可明确验收、可获得激励的参与入口。
+  category: competition # 会议请使用 "conference"，活动请使用 "activity"
+  tags:
+    - PaddlePaddle
+    - Hackathon
+  events:
+    - year: 2026 # 年份
+      id: PaddlePaddle-hackathon-10th-spring # 全局唯一的ID
+      link: https://github.com/PaddlePaddle/Paddle/issues/77429 # 链接
+      timeline:
+        - deadline: '2026-01-19T18:00:00' # 关键日期 (ISO 8601 格式)
+          comment: 'PR 提交截止' # 日期说明
+        - deadline: '2026-03-06T24:00:00'
+          comment: '结项提交'
+      timezone: Asia/Shanghai # 所在时区
+      date: 2026 年 1 月 19 日 - 3 月 6 日 # 人类可读的日期范围
+      place: 线上 # 地点
+
 - title: PaddlePaddle 启航计划集训营（第六期）
   description: 「启航计划」 是 飞桨开源社区 发起的远程集训项目，也是「护航计划」的前置活动。我们以开展线上集训营的形式，鼓励开发者积极参与开源项目，以此提升自己的代码实践能力，与社区共同成长 💪。只要对开源怀有热忱，都欢迎报名参与！
   category: competition # 会议请使用 "conference"，活动请使用 "activity"

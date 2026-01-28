@@ -1,3 +1,20 @@
+- title: [实习招募] 飞桨 AI Infra 正式实习生招募（长期 / 高含金量项目）
+  description: 该项目面向对 大模型训练、分布式系统、AI 编译器、高性能计算、系统工程 等方向有强烈兴趣的开发者与在校同学，采用真实核心项目制 + 双导师制培养模式，深度参与飞桨核心研发工作。实习生通过简历筛选 + 笔试任务评估 + 技术面试后，以线下实习的形式长期深度参与飞桨开源项目开发，项目成果将通过 PR（Pull Request） 方式贡献至飞桨官方仓库，实习周期 不少于 3 个月（部分课题要求 6 个月及以上），优秀同学有转正机会与官方实习证明。
+  category: activity
+  tags:
+    - 实习招募
+    - 线下实习
+  events:
+    - year: 2026
+      id: PaddlePaddleInternship2026
+      link: https://github.com/PaddlePaddle/Paddle/issues/77190
+      timeline:
+        - deadline: '2026-01-04T00:00:00'
+          comment: '活动开始'
+      timezone: Asia/Shanghai
+      date: 2026年1月4日起长期招募
+      place: 线上
+
 - title: 腾讯开源活动
   description: 如何用开源经历敲开大厂之门？从“学生开源贡献者”到“腾讯工卡”，畅聊升级打怪之路!
   category: activity
