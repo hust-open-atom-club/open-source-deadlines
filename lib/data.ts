@@ -54,3 +54,44 @@ export function isEventEnded(event: EventData): boolean {
   
   return lastDeadline.setZone(displayTimezone) < now
 }
+
+export type ActivityCategory = DeadlineItem['category']
+export type SortKey = 'next-deadline'
+
+export interface QueryParams {
+  category?: ActivityCategory[]
+  tags?: string[]
+  locations?: string[]
+  favorites?: string[]
+  q?: string
+  sort?: SortKey
+  page?: number
+  pageSize?: number
+  now?: string
+}
+
+export interface FlatDeadline {
+  item: DeadlineItem
+  event: EventData
+  nextDeadline: string | null
+  timeRemaining: number | null
+}
+
+export interface FacetEntry {
+  value: string
+  count: number
+}
+
+export interface Facets {
+  categories: FacetEntry[]
+  tags: FacetEntry[]
+  locations: FacetEntry[]
+}
+
+export interface QueryResult {
+  items: FlatDeadline[]
+  total: number
+  page: number
+  pageSize: number
+  facets: Facets
+}

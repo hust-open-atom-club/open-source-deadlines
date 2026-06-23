@@ -7,6 +7,8 @@
     "build": "env COREPACK_ENABLE_AUTO_PIN=0 next build",
     "start": "next start",
     "lint": "env COREPACK_ENABLE_AUTO_PIN=0 next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "knip": "knip",
     "prepare": "husky"
   },
@@ -49,7 +51,8 @@
     "knip": "^5.61.3",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.9"
   },
   "packageManager": "bun@1.2.21"
 }
