@@ -1,11 +1,23 @@
 import { create } from 'zustand'
-import { DeadlineItem } from '@/lib/data'
+import {
+  ActivityCategory,
+  Facets,
+  FlatDeadline,
+  QueryResult,
+} from '@/lib/data'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
+const EMPTY_FACETS: Facets = { categories: [], tags: [], locations: [] }
+
 interface AppState {
-  items: DeadlineItem[]
+  items: FlatDeadline[]
+  facets: Facets
+  allFacets: Facets
+  total: number
   loading: boolean
-  selectedCategory: string | null
+  hasLoaded: boolean
+  error: string | null
+  selectedCategory: ActivityCategory | null
   selectedTags: string[]
   selectedLocations: string[]
   searchQuery: string
@@ -14,14 +26,14 @@ interface AppState {
   showOnlyFavorites: boolean
   setShowOnlyFavorites: (show: boolean) => void
   mounted: boolean
-  
-  // 时区相关状态
+
   displayTimezone: string
   setDisplayTimezone: (timezone: string) => void
   detectUserTimezone: () => void
-  
-  fetchItems: () => Promise<void>
-  setCategory: (category: string | null) => void
+
+  fetchQuery: () => Promise<void>
+  buildQueryString: () => string
+  setCategory: (category: ActivityCategory | null) => void
   toggleTag: (tag: string) => void
   toggleLocation: (location: string) => void
   setSearchQuery: (query: string) => void
@@ -29,10 +41,14 @@ interface AppState {
 
 export const useEventStore = create<AppState>()(
   persist(
-    (set) => ({
-      // State
+    (set, get) => ({
       items: [],
+      facets: EMPTY_FACETS,
+      allFacets: EMPTY_FACETS,
+      total: 0,
       loading: true,
+      hasLoaded: false,
+      error: null,
       selectedCategory: null,
       selectedTags: [],
       selectedLocations: [],
@@ -40,11 +56,9 @@ export const useEventStore = create<AppState>()(
       favorites: [],
       showOnlyFavorites: false,
       mounted: false,
-      
-      // 默认使用上海时区
-      displayTimezone: "Asia/Shanghai",
 
-      // Actions
+      displayTimezone: 'Asia/Shanghai',
+
       toggleFavorite: (id: string) =>
         set((state) => ({
           favorites: state.favorites.includes(id)
@@ -52,62 +66,89 @@ export const useEventStore = create<AppState>()(
             : [...state.favorites, id],
         })),
       setShowOnlyFavorites: (show: boolean) => set({ showOnlyFavorites: show }),
-      fetchItems: async () => {
-        set({ loading: true })
+
+      buildQueryString: () => {
+        const s = get()
+        const p = new URLSearchParams()
+        if (s.selectedCategory) p.set('category', s.selectedCategory)
+        if (s.selectedTags.length) p.set('tag', s.selectedTags.join(','))
+        if (s.selectedLocations.length) p.set('location', s.selectedLocations.join(','))
+        if (s.searchQuery.trim()) p.set('q', s.searchQuery.trim())
+        if (s.showOnlyFavorites && s.favorites.length) {
+          p.set('favorite', s.favorites.join(','))
+        }
+        p.set('pageSize', '200')
+        const str = p.toString()
+        return str ? `?${str}` : ''
+      },
+
+      fetchQuery: async () => {
+        set({ loading: true, error: null })
+        const qs = get().buildQueryString()
         try {
-          const res = await fetch('/api/data')
-          const data = await res.json()
-          set({ items: data, loading: false })
+          const res = await fetch(`/api/activities${qs}`)
+          if (!res.ok) throw new Error(`HTTP ${res.status}`)
+          const result: QueryResult = await res.json()
+          set({
+            items: result.items,
+            facets: result.facets,
+            allFacets: result.allFacets,
+            total: result.total,
+            loading: false,
+            hasLoaded: true,
+          })
         } catch (err) {
           console.error('Failed to load data:', err)
-          set({ loading: false })
+          set({
+            loading: false,
+            error: err instanceof Error ? err.message : 'Failed to load',
+          })
         }
       },
-      
-      // 设置时区
+
       setDisplayTimezone: (timezone: string) => set({ displayTimezone: timezone }),
-      
-      // 检测用户本地时区
+
       detectUserTimezone: () => {
         try {
-          const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
           if (userTimezone) {
-            set({ displayTimezone: userTimezone });
+            set({ displayTimezone: userTimezone })
           }
         } catch (err) {
-          console.error('Failed to detect user timezone:', err);
-          // 如果检测失败，保持当前时区不变
+          console.error('Failed to detect user timezone:', err)
         }
       },
-      
+
       setCategory: (category) => set({ selectedCategory: category }),
 
-      toggleTag: (tag) => set(state => ({
-        selectedTags: state.selectedTags.includes(tag)
-          ? state.selectedTags.filter(t => t !== tag)
-          : [...state.selectedTags, tag]
-      })),
+      toggleTag: (tag) =>
+        set((state) => ({
+          selectedTags: state.selectedTags.includes(tag)
+            ? state.selectedTags.filter((t) => t !== tag)
+            : [...state.selectedTags, tag],
+        })),
 
-      toggleLocation: (location) => set(state => ({
-        selectedLocations: state.selectedLocations.includes(location)
-          ? state.selectedLocations.filter(l => l !== location)
-          : [...state.selectedLocations, location]
-      })),
+      toggleLocation: (location) =>
+        set((state) => ({
+          selectedLocations: state.selectedLocations.includes(location)
+            ? state.selectedLocations.filter((l) => l !== location)
+            : [...state.selectedLocations, location],
+        })),
 
       setSearchQuery: (query) => set({ searchQuery: query }),
     }),
     {
       name: 'favorites-storage',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ 
+      partialize: (state) => ({
         favorites: state.favorites,
-        displayTimezone: state.displayTimezone // 保存用户选择的时区
+        displayTimezone: state.displayTimezone,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.mounted = true
         }
-      }
-    }
-  )
-) 
+      },
+    },
+  ),
+)

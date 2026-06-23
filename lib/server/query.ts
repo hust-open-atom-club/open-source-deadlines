@@ -173,6 +173,21 @@ export function computeFacets(items: FlatDeadline[]): Facets {
   }
 }
 
+/**
+ * Run the full query pipeline: flatten → search → filter → sort → paginate,
+ * and compute the facet buckets to drive the FilterBar UI.
+ *
+ * Facet counting follows the "disjunctive (expanding) facets" convention
+ * popularised by Algolia / Elasticsearch / GitHub Search: when computing
+ * the count for a given dimension (e.g. tags), the filter on that same
+ * dimension is excluded, while filters on other dimensions are still
+ * applied. This gives a stable, predictable count interpretation:
+ *   "how many results would I get if I (also) selected this value?"
+ *
+ * Without this, selecting a tag whose filter is OR-combined with other
+ * tags would cause its own count to jump (because the OR set expands).
+ * See lib/server/query.test.ts for the canonical examples.
+ */
 export function queryActivities(
   source: DeadlineItem[],
   params: QueryParams,
@@ -182,7 +197,13 @@ export function queryActivities(
   const filtered = applyFilters(searched, params)
   const sorted = applySort(filtered, params.sort)
   const paged = applyPagination(sorted, params.page, params.pageSize)
-  const facets = computeFacets(filtered)
+
+  const facets: Facets = {
+    categories: computeFacets(applyFilters(searched, { ...params, category: undefined })).categories,
+    tags: computeFacets(applyFilters(searched, { ...params, tags: undefined })).tags,
+    locations: computeFacets(applyFilters(searched, { ...params, locations: undefined })).locations,
+  }
+  const allFacets = computeFacets(flat)
 
   return {
     items: paged.items,
@@ -190,5 +211,6 @@ export function queryActivities(
     page: paged.page,
     pageSize: paged.pageSize,
     facets,
+    allFacets,
   }
 }

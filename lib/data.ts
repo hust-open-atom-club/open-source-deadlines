@@ -94,4 +94,5 @@ export interface QueryResult {
   page: number
   pageSize: number
   facets: Facets
+  allFacets: Facets
 }

@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { useEventStore } from '@/lib/store'
+import { ActivityCategory } from '@/lib/data'
 import { ChevronDown, ChevronUp, Search, Star } from 'lucide-react'
 import { ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -40,7 +41,8 @@ function FilterButton({ isSelected, onClick, children, className = '' }: FilterB
 export function FilterBar() {
   const { t } = useTranslation('common');
   const {
-    items,
+    facets,
+    allFacets,
     selectedCategory,
     selectedTags,
     selectedLocations,
@@ -56,26 +58,34 @@ export function FilterBar() {
 
   const [visibleTagCount, setVisibleTagCount] = useState(10)
 
-  const categories = ['conference', 'competition', 'activity']
-  
-  // 统计每个标签的数量
-  const tagCounts = items.reduce((acc, item) => {
-    item.tags.forEach(tag => {
-      acc[tag] = (acc[tag] || 0) + 1
-    })
-    return acc
-  }, {} as Record<string, number>)
-  
-  const allTags = Array.from(new Set(items.flatMap(item => item.tags)))
-    .sort((a, b) => tagCounts[b] - tagCounts[a]) // 按数量降序排序
-  
+  const categories: ActivityCategory[] = ['conference', 'competition', 'activity']
+
+  // tag/location 列表用全集 (allFacets) 渲染，保证选中某个分类后其他维度不会消失。
+  // count 显示用当前过滤后的 facets，让用户知道"如果再加这个 tag 还能命中多少"。
+  // selectedTags / selectedLocations 与 allFacets 求并集，兜底防止已选项消失。
+  const tagCounts: Record<string, number> = Object.fromEntries(
+    facets.tags.map(f => [f.value, f.count])
+  )
+  const tagSet = new Set<string>([
+    ...allFacets.tags.map(f => f.value),
+    ...selectedTags,
+  ])
+  const allTags = Array.from(tagSet).sort((a, b) => {
+    const ca = tagCounts[a] ?? 0
+    const cb = tagCounts[b] ?? 0
+    if (cb !== ca) return cb - ca
+    return a.localeCompare(b)
+  })
+
   const displayedTags = allTags.slice(0, visibleTagCount)
   const hasMoreTags = allTags.length > visibleTagCount
   const remainingTags = allTags.length - visibleTagCount
-  
-  const allLocations = Array.from(new Set(
-    items.flatMap(item => item.events.map(event => event.place))
-  )).sort()
+
+  const locationSet = new Set<string>([
+    ...allFacets.locations.map(f => f.value),
+    ...selectedLocations,
+  ])
+  const allLocations = Array.from(locationSet).sort()
   
   return (
     <div className="space-y-4">
@@ -162,7 +172,7 @@ export function FilterBar() {
                 isSelected={selectedTags.includes(tag)}
                 onClick={() => toggleTag(tag)}
               >
-                {tag} <span className="ml-1 text-xs opacity-70">({tagCounts[tag]})</span>
+                {tag} <span className="ml-1 text-xs opacity-70">({tagCounts[tag] ?? 0})</span>
               </FilterButton>
             ))}
           </div>

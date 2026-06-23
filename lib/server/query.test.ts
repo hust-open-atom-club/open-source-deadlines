@@ -226,4 +226,42 @@ describe('queryActivities (integration)', () => {
     expect(result.items).toHaveLength(1)
     expect(result.facets.tags.find((t) => t.value === 'community')?.count).toBe(2)
   })
+
+  it('uses expanding facets: a dimension excludes its own filter when counting', () => {
+    const result = queryActivities(FIXTURE, {
+      now: FIXED_NOW,
+      tags: ['hack'],
+    })
+    expect(result.total).toBe(1)
+    expect(result.items[0].event.id).toBe('hack-bj-2026')
+    expect(result.facets.tags.find((t) => t.value === 'community')?.count).toBe(2)
+    expect(result.facets.tags.find((t) => t.value === 'oss')?.count).toBe(1)
+    expect(result.facets.tags.find((t) => t.value === 'workshop')?.count).toBe(1)
+    expect(result.facets.categories.find((c) => c.value === 'competition')?.count).toBe(1)
+    expect(result.facets.categories.find((c) => c.value === 'conference')).toBeUndefined()
+  })
+
+  it('expanding facets: other dimensions still narrow the count', () => {
+    const result = queryActivities(FIXTURE, {
+      now: FIXED_NOW,
+      category: ['competition'],
+      tags: ['hack'],
+    })
+    expect(result.facets.tags.find((t) => t.value === 'community')?.count).toBe(1)
+    expect(result.facets.tags.find((t) => t.value === 'oss')).toBeUndefined()
+  })
+
+  it('allFacets reflect the unfiltered universe regardless of filter', () => {
+    const filtered = queryActivities(FIXTURE, {
+      now: FIXED_NOW,
+      category: ['conference'],
+    })
+    const unfiltered = queryActivities(FIXTURE, { now: FIXED_NOW })
+
+    expect(filtered.allFacets.categories.map((c) => c.value).sort()).toEqual(
+      unfiltered.allFacets.categories.map((c) => c.value).sort(),
+    )
+    expect(filtered.allFacets.tags.length).toBe(unfiltered.allFacets.tags.length)
+    expect(filtered.allFacets.locations.length).toBe(unfiltered.allFacets.locations.length)
+  })
 })
