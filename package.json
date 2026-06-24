@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "env COREPACK_ENABLE_AUTO_PIN=0 next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "env COREPACK_ENABLE_AUTO_PIN=0 next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "knip": "knip",
