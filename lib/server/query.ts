@@ -2,6 +2,7 @@ import Fuse from 'fuse.js'
 import { DateTime } from 'luxon'
 import {
   DeadlineItem,
+  EventData,
   Facets,
   FlatDeadline,
   QueryParams,
@@ -213,4 +214,26 @@ export function queryActivities(
     facets,
     allFacets,
   }
+}
+
+/**
+ * Look up a single event by its globally unique `event.id` (e.g. `cnsoftbei-2025`),
+ * scanning all `DeadlineItem.events` in the dataset. Returns the parent
+ * `DeadlineItem` together with the matched `EventData` so callers (notably the
+ * per-activity .ics subscription endpoint) can render title/description/place
+ * alongside the timeline. Returns `null` when no match is found.
+ *
+ * Note: subscription granularity is one `EventData` (a single yearly edition),
+ * not the parent activity, because different years have distinct timelines
+ * and should not be folded into a single calendar feed.
+ */
+export function getEventById(
+  source: DeadlineItem[],
+  id: string,
+): { item: DeadlineItem; event: EventData } | null {
+  for (const item of source) {
+    const event = item.events.find((e) => e.id === id)
+    if (event) return { item, event }
+  }
+  return null
 }

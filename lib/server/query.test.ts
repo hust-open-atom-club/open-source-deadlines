@@ -7,6 +7,7 @@ import {
   applySort,
   computeFacets,
   flatten,
+  getEventById,
   queryActivities,
 } from '@/lib/server/query'
 
@@ -263,5 +264,22 @@ describe('queryActivities (integration)', () => {
     )
     expect(filtered.allFacets.tags.length).toBe(unfiltered.allFacets.tags.length)
     expect(filtered.allFacets.locations.length).toBe(unfiltered.allFacets.locations.length)
+  })
+})
+
+describe('getEventById', () => {
+  it('returns the parent item and matched event for a known id', () => {
+    const found = getEventById(FIXTURE, 'hack-bj-2026')
+    expect(found).not.toBeNull()
+    expect(found!.event.id).toBe('hack-bj-2026')
+    expect(found!.item.title).toBe('Hackathon Beijing')
+  })
+
+  it('returns null when the id does not exist', () => {
+    expect(getEventById(FIXTURE, 'does-not-exist')).toBeNull()
+  })
+
+  it('returns null on empty source', () => {
+    expect(getEventById([], 'osca-2026')).toBeNull()
   })
 })
