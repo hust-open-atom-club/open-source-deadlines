@@ -1,13 +1,14 @@
 'use client'
 
 import { EventCard } from '@/components/EventCard'
+import { EventCardSkeletonList, PageSkeleton } from '@/components/EventCardSkeleton'
 import { FilterBar } from '@/components/FilterBar'
 import { SwitchLanguage } from '@/components/SwitchLanguage'
 import { useEventStore } from '@/lib/store'
 import { useSyncUrl } from '@/lib/hooks/useSyncUrl'
 import { Calendar } from 'lucide-react'
 import Link from 'next/link'
-import { Suspense, useEffect } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function HomeInner() {
@@ -39,25 +40,15 @@ function HomeInner() {
     favorites,
   ])
 
-  const { t, ready: translationReady } = useTranslation()
+  const { t } = useTranslation()
 
-  if (!translationReady) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  if (loading && !hasLoaded) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-slate-600">{t('events.loading')}</p>
-        </div>
-      </div>
-    )
+  if (!mounted) {
+    return <PageSkeleton />
   }
 
   return (
@@ -122,16 +113,20 @@ function HomeInner() {
               <div className="h-full w-1/3 animate-[loading-bar_1.2s_ease-in-out_infinite] bg-primary" />
             </div>
           )}
-          <div
-            className={`space-y-4 transition-opacity duration-200 ${
-              loading && hasLoaded ? 'opacity-60' : 'opacity-100'
-            }`}
-            aria-busy={loading}
-          >
-            {items.map(({ item, event }) => (
-              <EventCard key={`${event.id}`} item={item} event={event} />
-            ))}
-          </div>
+          {loading && !hasLoaded ? (
+            <EventCardSkeletonList />
+          ) : (
+            <div
+              className={`space-y-4 transition-opacity duration-200 ${
+                loading && hasLoaded ? 'opacity-60' : 'opacity-100'
+              }`}
+              aria-busy={loading}
+            >
+              {items.map(({ item, event }) => (
+                <EventCard key={`${event.id}`} item={item} event={event} />
+              ))}
+            </div>
+          )}
         </div>
 
         {!loading && items.length === 0 && !error && (

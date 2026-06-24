@@ -2,8 +2,10 @@
 
 import i18next from "i18next";
 import { initReactI18next } from 'react-i18next';
-import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+
+import enCommon from './locales/en/common.json';
+import zhCNCommon from './locales/zh-CN/common.json';
 
 const supportedLngs = ['en', 'zh-CN'];
 export const supportedLngDisplayNames: Record<string, string> = {
@@ -12,12 +14,12 @@ export const supportedLngDisplayNames: Record<string, string> = {
 };
 
 i18next
-  .use(HttpApi)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    resources: {
+      'en': { common: enCommon },
+      'zh-CN': { common: zhCNCommon },
     },
     fallbackLng: 'zh-CN',
     interpolation: { escapeValue: false },
