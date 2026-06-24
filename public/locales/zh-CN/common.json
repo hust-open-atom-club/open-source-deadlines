@@ -49,6 +49,12 @@
   },
   "calendar": {
     "title": "日历",
-    "download": "下载 .ics"
+    "download": "下载 .ics",
+    "subscribe": "持续订阅",
+    "subscribeHint": "添加后会随官方信息自动更新",
+    "copyLink": "复制订阅链接",
+    "copied": "已复制订阅链接",
+    "googleSubscribe": "Google 日历订阅",
+    "appleSubscribe": "Apple 日历订阅"
   }
 }

@@ -49,6 +49,12 @@
   },
   "calendar": {
     "title": "Calendar",
-    "download": "Download .ics"
+    "download": "Download .ics",
+    "subscribe": "Subscribe (auto-update)",
+    "subscribeHint": "Stays in sync as the schedule is updated",
+    "copyLink": "Copy subscription link",
+    "copied": "Subscription link copied",
+    "googleSubscribe": "Subscribe in Google Calendar",
+    "appleSubscribe": "Subscribe in Apple Calendar"
   }
 }

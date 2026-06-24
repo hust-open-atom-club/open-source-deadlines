@@ -1,18 +1,25 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { google, outlook, yahoo } from "calendar-link";
 import {
   Apple,
+  Bell,
   Calendar,
   CalendarDays,
   CalendarRange,
+  Check,
+  Copy,
+  Link as LinkIcon,
   Mail,
 } from "lucide-react";
 import { DateTime } from "luxon";
@@ -27,6 +34,22 @@ interface AddToCalendarProps {
   startTime?: string; // HH:mm
   endTime?: string;   // HH:mm
   timeZone: string;   // e.g. "Asia/Shanghai"
+  /**
+   * When provided, the dropdown also shows a "Subscribe (auto-update)" group
+   * that points at GET /api/activities/[subscriptionEventId]/ics. This is
+   * the event-level (single yearly edition) subscription endpoint, which
+   * tracks every deadline in the timeline at once.
+   */
+  subscriptionEventId?: string;
+}
+
+function buildSubscriptionUrl(eventId: string): string {
+  if (typeof window === "undefined") return "";
+  return `${window.location.origin}/api/activities/${encodeURIComponent(eventId)}/ics`;
+}
+
+function toWebcalUrl(httpUrl: string): string {
+  return httpUrl.replace(/^https?:\/\//, "webcal://");
 }
 
 export function AddToCalendar({
@@ -38,8 +61,20 @@ export function AddToCalendar({
   startTime,
   endTime,
   timeZone,
+  subscriptionEventId,
 }: AddToCalendarProps) {
-  // 组合 ISO 格式时间
+  const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
+  const [subscriptionUrl, setSubscriptionUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!subscriptionEventId) {
+      setSubscriptionUrl(null);
+      return;
+    }
+    setSubscriptionUrl(buildSubscriptionUrl(subscriptionEventId));
+  }, [subscriptionEventId]);
+
   const startLuxon = DateTime.fromISO(
     `${startDate}T${startTime ?? "00:00"}`,
     { zone: timeZone }
@@ -49,11 +84,9 @@ export function AddToCalendar({
     { zone: timeZone }
   );
 
-  // For ICS export (UTC format)
   const start = startLuxon.toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
   const end = endLuxon.toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'");
 
-  // For Google/Outlook/Yahoo (ISO format)
   const event = {
     title,
     description,
@@ -61,7 +94,6 @@ export function AddToCalendar({
     start: startLuxon.toISO(),
     end: endLuxon.toISO(),
   };
-
 
   const handleDownloadICS = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -89,7 +121,25 @@ END:VCALENDAR`;
     URL.revokeObjectURL(url);
   };
 
-  const { t } = useTranslation();
+  const googleSubscribeUrl = subscriptionUrl
+    ? `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(subscriptionUrl)}`
+    : null;
+  const appleSubscribeUrl = subscriptionUrl ? toWebcalUrl(subscriptionUrl) : null;
+
+  const handleCopySubscriptionLink = async (
+    e: React.MouseEvent<HTMLDivElement>,
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!subscriptionUrl) return;
+    try {
+      await navigator.clipboard.writeText(subscriptionUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.warn("Failed to copy subscription link:", err);
+    }
+  };
 
   return (
     <DropdownMenu>
@@ -136,6 +186,57 @@ END:VCALENDAR`;
         >
           <Apple className="h-4 w-4" /> Apple / iCal ({t("calendar.download")})
         </DropdownMenuItem>
+
+        {subscriptionUrl && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel className="flex items-center gap-2 text-xs text-muted-foreground">
+              <Bell className="h-3.5 w-3.5" />
+              {t("calendar.subscribe")}
+            </DropdownMenuLabel>
+            {googleSubscribeUrl && (
+              <DropdownMenuItem asChild>
+                <a
+                  href={googleSubscribeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <CalendarDays className="h-4 w-4" />
+                  {t("calendar.googleSubscribe")}
+                </a>
+              </DropdownMenuItem>
+            )}
+            {appleSubscribeUrl && (
+              <DropdownMenuItem asChild>
+                <a
+                  href={appleSubscribeUrl}
+                  className="flex items-center gap-2"
+                >
+                  <LinkIcon className="h-4 w-4" />
+                  {t("calendar.appleSubscribe")}
+                </a>
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuItem
+              onSelect={(e) => e.preventDefault()}
+              onClick={handleCopySubscriptionLink}
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 text-green-600" />
+                  {t("calendar.copied")}
+                </>
+              ) : (
+                <>
+                  <Copy className="h-4 w-4" />
+                  {t("calendar.copyLink")}
+                </>
+              )}
+            </DropdownMenuItem>
+          </>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

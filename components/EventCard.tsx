@@ -211,6 +211,7 @@ export function EventCard({ item, event }: EventCardProps) {
                         startTime={nextDeadline.date.toFormat("HH:mm")}
                         endTime={nextDeadline.date.toFormat("HH:mm")}
                         timeZone={event.timezone}
+                        subscriptionEventId={event.id}
                       />
                     </div>
                   )}
@@ -295,6 +296,7 @@ export function EventCard({ item, event }: EventCardProps) {
                     startTime={nextDeadline.date.toFormat("HH:mm")}
                     endTime={nextDeadline.date.plus({ hours: 1 }).toFormat("HH:mm")}
                     timeZone={event.timezone}
+                    subscriptionEventId={event.id}
                   />
                 </div>
               )}
