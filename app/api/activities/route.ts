@@ -11,6 +11,8 @@ import {
 const VALID_CATEGORIES: ActivityCategory[] = ['conference', 'competition', 'activity']
 const VALID_SORTS: SortKey[] = ['next-deadline']
 
+export const dynamic = 'force-dynamic'
+
 function readMulti(searchParams: URLSearchParams, key: string): string[] {
   const all = searchParams.getAll(key).flatMap((raw) => raw.split(','))
   return all
@@ -66,7 +68,7 @@ export async function GET(req: NextRequest) {
     const result = queryActivities(source, params)
     return NextResponse.json(result, {
       headers: {
-        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=600',
+        'Cache-Control': 'no-store',
       },
     })
   } catch (error) {
