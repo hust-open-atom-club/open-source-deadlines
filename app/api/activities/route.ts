@@ -14,8 +14,8 @@ const VALID_SORTS: SortKey[] = ['next-deadline']
 export const dynamic = 'force-dynamic'
 
 function readMulti(searchParams: URLSearchParams, key: string): string[] {
-  const all = searchParams.getAll(key).flatMap((raw) => raw.split(','))
-  return all
+  return searchParams
+    .getAll(key)
     .map((v) => v.trim())
     .filter((v) => v.length > 0)
 }

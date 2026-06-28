@@ -59,6 +59,25 @@ const FIXTURE: DeadlineItem[] = [
       },
     ],
   },
+  {
+    title: 'Himalayan Summit',
+    description: 'desc',
+    category: 'conference',
+    tags: ['OSS'],
+    events: [
+      {
+        year: 2026,
+        id: 'himalayan-2026',
+        link: 'https://example.com/hs',
+        timezone: 'Asia/Kathmandu',
+        date: '2026',
+        place: 'Kathmandu, Nepal',
+        timeline: [
+          { deadline: '2099-12-31T18:00:00', comment: 'CFP' },
+        ],
+      },
+    ],
+  },
 ]
 
 vi.mock('@/lib/server/data-source', () => ({
@@ -81,15 +100,17 @@ describe('GET /api/activities', () => {
     const res = await fetchQuery('')
     expect(res.status).toBe(200)
     const body = await res.json()
-    expect(body.total).toBe(3)
-    expect(body.items).toHaveLength(3)
+    expect(body.total).toBe(4)
+    expect(body.items).toHaveLength(4)
   })
 
   it('filters by category (singular key)', async () => {
     const res = await fetchQuery('?category=conference')
     const body = await res.json()
-    expect(body.total).toBe(1)
-    expect(body.items[0].event.id).toBe('big-conf-2026')
+    expect(body.total).toBe(2)
+    expect(body.items.map((x: { event: { id: string } }) => x.event.id).sort()).toEqual(
+      ['big-conf-2026', 'himalayan-2026'].sort(),
+    )
   })
 
   it('filters by tag', async () => {
@@ -125,7 +146,23 @@ describe('GET /api/activities', () => {
   it('ignores unknown query keys silently', async () => {
     const res = await fetchQuery('?categories=conference&tags=AI')
     const body = await res.json()
-    expect(body.total).toBe(3)
+    expect(body.total).toBe(4)
+  })
+
+  it('matches a location whose value contains a comma (regression for split-on-comma bug)', async () => {
+    const res = await fetchQuery('?location=Kathmandu%2C%20Nepal')
+    const body = await res.json()
+    expect(body.total).toBe(1)
+    expect(body.items[0].event.id).toBe('himalayan-2026')
+  })
+
+  it('treats repeated query keys as multi-value filters', async () => {
+    const res = await fetchQuery('?location=Online&location=Beijing')
+    const body = await res.json()
+    expect(body.total).toBe(2)
+    expect(body.items.map((x: { event: { id: string } }) => x.event.id).sort()).toEqual(
+      ['big-conf-2026', 'workshop-2026'].sort(),
+    )
   })
 
   it('returns Cache-Control: no-store to prevent insufficient CDN vary', async () => {
