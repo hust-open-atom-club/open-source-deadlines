@@ -31,6 +31,12 @@ interface AppState {
   setDisplayTimezone: (timezone: string) => void
   detectUserTimezone: () => void
 
+  currentPage: number
+  pageSize: number
+  setCurrentPage: (page: number) => void
+  setPageSize: (size: number) => void
+  resetPage: () => void
+
   fetchQuery: () => Promise<void>
   buildQueryString: () => string
   setCategory: (category: ActivityCategory | null) => void
@@ -56,6 +62,8 @@ export const useEventStore = create<AppState>()(
       favorites: [],
       showOnlyFavorites: false,
       mounted: false,
+      currentPage: 1,
+      pageSize: 20,
 
       displayTimezone: 'Asia/Shanghai',
 
@@ -65,22 +73,36 @@ export const useEventStore = create<AppState>()(
             ? state.favorites.filter((favId) => favId !== id)
             : [...state.favorites, id],
         })),
-      setShowOnlyFavorites: (show: boolean) => set({ showOnlyFavorites: show }),
+      setShowOnlyFavorites: (show: boolean) => {
+        set({ showOnlyFavorites: show })
+        get().resetPage()
+      },
 
       buildQueryString: () => {
         const s = get()
         const p = new URLSearchParams()
         if (s.selectedCategory) p.set('category', s.selectedCategory)
-        if (s.selectedTags.length) p.set('tag', s.selectedTags.join(','))
-        if (s.selectedLocations.length) p.set('location', s.selectedLocations.join(','))
+        if (s.selectedTags.length) s.selectedTags.forEach((tag) => p.append('tag', tag))
+        if (s.selectedLocations.length) s.selectedLocations.forEach((loc) => p.append('location', loc))
         if (s.searchQuery.trim()) p.set('q', s.searchQuery.trim())
         if (s.showOnlyFavorites && s.favorites.length) {
-          p.set('favorite', s.favorites.join(','))
+          s.favorites.forEach((fav) => p.append('favorite', fav))
         }
-        p.set('pageSize', '200')
+        p.set('page', s.currentPage.toString())
+        p.set('pageSize', s.pageSize.toString())
         const str = p.toString()
         return str ? `?${str}` : ''
       },
+
+      setCurrentPage: async (page: number) => {
+        set({ currentPage: page })
+        await get().fetchQuery()
+      },
+      setPageSize: async (size: number) => {
+        set({ pageSize: size, currentPage: 1 })
+        await get().fetchQuery()
+      },
+      resetPage: () => set({ currentPage: 1 }),
 
       fetchQuery: async () => {
         set({ loading: true, error: null })
@@ -119,23 +141,33 @@ export const useEventStore = create<AppState>()(
         }
       },
 
-      setCategory: (category) => set({ selectedCategory: category }),
+      setCategory: (category) => {
+        set({ selectedCategory: category })
+        get().resetPage()
+      },
 
-      toggleTag: (tag) =>
+      toggleTag: (tag) => {
         set((state) => ({
           selectedTags: state.selectedTags.includes(tag)
             ? state.selectedTags.filter((t) => t !== tag)
             : [...state.selectedTags, tag],
-        })),
+        }))
+        get().resetPage()
+      },
 
-      toggleLocation: (location) =>
+      toggleLocation: (location) => {
         set((state) => ({
           selectedLocations: state.selectedLocations.includes(location)
             ? state.selectedLocations.filter((l) => l !== location)
             : [...state.selectedLocations, location],
-        })),
+        }))
+        get().resetPage()
+      },
 
-      setSearchQuery: (query) => set({ searchQuery: query }),
+      setSearchQuery: (query) => {
+        set({ searchQuery: query })
+        get().resetPage()
+      },
     }),
     {
       name: 'favorites-storage',

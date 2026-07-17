@@ -3,6 +3,7 @@
 import { EventCard } from '@/components/EventCard'
 import { EventCardSkeletonList, PageSkeleton } from '@/components/EventCardSkeleton'
 import { FilterBar } from '@/components/FilterBar'
+import { Pagination } from '@/components/Pagination'
 import { SwitchLanguage } from '@/components/SwitchLanguage'
 import { useEventStore } from '@/lib/store'
 import { useSyncUrl } from '@/lib/hooks/useSyncUrl'
@@ -134,6 +135,12 @@ function HomeInner() {
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-xl font-semibold text-slate-900 mb-2">{t('events.notFound')}</h3>
             <p className="text-slate-600">{t('events.hint')}</p>
+          </div>
+        )}
+
+        {!error && hasLoaded && (
+          <div className="mt-6 bg-white rounded-xl p-2 shadow-sm border">
+            <Pagination />
           </div>
         )}
 

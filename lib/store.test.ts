@@ -32,28 +32,31 @@ afterEach(() => {
 })
 
 describe('buildQueryString', () => {
-  it('returns only pageSize=200 when no filter is set', () => {
+  it('returns page=1&pageSize=20 when no filter is set', () => {
     const qs = useEventStore.getState().buildQueryString()
-    expect(qs).toBe('?pageSize=200')
+    expect(qs).toBe('?page=1&pageSize=20')
   })
 
   it('encodes category', () => {
     useEventStore.setState({ selectedCategory: 'conference' })
-    expect(useEventStore.getState().buildQueryString()).toBe(
-      '?category=conference&pageSize=200',
-    )
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toContain('category=conference')
+    expect(qs).toContain('page=1')
+    expect(qs).toContain('pageSize=20')
   })
 
-  it('joins multiple tags with comma', () => {
+  it('uses repeated keys for multiple tags', () => {
     useEventStore.setState({ selectedTags: ['AI', 'ML'] })
-    expect(useEventStore.getState().buildQueryString()).toContain('tag=AI%2CML')
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toContain('tag=AI')
+    expect(qs).toContain('tag=ML')
   })
 
-  it('joins multiple locations with comma', () => {
+  it('uses repeated keys for multiple locations', () => {
     useEventStore.setState({ selectedLocations: ['Beijing', 'Shanghai'] })
-    expect(useEventStore.getState().buildQueryString()).toContain(
-      'location=Beijing%2CShanghai',
-    )
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toContain('location=Beijing')
+    expect(qs).toContain('location=Shanghai')
   })
 
   it('encodes search query trimmed', () => {
@@ -63,7 +66,9 @@ describe('buildQueryString', () => {
 
   it('skips q when only whitespace', () => {
     useEventStore.setState({ searchQuery: '   ' })
-    expect(useEventStore.getState().buildQueryString()).toBe('?pageSize=200')
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toBe('?page=1&pageSize=20')
+    expect(qs).not.toContain('q=')
   })
 
   it('sends favorite ids only when showOnlyFavorites is true', () => {
@@ -74,12 +79,16 @@ describe('buildQueryString', () => {
     expect(useEventStore.getState().buildQueryString()).not.toContain('favorite=')
 
     useEventStore.setState({ showOnlyFavorites: true })
-    expect(useEventStore.getState().buildQueryString()).toContain('favorite=a%2Cb')
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toContain('favorite=a')
+    expect(qs).toContain('favorite=b')
   })
 
   it('omits favorite param when favorites is empty even if toggle on', () => {
     useEventStore.setState({ showOnlyFavorites: true, favorites: [] })
-    expect(useEventStore.getState().buildQueryString()).toBe('?pageSize=200')
+    const qs = useEventStore.getState().buildQueryString()
+    expect(qs).toBe('?page=1&pageSize=20')
+    expect(qs).not.toContain('favorite=')
   })
 
   it('combines all params', () => {
@@ -97,7 +106,8 @@ describe('buildQueryString', () => {
     expect(qs).toContain('location=Beijing')
     expect(qs).toContain('q=CV')
     expect(qs).toContain('favorite=x')
-    expect(qs).toContain('pageSize=200')
+    expect(qs).toContain('page=1')
+    expect(qs).toContain('pageSize=20')
   })
 })
 
@@ -134,7 +144,7 @@ describe('fetchQuery', () => {
       items: [],
       total: 3,
       page: 1,
-      pageSize: 200,
+      pageSize: 20,
       facets: {
         categories: [{ value: 'conference', count: 3 }],
         tags: [{ value: 'AI', count: 2 }],
@@ -163,7 +173,7 @@ describe('fetchQuery', () => {
 
     await useEventStore.getState().fetchQuery()
 
-    expect(fetchSpy).toHaveBeenCalledWith('/api/activities?pageSize=200')
+    expect(fetchSpy).toHaveBeenCalledWith('/api/activities?page=1&pageSize=20')
     const s = useEventStore.getState()
     expect(s.total).toBe(3)
     expect(s.facets.tags[0]).toEqual({ value: 'AI', count: 2 })

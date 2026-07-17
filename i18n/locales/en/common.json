@@ -56,5 +56,13 @@
     "copied": "Subscription link copied",
     "googleSubscribe": "Subscribe in Google Calendar",
     "appleSubscribe": "Subscribe in Apple Calendar"
+  },
+  "pagination": {
+    "first": "First",
+    "prev": "Prev",
+    "next": "Next",
+    "last": "Last",
+    "showing": "Showing {{start}} - {{end}} of {{total}} results",
+    "perPage": "{{size}} per page"
   }
 }

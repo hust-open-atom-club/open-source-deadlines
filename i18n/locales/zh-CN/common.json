@@ -56,5 +56,13 @@
     "copied": "已复制订阅链接",
     "googleSubscribe": "Google 日历订阅",
     "appleSubscribe": "Apple 日历订阅"
+  },
+  "pagination": {
+    "first": "首页",
+    "prev": "上一页",
+    "next": "下一页",
+    "last": "末页",
+    "showing": "显示 {{start}} - {{end}} 共 {{total}} 条结果",
+    "perPage": "每页 {{size}} 条"
   }
 }
