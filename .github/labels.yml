@@ -1,9 +1,9 @@
 - name: activity-add
   color: 0e8a16
-  description: 新增活动信息
+  description: Add new activity information
 - name: activity-update
   color: fbca04
-  description: 修改活动信息
+  description: Update existing activity information
 - name: bug
   color: d73a4a
   description: Something isn't working
