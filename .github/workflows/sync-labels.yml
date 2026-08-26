@@ -13,7 +13,8 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v4
-      - uses: micnncim/action-label-syncer@v1
+      # 锁定到 v1 标签当前指向的 commit，防止可变标签被篡改
+      - uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c
         with:
           prune: false
         env:
