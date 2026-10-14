@@ -124,6 +124,32 @@ docker run --rm -p 3000:3000 \
 `.env*` 文件不会进入构建上下文；请通过 `docker run --env-file` 或 `-e` 提供运行时
 配置，不要把凭据写入镜像。修改远程数据无需重建镜像；本地回退数据随镜像版本固定。
 
+### 手动发布 GHCR 镜像
+
+1. 将 Docker 配置和 `.github/workflows/publish-ghcr.yml` 合并到默认分支 `main`。
+   GitHub Actions 的手动运行入口需要工作流已存在于默认分支；构建也要求 Docker
+   文件已经合并到 `main`。
+2. 打开 **Actions → Publish GHCR image → Run workflow**，手动运行。
+   工作流只有 `workflow_dispatch` 触发器，不会因推送、PR 或定时任务而自动发布。
+3. 无论运行入口选择哪个分支，工作流始终检出构建开始时最新的 `main`，并发布：
+   - `ghcr.io/hust-open-atom-club/open-source-deadlines:latest`
+   - `ghcr.io/hust-open-atom-club/open-source-deadlines:sha-<main 的完整 commit SHA>`
+
+镜像平台为 `linux/amd64`。工作流使用内置 `GITHUB_TOKEN` 和最小的
+`contents: read`、`packages: write` 权限，无需添加 secret。发布任务串行执行，
+源代码 commit 和镜像 digest 会写入运行摘要。
+
+首次发布受组织的 GitHub Packages 策略限制。新包默认可能是私有的；如果需要匿名
+拉取，请在包设置中确认可见性。若同名包已经存在，请确认当前仓库具有该包的 Actions
+写入权限。成功发布后运行：
+
+```bash
+docker run --rm -p 3000:3000 \
+  ghcr.io/hust-open-atom-club/open-source-deadlines:latest
+```
+
+需要固定部署版本时，请使用 `sha-<完整 commit SHA>` 标签，或运行摘要中的 digest。
+
 ### 技术栈
 
 - **框架**: [Next.js](https://nextjs.org/)
